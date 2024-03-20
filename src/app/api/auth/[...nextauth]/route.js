@@ -53,8 +53,8 @@ export const authOptions = {
   
             let customLists = userLists || [];
   
-            if (!userLists?.includes("Watched Via ")) {
-              customLists.push("Watched Via ");
+            if (!userLists?.includes("Watched Via 1Anime")) {
+              customLists.push("Watched Via 1Anime");
               const fetchGraphQL = async (query, variables) => {
                 const response = await fetch("https://graphql.anilist.co/", {
                   method: "POST",
