@@ -165,6 +165,6 @@ Don't forget to give the project a star! Thanks again!
 
 Project Link: [https://github.com/Luckyhv/aniplay](https://github.com/Luckyhv/aniplay)
 
-Discord Server: [https://discord.gg/aW5P4W94ZS](https://discord.gg/aW5P4W94ZS)
+Discord Server: [https://dsc.gg/1Anime](https://dsc.gg/1Anime)
 
 For any queries you can DM me on Discord `harsha9680`.

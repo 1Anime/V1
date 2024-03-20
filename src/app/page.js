@@ -60,6 +60,14 @@ async function Home() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
+                    <ContinueWatching session={session} />
+        </MotionDiv>
+        <MotionDiv
+          initial={{ y: 10, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          viewport={{ once: true }}
+        >
           <Animecard data={herodata} cardid="Trending Now" />
         </MotionDiv>
         <MotionDiv
@@ -76,14 +84,7 @@ async function Home() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
-          <ContinueWatching session={session} />
-        </MotionDiv>
-        <MotionDiv
-          initial={{ y: 10, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-        >
+
           <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
             <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 100 Anime" />
             <VerticalList data={seasonaldata} id="Seasonal Anime" />

@@ -16,12 +16,12 @@ import { AuthProvider } from './SessionProvider';
 const inter = Inter({ subsets: ['latin'] })
 const myfont = localFont({ src: "../static-fonts/AldotheApache.ttf" })
 
-const APP_NAME = "Aniplay";
-const APP_DEFAULT_TITLE = "Aniplay - Watch Anime Online";
-const APP_DESCRIPTION = "Explore a vast collection of anime on Aniplay, your go-to destination for streaming the latest and classic anime series. Immerse yourself in captivating storylines, vibrant animation, and diverse genres. Discover a world of entertainment at your fingertips with Aniplay, where every episode is an adventure.";
+const APP_NAME = "
+const APP_DEFAULT_TITLE = " - Watch Anime Online";
+const APP_DESCRIPTION = "Explore a vast collection of anime on , your go-to destination for streaming the latest and classic anime series. Immerse yourself in captivating storylines, vibrant animation, and diverse genres. Discover a world of entertainment at your fingertips with , where every episode is an adventure.";
 
 export const metadata = {
-  metadataBase: new URL('https://aniplaynow.live'),
+  metadataBase: new URL('https://e'),
   applicationName: APP_NAME,
   title: APP_DEFAULT_TITLE,
   description: APP_DESCRIPTION,
@@ -48,7 +48,7 @@ export const metadata = {
     'latest dubbed anime',
     'subbed anime streaming',
     'dubbed anime streaming',
-    'aniplay latest anime',
+    ' latest anime',
   ],
   manifest: "/manifest.json",
   appleWebApp: {
