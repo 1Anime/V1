@@ -21,7 +21,7 @@ const APP_DEFAULT_TITLE = "1Anime - Watch Anime Online";
 const APP_DESCRIPTION = "Explore a vast collection of anime on , your go-to destination for streaming the latest and classic anime series. Immerse yourself in captivating storylines, vibrant animation, and diverse genres. Discover a world of entertainment at your fingertips with , where every episode is an adventure.";
 
 export const metadata = {
-  metadataBase: new URL('https://e'),
+  metadataBase: new URL('https://1anime.vercel.app'),
   applicationName: APP_NAME,
   title: APP_DEFAULT_TITLE,
   description: APP_DESCRIPTION,
