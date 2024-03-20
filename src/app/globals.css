@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "28 Days Later";
+    src: url('../static-fonts/28 Days Later.ttf');
+}
+
+.aniplay{
+    font-family: "28 Days Later";
+}
+
+html {
+    /* scroll-behavior: smooth !important; */
+    letter-spacing:0.05rem;
+   }
+   
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: #2b2b2d;
+}
+
+::-webkit-scrollbar-track{
+    /* background-color: black; */
+}
+
+.recommendationglobal{
+    max-width: 85%;
+    margin: 20px auto 0 auto;
+}
+
+
+@media(max-width:1200px){
+    .recommendationglobal{
+        max-width: 90%;
+    }
+}
+
+@media(max-width:900px){
+    .recommendationglobal{
+        max-width: 95%;
+    }
+}
+
+@media(max-width:600px){
+    .recommendationglobal{
+        max-width: 99%;
+    }
+}
+
+.gototop{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.top-btn {
+    font-size: 1.2rem;
+    width: 41px;
+    height: 41px;
+    color: #fff;
+    background-color: #1e1e24;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 5%;
+    right: 1.5%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+/* .top-btn--icon {
+  animation: gototop 1.2s linear infinite alternate-reverse;
+} */
+
+@keyframes gototop {
+  0% {
+    transform: translateY(-0.25rem);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
+  @media (max-width: 1024px) {
+    .top-btn {
+        display: none;
+    }
+  }
+
+
+/* 404 Page */
+.button {
+    display: block;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+  }
+  
+  .button:before,
+  .button:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 7px;
+  }
+  
+  .button:before {
+    border: 4px solid #f0eeef;
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+  }
+  
+  .button:after {
+    border: 4px solid #96daf0;
+    transform: scale(1.3);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+  }
+  
+  .button-box {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .button-elem {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 17px 18px 0 18px;
+    transform: rotate(180deg);
+    fill: #f0eeef;
+  }
+  
+  .notf:hover .button:before,
+  .notf:hover .button:before {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .notf:hover .button:after,
+  .notf:focus .button:after {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+  }
+  
+  .notf:hover .button .button-box,
+  .notf:focus .button .button-box {
+    transition: 0.4s;
+    transform: translateX(-56px);
+  }

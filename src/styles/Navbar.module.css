@@ -1,0 +1,109 @@
+@font-face {
+    font-family: "28 Days Later";
+    src: url('../static-fonts/28 Days Later.ttf');
+}
+.homenavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 68px;
+    padding: 0 6.8%;
+    margin: auto;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition:all 300ms ease-in-out;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 68px;
+    padding: 0 3%;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition:all 300ms ease-in-out;
+}
+
+.navbarscroll {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    transition:all 300ms ease-in-out;
+}
+
+.navleft {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.logoContainer {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    font-family: "28 Days Later";
+    /* border: 1px solid white; */
+}
+
+.logoLink {
+    font-size: 2.2rem;
+    margin: 4px 0 0 0;
+    line-height: normal;
+    text-decoration: none;
+}
+
+
+.navItemsContainer {
+    display: flex;
+    gap: 15px;
+    margin: 3px 0 0 0;
+}
+
+.navItem {
+    color: #dadada;
+    text-decoration: none;
+}
+
+.navItem:hover {
+    color: white;
+}
+
+.navright {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    /* border: 1px solid white; */
+}
+
+@media(max-width:1280px){
+    .homenavbar{
+        padding: 0 3%;
+    }
+}
+
+@media(max-width:768px) {
+    .navItemsContainer {
+        display: none;
+    }
+    .navright{
+        gap: 10px;
+    }
+}
+
+.toggle{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
