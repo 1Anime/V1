@@ -48,7 +48,7 @@ function Footer() {
                                 {/* <p className={`aniplay self-center text-3xl font-medium whitespace-nowrap dark:text-white`}>
                                     ANIPLAY
                                     </p> */}
-                                    <Image src='/logo.svg' width={50} height={50} className="w-32 h-20 "/>
+                                    <Image src='https://1anime.pages.dev/1Anime.png' width={50} height={50} className="w-32 h-20 "/>
                             </Link>
                             <p className="lg:text-[0.8rem] text-[0.7rem] text-[#ffffffb2] lg:w-[480px]">
                                 This site does not store any files on our server, we are linked
