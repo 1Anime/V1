@@ -79,7 +79,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" className='dark text-foreground bg-background' suppressHydrationWarning={true}>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-W661D2QCV3"
+        src="https://www.googletagmanager.com/gtag/js?id=G-TYKL9CYSFS"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -88,7 +88,7 @@ export default async function RootLayout({ children }) {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-W661D2QCV3');`}
+  gtag('config', 'G-TYKL9CYSFS');`}
       </Script>
       <head>
         <meta name="google-site-verification" content="9Cj5Gd0-OuGDtGb4HpRqNfBXy3FuFCcFNWSvTPOlTzE" />
