@@ -80,6 +80,13 @@ function Footer() {
                                     </li>
                                     <li>
                                         <Link href="https://ko-fi.com/1Anime" target='_blank' className="hover:text-white !font-semibold !text-[0.8rem]">Donate</Link>
+                                      <li>
+                                        <Link href="https://status.1anime.info" className="hover:text-white"> Status</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="https://openapi.1anime.info" className="hover:text-white"> Open API- For Developers</Link>
+                                    </li>
+
                                     </li>
                                 </ul>
                             </div>
