@@ -75,12 +75,13 @@ function Footer() {
                             </div>
                             <div>
                                 <ul className="font-semibold flex flex-col gap-2 lg:text-[0.85rem] text-[0.7rem] text-[#ffffffb2]">
+    <li>
+                                        <Link href="https://ko-fi.com/1Anime" target='_blank' className="hover:text-white !font-semibold !text-[0.8rem]">Donate</Link>
+                                      <li>
                                     <li>
                                         <Link href="/dmca" className="hover:text-white"> DMCA</Link>
                                     </li>
-                                    <li>
-                                        <Link href="https://ko-fi.com/1Anime" target='_blank' className="hover:text-white !font-semibold !text-[0.8rem]">Donate</Link>
-                                      <li>
+                                    
                                         <Link href="https://status.1anime.info" className="hover:text-white"> Status</Link>
                                     </li>
                                     <li>
