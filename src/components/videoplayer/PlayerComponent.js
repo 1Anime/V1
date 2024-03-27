@@ -146,7 +146,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                                 <div className='text-sm sm:text-base px-2 flex flex-col items-center text-center'>
                                     <p className='mb-2 text-xl'>(╯°□°)╯︵ ɹoɹɹƎ</p>
                                     <p>Failed to load episode. Please try again later.</p>
-                                    <p>If the problem persists, consider changing servers.</p>
+                                    <p>If the problem persists, consider changing servers. or try <a href="https://1anime.co/proxy.html">1Anime Proxy</a></p>
                                 </div>) : (
                                 <div className="pointer-events-none absolute inset-0 z-50 flex h-full w-full items-center justify-center">
                                     <Spinner.Root className="text-white animate-spin opacity-100" size={84}>
