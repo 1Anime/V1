@@ -102,7 +102,7 @@ export default async function RootLayout({ children }) {
             {children}
           </NextUiProvider>
         </AuthProvider>
-        {/* <NextTopLoader color="#CA1313" className="z-[99999]" /> */}
+        {/* <NextTopLoader color="#6E00FF" className="z-[99999]" /> */}
         <Toaster richColors={true} closeButton={true} theme="dark" />
         <Search />
         <Changelogs />

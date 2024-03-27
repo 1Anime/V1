@@ -31,7 +31,7 @@ export function AuthProvider({ children, session }) {
             </SkeletonTheme>
             <ProgressBar
                 height="3px"
-                color="#CA1313"
+                color="#6E00FF"
                 options={{ showSpinner: true }}
             // shallowRouting // by enabling this progressbar does not show on query params change
             />
