@@ -79,13 +79,13 @@ function Footer() {
                                         <Link href="https://ko-fi.com/1Anime" target='_blank' className="hover:text-white !font-semibold !text-[0.8rem]">Donate</Link>
                                       <li>
                                     <li>
-                                        <Link href="/dmca" className="hover:text-white"> DMCA</Link>
+                                        <Link href="/dmca" className="hover:text-white"> DMCA & Privacy Policy</Link>
                                     </li>
                                     
                                         <Link href="https://status.1anime.info" className="hover:text-white"> Status</Link>
                                     </li>
                                     <li>
-                                        <Link href="https://openapi.1anime.info" className="hover:text-white"> Open API- For Developers</Link>
+                                        <Link href="https://proxy.1anime.info" className="hover:text-white"> more 1Anime</Link>
                                     </li>
 
                                     </li>
@@ -96,10 +96,10 @@ function Footer() {
                 </div>
                 <div className='bg-tersier border-t border-white/5 mt-2'></div>
                 <div className="mx-auto w-full lg:max-w-[83%] lg:flex lg:items-center lg:justify-between lg:text-[0.8rem] text-[0.7rem] text-[#ffffffb2] py-3">
-                    <span className="sm:text-center ms-5 lg:ms-0">© {year} <Link href="/" className="hover:text-white">1Anime X AniPlay</Link> | Made by <span className="font-bold" >Luckyhv</span> and hosted by <span className="font-bold" >1Anime</span>
+                    <span className="sm:text-center ms-5 lg:ms-0">© {year} <Link href="/" className="hover:text-white">1Anime X AniPlay</Link> | Made by <span className="font-bold" >AniPlay Team</span> and hosted by <span className="font-bold" >1Anime</span>
                     </span>
                     <div className="flex mt-4 lg:justify-center lg:mt-0">
-                        <Link href="https://github.com/Luckyhv/aniplay" target="_blank" className=" hover:text-gray-900 dark:hover:text-white ms-5 lg:ms-0">
+                        <Link href="https://github.com/AniPlay Team/aniplay" target="_blank" className=" hover:text-gray-900 dark:hover:text-white ms-5 lg:ms-0">
                             <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clipRule="evenodd" />
                             </svg>

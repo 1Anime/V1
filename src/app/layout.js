@@ -17,7 +17,7 @@ const inter = Inter({ subsets: ['latin'] })
 const myfont = localFont({ src: "../static-fonts/AldotheApache.ttf" })
 
 const APP_NAME = "1Anime"
-const APP_DEFAULT_TITLE = "1Anime - Watch Anime Online";
+const APP_DEFAULT_TITLE = "1Anime - Watch Anime, Read Manga WITHOUT ADS for FREE!";
 const APP_DESCRIPTION = "Explore a vast collection of anime on , your go-to destination for streaming the latest and classic anime series. Immerse yourself in captivating storylines, vibrant animation, and diverse genres. Discover a world of entertainment at your fingertips with , where every episode is an adventure.";
 
 export const metadata = {
