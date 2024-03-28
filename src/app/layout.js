@@ -92,8 +92,8 @@ export default async function RootLayout({ children }) {
       </Script>
       <head>
         <meta name="google-site-verification" content="9Cj5Gd0-OuGDtGb4HpRqNfBXy3FuFCcFNWSvTPOlTzE" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://1anime.co/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="https://1anime.co/android-chrome-192x192.png" />
         {/* <script src="https://kit.fontawesome.com/c189d5d7c5.js" crossOrigin="anonymous" async></script> */}
       </head>
       <body className={myfont.className}>
