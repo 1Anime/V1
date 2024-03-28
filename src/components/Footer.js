@@ -85,7 +85,7 @@ function Footer() {
                                         <Link href="https://status.1anime.info" className="hover:text-white"> Status</Link>
                                     </li>
                                     <li>
-                                        <Link href="https://proxy.1anime.info" className="hover:text-white"> more 1Anime</Link>
+                                        <Link href="https://1anime.co/proxy" className="hover:text-white"> Proxy</Link>
                                     </li>
 
                                     </li>
