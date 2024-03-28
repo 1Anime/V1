@@ -11,7 +11,7 @@ function page() {
       <div className="mx-auto w-[94%] lg:w-[80%]">
         <h1 className="text-3xl font-bold mt-4 md:mt-8">DMCA - Disclaimer</h1>
         <p className="mt-4 text-[#bdbdbd]">
-          Aniplaynow.live is committed to respecting the intellectual property
+          1anime.co is committed to respecting the intellectual property
           rights of others and complying with the Digital Millennium Copyright
           Act (DMCA). We take copyright infringement seriously and will respond
           to notices of alleged copyright infringement that comply with the DMCA
@@ -76,17 +76,17 @@ function page() {
 
         <h2 className="text-2xl font-bold mt-8">NOTE:</h2>
         <p className="mt-4 text-[#bdbdbd]">
-          None of the files listed on aniplaynow.live are hosted on our servers. All
-          links point to content hosted on third-party websites. gojo.live does
+          None of the files listed on 1anime.co are hosted on our servers. All
+          links point to content hosted on third-party websites. 1anime.co does
           not accept responsibility for content hosted on third-party websites
           and has no involvement in the downloading/uploading of movies. We only
           post links that are available on the internet. If you believe that any
           content on our website infringes upon your intellectual property
           rights and you hold the copyright for that content, please report it
           to{" "}
-          <Link href="mailto:contact@aniplaynow.live" className="text-white">
-            contact@aniplaynow.live
-          </Link>{" "}
+          <Link href="mailto:support@1anime.co" className="text-white">
+            support@1anime.co
+          </Link>{" "} or visit support.1anime.co
           and the content will be immediately removed.
         </p>
       </div>
