@@ -5,6 +5,6 @@ export default function robots() {
         allow: '/',
         disallow: [ '/anime/', '/api/' ],
       },
-      sitemap: 'https://aniplaynow.live/sitemap.xml',
+      sitemap: 'https://app.1anime.co/sitemap.xml',
     }
   }
