@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "V3.0.0"
+const newVersion = "v2024.3.28"
 
 const releaseLogs = [
     // {
@@ -46,16 +46,10 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "V3.0.0",
+        version: "v2024.3.28",
         changes: [
-            "Many anime now has Gogoanime, Zoro is also fixed.",
-            "Now Episode details will be available for more anime.",
-            "Newly added filler tag - Currently on Zoro Provider.",
-            "Now u can find Uncensored Versions of anime.",
-            "Major Performance Improvement.",
-            "I guess Recent Episodes is fixed.",
-            "View Github for more information",
-        ],
+            "UI Fix with API Fix and Logo Changes.",
+            ],
     },
 ];
 
