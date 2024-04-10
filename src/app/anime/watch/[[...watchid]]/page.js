@@ -96,6 +96,7 @@ async function AnimeWatch({ params, searchParams }) {
            <div className="p-1">
          <DisqusComments
             key={epId}
+            key={theme}
             post={{
               id: id,
               title: data?.title?.english || data?.title?.romaji,
