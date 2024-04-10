@@ -115,7 +115,7 @@ function Navbarcomponent({ home = false }) {
                     </Link>
                 </div>
                 <div className={styles.navItemsContainer}>
-                    <Link href="/anime/catalog" className={styles.navItem}>Catalog</Link>
+                    <Link href="/anime/catalog" className={styles.navItem}>Explore</Link>
                     <Link href="/anime/catalog?sortby=TRENDING_DESC" className={styles.navItem}>Trending</Link>
                     <Link href="/anime/catalog?format=MOVIE" className={styles.navItem}>Movies</Link>
                     <Link href="https://community.aniplaynow.live" className={styles.navItem}>Community</Link>
