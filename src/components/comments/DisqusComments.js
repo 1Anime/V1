@@ -1,21 +1,25 @@
-"use client";
-
 import { DiscussionEmbed } from "disqus-react";
 
 const DisqusComments = ({ post }) => {
-  let currentUrl = typeof window !== 'undefined' ? window.location.href : '';
-  currentUrl = currentUrl.replace(/&?host=[^&]*/, '').replace(/&?epid=[^&]*/, '').replace(/&?type=[^&]*/, '');
-  const disqusShortname = "aniwatchcommunity";
-  const disqusConfig = {
-    url: currentUrl,
-    identifier: currentUrl,
-    title: `${post.title} - Episode ${post.episode}`, // Single post title
-     colorScheme: theme === "dark" ? "dark" : "light",
-  };
+  const { asPath } = useRouter();
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const url = `${origin}${asPath}`;
+  const { theme } = useTheme();
 
   return (
     <div>
-      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      <DiscussionEmbed
+        shortname="aniwatchcommunity"
+        config={{
+          url,
+          identifier: url,
+          title: `${post.title} - Episode ${post.episode}`,
+          language: "en_US",
+          sso: { name: "1Anime" },
+          colorScheme: theme === "dark" ? "dark" : "light",
+        }}
+        key={theme} // Add this line to handle theme changes
+      />
     </div>
   );
 };

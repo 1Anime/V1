@@ -101,6 +101,7 @@ async function AnimeWatch({ params, searchParams }) {
               title: data?.title?.english || data?.title?.romaji,
               episode: epNum,
               name: "aniwatchcommunity",
+              
             }}
           />
          </div>
