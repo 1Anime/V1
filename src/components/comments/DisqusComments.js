@@ -10,6 +10,7 @@ const DisqusComments = ({ post }) => {
     url: currentUrl,
     identifier: currentUrl,
     title: `${post.title} - Episode ${post.episode}`, // Single post title
+     colorScheme: theme === "dark" ? "dark" : "light",
   };
 
   return (
