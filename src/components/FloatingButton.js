@@ -26,7 +26,7 @@ function FloatingButton({session}) {
             </DropdownTrigger>
             <DropdownMenu variant="flat" aria-label="Profile Actions">
                 <DropdownItem key="catalog" startContent={<CatalogIcon className={iconClasses} />}>
-                    <Link href={`/anime/catalog`} className='w-full h-full block '>Catalog</Link>
+                    <Link href={`/anime/catalog`} className='w-full h-full block '>Explore</Link>
                 </DropdownItem>
                 <DropdownItem key="settings" startContent={<SettingsIcon className={iconClasses} />}>
                     <Link href={`/settings`} className='w-full h-full block '>Settings</Link>
