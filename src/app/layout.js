@@ -14,7 +14,7 @@ import FloatingButton from '@/components/FloatingButton';
 import { AuthProvider } from './SessionProvider';
 
 const Archivo = Archivo({ subsets: ['latin'] })
-const myfont = localFont({ src: "../static-fonts/AldotheApache.ttf" })
+const myfont = localFont({ src: "https://1anime.co/archivo.ttf" })
 
 const APP_NAME = "1Anime"
 const APP_DEFAULT_TITLE = "1Anime - Watch Anime, Read Manga WITHOUT ADS for FREE!";
