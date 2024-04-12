@@ -1,4 +1,4 @@
-import { Archivo } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { NextUiProvider } from "./NextUiProvider";
 // import NextTopLoader from 'nextjs-toploader';
@@ -13,7 +13,7 @@ import Changelogs from '../components/Changelogs';
 import FloatingButton from '@/components/FloatingButton';
 import { AuthProvider } from './SessionProvider';
 
-const Archivo = Archivo({ subsets: ['latin'] })
+const Inter = Inter({ subsets: ['latin'] })
 const myfont = localFont({ src: "https://1anime.co/archivo.ttf" })
 
 const APP_NAME = "1Anime"
