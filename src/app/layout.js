@@ -13,7 +13,7 @@ import Changelogs from '../components/Changelogs';
 import FloatingButton from '@/components/FloatingButton';
 import { AuthProvider } from './SessionProvider';
 
-const Inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] })
 const myfont = localFont({ src: "https://1anime.co/archivo.ttf" })
 
 const APP_NAME = "1Anime"
