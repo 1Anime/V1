@@ -142,6 +142,20 @@ function Navbarcomponent({ home = false }) {
                         ></path>
                     </svg>
                 </button>
+                                <div className="flex items-center ml-5">
+                            <label className="relative cursor-pointer">
+                                {animetitle && (
+                                    <input
+                                        type="checkbox"
+                                        className="sr-only peer"
+                                        checked={animetitle === 'english'}
+                                        onChange={handleToggle}
+                                    />
+                                )}
+                                <div className="w-[40px] text-xs h-4 flex items-center bg-[#EAEEFB] rounded-full  peer-checked:text-[#18181b] text-[black] font-bold after:flex after:items-center after:justify-center peer after:content-['JP'] peer-checked:after:content-['EN'] peer-checked:after:translate-x-3/4 after:absolute peer-checked:after:border-white after:bg-white after:border after:border-gray-300 after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-[#EAEEFB]">
+                                </div>
+                            </label>
+                        </div>
                 <div>
                     {isLoggedIn && (
                         <Dropdown placement="bottom-end" classNames={{
