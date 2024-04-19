@@ -163,7 +163,7 @@ function PlayerEpisodeList({ id, data, onprovider, setwatchepdata, epnum }) {
                   SUB: </span>
                 {episodeData?.map((item) => (
                   <div key={item.providerId} value={item.providerId} className={item.providerId === defaultProvider && subtype === 'sub' ? styles.providerselected : styles.provider} onClick={() => handleProviderChange(item.providerId, "sub")}>
-                    {item.providerId}
+                    {item.providerId} Server
                   </div>
                 ))}
               </div>
@@ -175,7 +175,7 @@ function PlayerEpisodeList({ id, data, onprovider, setwatchepdata, epnum }) {
                   DUB: </span>
                 {episodeData?.map((item) => (
                   <div key={item.providerId} value={item.providerId} className={item.providerId === defaultProvider && subtype === 'dub' ? styles.providerselected : styles.provider} onClick={() => handleProviderChange(item.providerId, "dub")}>
-                    {item.providerId}
+                    {item.providerId} Server
                   </div>
                 ))}
               </div>

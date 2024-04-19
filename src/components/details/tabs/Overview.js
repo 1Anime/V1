@@ -88,7 +88,7 @@ function Overview({data}) {
                         <span className={styles.sideheading}>Duration</span> <span className={styles.con}>{`${data?.duration} min` || `Na`}</span>
                     </div>
                     <div className={styles.singlecontent}>
-                        <span className={styles.sideheading}>Popularity</span> <span className={styles.con}>{`${data?.popularity} users`}</span>
+                        <span className={styles.sideheading}>Popularity (AniList)</span> <span className={styles.con}>{`${data?.popularity} users`}</span>
                     </div>
                 </div>
             </div>
