@@ -166,6 +166,9 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
           {/* AD HERE */}
           <div className="ad-container">
             <a href="https://linktr.ee/1anime">
+<<<<<<< HEAD
+              <img src="https://media.discordapp.net/attachments/1001735269466259460/1231135029611204648/Ad.jpg?ex=6635dad8&is=662365d8&hm=5ec36eb079e0c60a801b51055c7e5ac81dd5e9e243a9784ada92bb20a4b30bc6&" alt="Support Us" className="ad-image" />
+=======
               <img src="https://media.discordapp.net/attachments/1001735269466259460/1231135029611204648/Ad.jpg?ex=6635dad8&is=662365d8&hm=5ec36eb079e0c60a801b51055c7e5ac81dd5e9e243a9784ada92bb20a4b30bc6&=&format=webp" alt="Support Us" className="ad-image" />
             </a>
           </div>

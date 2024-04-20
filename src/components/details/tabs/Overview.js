@@ -114,6 +114,7 @@ function Overview({data}) {
           <div className="ad-container">
             <a href="https://linktr.ee/1anime">
               <img src="https://media.discordapp.net/attachments/1001735269466259460/1231135029611204648/Ad.jpg?ex=6635dad8&is=662365d8&hm=5ec36eb079e0c60a801b51055c7e5ac81dd5e9e243a9784ada92bb20a4b30bc6&=&format=webp" alt="Support Us" className="ad-image" />
+>>>>>>> d0cd2a3671522ebf9c22cc776a284a2e62d5677b
             </a>
           </div>
             </div>
