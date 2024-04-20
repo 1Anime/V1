@@ -37,6 +37,13 @@ export default function ErrorPage({
           >
             Go Home
           </button>
+          <button className="bg-white text-black font-medium py-2 px-3 rounded-lg"
+            onClick={() => {
+                router.push("https://1anime.co/proxy");
+            }}
+          >
+            Try Proxy
+          </button>
         </div>
       </div>
     </>
