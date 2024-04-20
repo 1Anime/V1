@@ -162,6 +162,13 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                     <h2 className='text-[20px]'>{data?.title?.[animetitle] || data?.title?.romaji}</h2>
                     <h2 className='text-[16px] text-[#ffffffb2]'>{` EPISODE ${epNum} `}</h2>
                 </div>
+                
+          {/* AD HERE */}
+          <div className="ad-container">
+            <a href="#">
+              <img src="https://media.discordapp.net/attachments/1001735268958752791/1231066896741175316/SupportUs.png?ex=662477e4&is=66232664&hm=a16531729b639675ce1f39b01fcf6360764525b26744fd4e3a37850ca7007e0e&=&format=webp&quality=lossless" alt="Support Us" className="ad-image" />
+            </a>
+          </div>
             </div>
             <div className='w-[98%] mx-auto lg:w-full'>
                 <PlayerEpisodeList id={id} data={data} setwatchepdata={setepisodeData} onprovider={provider} epnum={epNum} />
