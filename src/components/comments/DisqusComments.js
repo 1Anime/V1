@@ -22,7 +22,6 @@ const DisqusComments = ({ post }) => {
 
 function removeIframesWithHtml() {
   const disqusDiv = document.getElementById('disqus_thread');
-iframes
   if (disqusDiv && disqusDiv.getElementsByTagName('iframe').length > 0) {
       const iframes = disqusDiv.getElementsByTagName('iframe');
       for (let i = 0; i < iframes.length; i++) {
@@ -32,6 +31,5 @@ iframes
               iframe.parentNode?.removeChild(iframe);
 }}}}
 document.addEventListener('DOMContentLoaded', removeIframesWithHtml);
-
 
 export default DisqusComments;
