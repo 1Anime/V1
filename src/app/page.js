@@ -70,8 +70,8 @@ async function Home() {
 
           {/* AD HERE */}
           <div className="ad-container">
-            <a href="https://example.com/ad_link">
-              <img src="https://media.discordapp.net/attachments/1221283434589323395/1223134206222270545/FREE_ANIME.png?ex=66346eff&is=6621f9ff&hm=5839f5cda80d83cfa33b5c68d6dc35b3b4fd1454e295f1b5fed016a18fcb749c&=&format=webp&quality=lossless" alt="Ad" className="ad-image" />
+            <a href="#">
+              <img src="https://media.discordapp.net/attachments/1001735268958752791/1231066896741175316/SupportUs.png?ex=662477e4&is=66232664&hm=a16531729b639675ce1f39b01fcf6360764525b26744fd4e3a37850ca7007e0e&=&format=webp&quality=lossless" alt="Support Us" className="ad-image" />
             </a>
           </div>
 
