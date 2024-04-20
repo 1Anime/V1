@@ -26,7 +26,16 @@ function DetailsContainer({data, id, session}) {
         <AnimeDetailsTop data={data} list={list} session={session} setList={setList} url={url}/>
       </div>
       <AnimeDetailsBottom data={data} />
-      <Episodesection data={data} id={id} setUrl={setUrl} progress={progress}/>
+      <Episodesection data={data} id={id} setUrl={setUrl} progress={progress}/> 
+      <DisqusComments
+            key={epId}
+            post={{
+              id: id,
+              title: data?.title?.english || data?.title?.romaji,
+              name: "aniwatchcommunity",
+              
+            }}
+          />
       {data?.recommendations?.nodes?.length > 0 && (
         <div className="recommendationglobal">
           <Animecards data={data.recommendations.nodes} cardid={"Recommendations"} />
