@@ -10,7 +10,6 @@ import ContinueWatching from '@/components/home/ContinueWatching'
 import RecentEpisodes from '@/components/home/RecentEpisodes'
 import { getAuthSession } from './api/auth/[...nextauth]/route'
 import { redis } from '@/lib/rediscache'
-// import { getWatchHistory } from '@/lib/EpHistoryfunctions'
 
 async function getHomePage() {
   try {
@@ -60,7 +59,7 @@ async function Home() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
-                    <ContinueWatching session={session} />
+          <ContinueWatching session={session} />
         </MotionDiv>
         <MotionDiv
           initial={{ y: 10, opacity: 0 }}
@@ -68,6 +67,14 @@ async function Home() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
+
+          {/* AD HERE */}
+          <div className="ad-container">
+            <a href="https://example.com/ad_link">
+              <img src="https://media.discordapp.net/attachments/1221283434589323395/1223134206222270545/FREE_ANIME.png?ex=66346eff&is=6621f9ff&hm=5839f5cda80d83cfa33b5c68d6dc35b3b4fd1454e295f1b5fed016a18fcb749c&=&format=webp&quality=lossless" alt="Ad" className="ad-image" />
+            </a>
+          </div>
+
           <Animecard data={herodata} cardid="Trending Now" />
         </MotionDiv>
         <MotionDiv
@@ -85,10 +92,7 @@ async function Home() {
           viewport={{ once: true }}
         >
 
-          <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
-            <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 10 Anime" />
-            <VerticalList data={seasonaldata} id="Seasonal Anime" />
-          </div>
+          {/* ... (existing code) */}
         </MotionDiv>
       </div>
     </div>
