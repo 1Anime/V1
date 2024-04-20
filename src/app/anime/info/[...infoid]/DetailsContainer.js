@@ -4,6 +4,7 @@ import Episodesection from '@/components/Episodesection'
 import AnimeDetailsTop from '@/components/details/AnimeDetailsTop'
 import AnimeDetailsBottom from '@/components/details/AnimeDetailsBottom'
 import Animecards from '@/components/CardComponent/Animecards'
+import DisqusComments from "@/components/comments/DisqusComments";
 import { getUserLists } from '@/lib/AnilistUser';
 
 function DetailsContainer({data, id, session}) {
