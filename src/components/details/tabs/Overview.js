@@ -33,6 +33,13 @@ function Overview({data}) {
 
     return (
         <div className={styles.detailscard}>
+            
+          {/* AD HERE */}
+          <div className="ad-container">
+            <a href="#">
+              <img src="https://media.discordapp.net/attachments/1001735268958752791/1231066896741175316/SupportUs.png?ex=662477e4&is=66232664&hm=a16531729b639675ce1f39b01fcf6360764525b26744fd4e3a37850ca7007e0e&=&format=webp&quality=lossless" alt="Support Us" className="ad-image" />
+            </a>
+          </div>
             <div className={styles.card1}>
                 <h3 className={styles.detailsheading}>Details</h3>
                 <div className={styles.detailscontent}>
