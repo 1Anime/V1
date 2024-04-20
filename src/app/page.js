@@ -10,7 +10,6 @@ import ContinueWatching from '@/components/home/ContinueWatching'
 import RecentEpisodes from '@/components/home/RecentEpisodes'
 import { getAuthSession } from './api/auth/[...nextauth]/route'
 import { redis } from '@/lib/rediscache'
-// import { getWatchHistory } from '@/lib/EpHistoryfunctions'
 
 async function getHomePage() {
   try {
@@ -60,7 +59,7 @@ async function Home() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
-                    <ContinueWatching session={session} />
+          <ContinueWatching session={session} />
         </MotionDiv>
         <MotionDiv
           initial={{ y: 10, opacity: 0 }}
@@ -68,6 +67,7 @@ async function Home() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
+
           <Animecard data={herodata} cardid="Trending Now" />
         </MotionDiv>
         <MotionDiv
@@ -76,6 +76,14 @@ async function Home() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
+          
+          {/* AD HERE */}
+          <div className="ad-container">
+            <a href="https://linktr.ee/1anime">
+              <img src="https://media.discordapp.net/attachments/1001735268958752791/1231066896741175316/SupportUs.png?ex=662477e4&is=66232664&hm=a16531729b639675ce1f39b01fcf6360764525b26744fd4e3a37850ca7007e0e&=&format=webp&quality=lossless" alt="Support Us" className="ad-image" />
+            </a>
+          </div>
+          
           <RecentEpisodes cardid="Recent Episodes" />
         </MotionDiv>
         <MotionDiv
@@ -85,10 +93,7 @@ async function Home() {
           viewport={{ once: true }}
         >
 
-          <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
-            <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 10 Anime" />
-            <VerticalList data={seasonaldata} id="Seasonal Anime" />
-          </div>
+          {/* ... (existing code) */}
         </MotionDiv>
       </div>
     </div>

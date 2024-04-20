@@ -4,6 +4,7 @@ import Episodesection from '@/components/Episodesection'
 import AnimeDetailsTop from '@/components/details/AnimeDetailsTop'
 import AnimeDetailsBottom from '@/components/details/AnimeDetailsBottom'
 import Animecards from '@/components/CardComponent/Animecards'
+import DisqusComments from "@/components/comments/DisqusComments";
 import { getUserLists } from '@/lib/AnilistUser';
 
 function DetailsContainer({data, id, session}) {
@@ -26,7 +27,16 @@ function DetailsContainer({data, id, session}) {
         <AnimeDetailsTop data={data} list={list} session={session} setList={setList} url={url}/>
       </div>
       <AnimeDetailsBottom data={data} />
-      <Episodesection data={data} id={id} setUrl={setUrl} progress={progress}/>
+      <DisqusComments
+            post={{
+              id: id,
+              title: data?.title?.english || data?.title?.romaji,
+              name: "aniwatchcommunity",
+              
+            }}
+          />
+      <Episodesection data={data} id={id} setUrl={setUrl} progress={progress}/> 
+     
       {data?.recommendations?.nodes?.length > 0 && (
         <div className="recommendationglobal">
           <Animecards data={data.recommendations.nodes} cardid={"Recommendations"} />

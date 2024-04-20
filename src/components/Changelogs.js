@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v3.0.1"
+const newVersion = "v2024.4.20"
 
 const releaseLogs = [
     // {
@@ -46,11 +46,11 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "3.0.1",
+        version: "v2024.4.20",
         changes: [
-            "Add Disqus Comments.",
-            "Fix UI",
-            "Code is now opensource again. Learn more: https://1anime.co/github",
+            "Fixed Disqus having ads",
+            "Add UI Fixes",
+            "Code is now opensource again. Learn more: 1anime.co/github",
             ],
     },
 ];
