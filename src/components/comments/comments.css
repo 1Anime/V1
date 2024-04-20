@@ -5,3 +5,9 @@
   #disqus_thread a {
     color: #7700b3;
     }
+
+/*
+    iframe[src*="ads-iframe"] {
+        display: none;
+    }
+    */

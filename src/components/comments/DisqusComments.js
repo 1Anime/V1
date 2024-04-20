@@ -20,16 +20,18 @@ const DisqusComments = ({ post }) => {
   );
 };
 
-const disqusDiv = document.getElementById('disqus_thread');
-if (disqusDiv && disqusDiv.getElementsByTagName('iframe').length > 0) {
-    const iframes = disqusDiv.getElementsByTagName('iframe');
-    for (let i = 0; i < iframes.length; i++) {
-        const iframe = iframes[i];
-        if (iframe.contentDocument.documentElement.tagName.toLowerCase() === 'html') {
-            iframe.parentNode?.removeChild(iframe);
-        }
-    }
-}
+function removeIframesWithHtml() {
+  const disqusDiv = document.getElementById('disqus_thread');
+iframes
+  if (disqusDiv && disqusDiv.getElementsByTagName('iframe').length > 0) {
+      const iframes = disqusDiv.getElementsByTagName('iframe');
+      for (let i = 0; i < iframes.length; i++) {
+          const iframe = iframes[i];
+          if (iframe.contentDocument.documentElement.tagName.toLowerCase() === 'html') {
+              // Remove the iframe
+              iframe.parentNode?.removeChild(iframe);
+}}}}
+document.addEventListener('DOMContentLoaded', removeIframesWithHtml);
 
 
 export default DisqusComments;
