@@ -290,7 +290,7 @@ function Navbarcomponent({ home = false }) {
                             color="secondary"
                             name={data?.user?.name}
                             size="sm"
-                            src={data?.user?.image?.large || data?.user?.image?.medium || "https://i.pravatar.cc/150?u=a042581f4e29026704d"}
+                            src={data?.user?.image?.large || data?.user?.image?.medium || "https://media.discordapp.net/attachments/1001735269466259461/1231068879409778789/1AnimeSmedia_1.png?ex=662479bd&is=6623283d&hm=6fa39f541278a51437ce8723a7b5410176557931cac5e83ffcff438a474af757&=&format=webp&quality=lossless"}
                         />
                     </DropdownTrigger>
                     {isLoggedIn ? (
