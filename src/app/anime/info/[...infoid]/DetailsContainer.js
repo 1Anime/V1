@@ -28,7 +28,6 @@ function DetailsContainer({data, id, session}) {
       <AnimeDetailsBottom data={data} />
       <Episodesection data={data} id={id} setUrl={setUrl} progress={progress}/> 
       <DisqusComments
-            key={epId}
             post={{
               id: id,
               title: data?.title?.english || data?.title?.romaji,
