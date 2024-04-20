@@ -170,3 +170,17 @@ html {
     transition: 0.4s;
     transform: translateX(-56px);
   }
+
+  /* Add this to your CSS file */
+.ad-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px; /* Adjust the radius as desired */
+  overflow: hidden; /* Clip the curved corners */
+  background-color: #f0f0f0; /* Set a background color for the container */
+}
+
+.ad-image {
+  max-width: 100%;
+  height: auto;
+}
