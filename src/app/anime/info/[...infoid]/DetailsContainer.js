@@ -24,6 +24,8 @@ function DetailsContainer({data, id, session}) {
   return (
     <>
       <div className='h-[500px] '>
+        <AnimeDetailsTop data={data} list={list} session={session} setList={setList} url={url}/>
+      </div>
       <DisqusComments
             post={{
               id: id,
@@ -32,8 +34,6 @@ function DetailsContainer({data, id, session}) {
               
             }}
           />
-        <AnimeDetailsTop data={data} list={list} session={session} setList={setList} url={url}/>
-      </div>
       <AnimeDetailsBottom data={data} />
       <Episodesection data={data} id={id} setUrl={setUrl} progress={progress}/> 
      
