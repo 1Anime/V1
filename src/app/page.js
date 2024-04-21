@@ -92,8 +92,10 @@ async function Home() {
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
-
-          {/* ... (existing code) */}
+  <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
+            <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 100 Anime" />
+            <VerticalList data={seasonaldata} id="Seasonal Anime" />
+          </div>
         </MotionDiv>
       </div>
     </div>
