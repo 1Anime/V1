@@ -49,6 +49,7 @@ const releaseLogs = [
         version: "v2024.4.23",
         changes: [
             "Fixed slow performance",
+            "Join our discord: discord.gg/1Anime",
             "Code is now opensource again. Learn more: 1anime.co/github",
             ],
     },
@@ -117,7 +118,7 @@ export default function Changelogs() {
                                             </Link>
                                             {/* Discord Icon */}
                                             <Link
-                                                href="https://dsc.gg/1Anime"
+                                                href="https://discord.gg/1Anime"
                                                 target="_blank"
                                                 className="w-6 h-6 hover:opacity-75"
                                             >
