@@ -13,7 +13,7 @@ import {
 import { useRouter } from "next/navigation";
 import VideoProgressSave from '../../../utils/VideoProgressSave';
 import { VideoLayout } from "./components/layouts/video-layout";
-// import { DefaultVideoKeyboardActionDisplay } from '@vidstack/react/player/layouts/default';
+ import { DefaultVideoKeyboardActionDisplay } from '@vidstack/react/player/layouts/default';
 import '@vidstack/react/player/styles/default/keyboard.css';
 import { updateEp } from "@/lib/EpHistoryfunctions";
 import { saveProgress } from "@/lib/AnilistUser";  
