@@ -231,7 +231,7 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
         thumbnails={thumbnails ? process.env.NEXT_PUBLIC_PROXY_URI + '/' + thumbnails[0]?.src : ""}
         groupedEp={groupedEp}
       />
-      {/* <DefaultVideoKeyboardActionDisplay
+       <DefaultVideoKeyboardActionDisplay
         icons={{
           Play: null,
           Pause: null,
@@ -247,7 +247,7 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
           SeekForward: FastForwardIcon,
           SeekBackward: FastBackwardIcon,
         }}
-      /> */}
+      /> 
     </MediaPlayer>
   )
 }
