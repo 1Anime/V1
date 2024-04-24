@@ -13,14 +13,15 @@ import {
 import { useRouter } from "next/navigation";
 import VideoProgressSave from '../../../utils/VideoProgressSave';
 import { VideoLayout } from "./components/layouts/video-layout";
- import { DefaultVideoKeyboardActionDisplay } from '@vidstack/react/player/layouts/default';
+// import { DefaultVideoKeyboardActionDisplay } from '@vidstack/react/player/layouts/default';
 import '@vidstack/react/player/styles/default/keyboard.css';
 import { updateEp } from "@/lib/EpHistoryfunctions";
-import { saveProgress } from "@/lib/AnilistUser";  
+import { saveProgress } from "@/lib/AnilistUser";
 import { FastForwardIcon, FastBackwardIcon } from '@vidstack/react/icons';
 import { useSettings, useTitle, useNowPlaying } from '@/lib/store';
 import { useStore } from "zustand";
 import { toast } from 'sonner';
+
 function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thumbnails, skiptimes }) {
   const settings = useStore(useSettings, (state) => state.settings);
   const animetitle = useStore(useTitle, (state) => state.animetitle);
@@ -29,25 +30,33 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
   const { previousep, currentep, nextep } = groupedEp || {};
   const [getVideoProgress, UpdateVideoProgress] = VideoProgressSave();
   const router = useRouter();
+
   const playerRef = useRef(null);
   const { duration, fullscreen } = useMediaStore(playerRef);
   const remote = useMediaRemote(playerRef);
+
   const [opbutton, setopbutton] = useState(false);
   const [edbutton, setedbutton] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progressSaved, setprogressSaved] = useState(false);
   let interval;
+
   useEffect(() => {
     playerRef.current?.subscribe(({ currentTime, duration }) => {
+
       if (skiptimes && skiptimes.length > 0) {
         const opStart = skiptimes[0]?.startTime ?? 0;
         const opEnd = skiptimes[0]?.endTime ?? 0;
+
         const epStart = skiptimes[1]?.startTime ?? 0;
         const epEnd = skiptimes[1]?.endTime ?? 0;
+
         const opButtonText = skiptimes[0]?.text || "";
         const edButtonText = skiptimes[1]?.text || "";
+
         setopbutton(opButtonText === "Opening" && (currentTime > opStart && currentTime < opEnd));
         setedbutton(edButtonText === "Ending" && (currentTime > epStart && currentTime < epEnd));
+
         if (settings?.autoskip) {
           if (opButtonText === "Opening" && currentTime > opStart && currentTime < opEnd) {
             Object.assign(playerRef.current ?? {}, { currentTime: opEnd });
@@ -60,7 +69,9 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
         }
       }
     })
+
   }, [settings]);
+
   function onCanPlay() {
     if (skiptimes && skiptimes.length > 0) {
       const track = new TextTrack({
@@ -76,10 +87,12 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
       playerRef.current.textTracks.add(track);
     }
   }
+
   function onEnd() {
     // console.log("End")
     setIsPlaying(false);
   }
+
   function onEnded() {
     if (!nextep?.id) return;
     if (settings?.autonext) {
@@ -88,20 +101,24 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
       );
     }
   }
+
   function onPlay() {
     // console.log("play")
     setIsPlaying(true);
   }
+
   function onPause() {
     // console.log("pause")
     setIsPlaying(false);
   }
+
   useEffect(() => {
     if (isPlaying) {
       interval = setInterval(async () => {
         const currentTime = playerRef.current?.currentTime
           ? Math.round(playerRef.current?.currentTime)
           : 0;
+
         await updateEp({
           userName: session?.user?.name,
           aniId: String(dataInfo?.id) || String(id),
@@ -118,6 +135,7 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
           nextepNum: nextep?.number || null,
           subtype: subtype
         })
+
         UpdateVideoProgress(dataInfo?.id || id, {
           aniId: String(dataInfo?.id) || String(id),
           aniTitle: dataInfo?.title?.[animetitle] || dataInfo?.title?.romaji,
@@ -138,10 +156,12 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
     } else {
       clearInterval(interval);
     }
+
     return () => {
       clearInterval(interval);
     };
   }, [isPlaying, duration]);
+
   function onLoadedMetadata() {
     if (savedep && savedep[0]) {
       const seekTime = savedep[0]?.timeWatched;
@@ -154,6 +174,7 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
       if (seek?.epNum === Number(epNum)) {
         const seekTime = seek?.timeWatched;
         const percentage = duration !== 0 ? seekTime / Math.round(duration) : 0;
+
         if (percentage >= 0.95) {
           remote.seek(0);
         } else {
@@ -162,10 +183,12 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
       }
     }
   }
+
   function onTimeUpdate() {
     const currentTime = playerRef.current?.currentTime;
     const timeToShowButton = duration - 8;
     const percentage = currentTime / duration;
+
     if (session && !progressSaved && percentage >= 0.9) {
       try {
         setprogressSaved(true); // Mark progress as saved
@@ -175,7 +198,9 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
         toast.error("Error saving progress due to high traffic.");
       }
     }
+
     const nextButton = document.querySelector(".nextbtn");
+
     if (nextButton) {
       if (duration !== 0 && (currentTime > timeToShowButton && nextep?.id)) {
         nextButton.classList.remove("hidden");
@@ -184,6 +209,7 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
       }
     }
   }
+
   function onSourceChange() {
     if(fullscreen){
       console.log("true")
@@ -191,14 +217,18 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
       console.log("false")
     }
   }
+
   function handleop() {
     console.log("Skipping Intro");
     Object.assign(playerRef.current ?? {}, { currentTime: skiptimes[0]?.endTime ?? 0 });
   }
+
   function handleed() {
     console.log("Skipping Outro");
     Object.assign(playerRef.current ?? {}, { currentTime: skiptimes[1]?.endTime ?? 0 });
   }
+
+
   return (
     <MediaPlayer key={src} ref={playerRef} playsInline aspectRatio={16 / 9} load={settings?.load || 'idle'} muted={settings?.audio || false}
       autoPlay={settings?.autoplay || false}
@@ -231,7 +261,7 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
         thumbnails={thumbnails ? process.env.NEXT_PUBLIC_PROXY_URI + '/' + thumbnails[0]?.src : ""}
         groupedEp={groupedEp}
       />
-       <DefaultVideoKeyboardActionDisplay
+      {/* <DefaultVideoKeyboardActionDisplay
         icons={{
           Play: null,
           Pause: null,
@@ -247,10 +277,9 @@ function Player({ dataInfo, id, groupedEp, src, session, savedep, subtitles, thu
           SeekForward: FastForwardIcon,
           SeekBackward: FastBackwardIcon,
         }}
-      /> 
+      /> */}
     </MediaPlayer>
   )
 }
-
 
 export default Player
