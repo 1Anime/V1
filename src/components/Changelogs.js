@@ -50,6 +50,7 @@ const releaseLogs = [
         changes: [
             "Fixed slow performance",
             "Join our discord: discord.gg/1Anime",
+            "Report any bugs and request features in Feedback. It's FREE!",
             "Code is now opensource again. Learn more: 1anime.co/github",
             ],
     },
