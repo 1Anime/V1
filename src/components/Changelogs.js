@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v2024.4.23"
+const newVersion = "v2024.4.24"
 
 const releaseLogs = [
     // {
@@ -46,7 +46,7 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v2024.4.23",
+        version: "v2024.4.24",
         changes: [
             "Fixed slow performance",
             "Join our discord: discord.gg/1Anime",

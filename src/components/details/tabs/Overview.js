@@ -113,7 +113,7 @@ function Overview({data}) {
           {/* AD HERE */}
           <div className="ad-container">
             <a href="https://linktr.ee/1anime">
-              <img src="https://media.discordapp.net/attachments/1001735269466259461/1232667338285907968/SupportUs_1.gif?ex=662a4a6b&is=6628f8eb&hm=2b5f51b4bc531fbe756a6761434007eec1c87a693c45d62ee9ee59c31f40d8be&=" alt="Support Us" className="ad-image" />
+              <img src="https://media.discordapp.net/attachments/1001735269466259461/1232667338285907968/SupportUs_1.gif?ex=662a4a6b&is=6628f8eb&hm=2b5f51b4bc531fbe756a6761434007eec1c87a693c45d62ee9ee59c31f40d8be&=&width=1440&height=158" alt="Support Us" className="ad-image" />
             </a>
           </div>
             </div>
