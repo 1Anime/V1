@@ -21,8 +21,8 @@ function AnimeDetailsBottom({ data }) {
       label: "Characters",
     },
     {
-      name: "Staff",
-      label: "Staff",
+      name: "Reviews",
+      label: "Reviews",
     },
   ];
 
@@ -84,8 +84,16 @@ function AnimeDetailsBottom({ data }) {
                 <Characters data={data?.characters?.edges} />
               </div>
             )}
-            {activeTab.name === "Staff" && (
-              <div className={styles.detailscard}>Coming Soon</div>
+            {activeTab.name === "Reviews" && (
+              <div className={styles.detailscard}>    <DisqusComments
+              post={{
+                id: id,
+                title: data?.title?.english || data?.title?.romaji,
+                name: "aniwatchcommunity",
+  
+              }}
+            />
+        <Episodesection data={data} id={id} setUrl={setUrl} progress={progress}/> </div>
             )}
           </motion.div>
         </AnimatePresence>
