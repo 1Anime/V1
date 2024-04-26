@@ -46,7 +46,7 @@
 .spotlight{
     font-size: 1.3rem;
     margin: 5px 0;
-    color: #ed2672;
+    color: #8e50cc;
     font-weight: 500;
 }
 .heroinfo {
@@ -76,7 +76,7 @@
 }
 
 .activestatus{
-    color: #2fc867;
+    color: #8e50cc;
 }
 
 .herodescription {
@@ -96,7 +96,7 @@
 
 .watchnowbutton {
     padding: 8px 18px;
-    background-color: #4d148c;
+    background-color: #8e50cc;
     border-radius: 30px;
     font-weight: 500;
     display: flex;
