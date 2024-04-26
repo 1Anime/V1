@@ -35,7 +35,7 @@ function SettingsPage() {
     return (
         <div>
             <div className='relative h-[240px] md:h-[340px]'>
-                <div className='absolute w-full h-full' style={{ backgroundImage: `url('https://s4.anilist.co/file/anilistcdn/media/anime/banner/21-wf37VakJmZqs.jpg')`, backgroundPosition: "center", backgroundSize: "cover", height: "100%" }}></div>
+                <div className='absolute w-full h-full' style={{ backgroundImage: `url('https://media.discordapp.net/attachments/1001735269466259460/1233302536904118313/roshidere.jpeg?ex=662c99fe&is=662b487e&hm=8409c1e198ded16656faa518e08420ceaa3c5eab50c636ae5b2cb0bf6ce406e0&=&format=webp')`, backgroundPosition: "center", backgroundSize: "cover", height: "100%" }}></div>
                 <div className='bg-gradient-to-t from-black from-2% to-transparent absolute h-[101%] w-full z-[4] bottom-[-1px] inset-0'></div>
                 <div className='absolute left-[2%] lg:left-[7%] xl:left-[9.5%] bottom-6 lg:bottom-10  z-[6] text-[35px] text-bold flex flex-row items-center'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 mr-2 hover:animate-spin">
