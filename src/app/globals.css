@@ -12,7 +12,7 @@
 }
 */
 html {
-    /* scroll-behavior: smooth !important; */
+     scroll-behavior: smooth !important; 
     letter-spacing:0.05rem;
    }
    
@@ -22,7 +22,7 @@ html {
 
 ::-webkit-scrollbar-thumb{
     border-radius: 4px;
-    background-color: #2b2b2d;
+    background-color: #8e50cc;
 }
 
 ::-webkit-scrollbar-track{
