@@ -14,7 +14,7 @@ function FloatingButton({session}) {
             content: "py-1 px-1 border border-default-200 bg-gradient-to-br from-white to-default-200 dark:from-default-50 dark:to-black",
         }}>
             <DropdownTrigger>
-                <button className="fixed bottom-5 left-4 w-[45px] h-[45px] text-white rounded-full flex items-center justify-center box-border outline-none bg-[#4d148c] shadow-2xl md:hidden">
+                <button className="fixed bottom-5 right-4 w-[45px] h-[45px] text-white rounded-full flex items-center justify-center box-border outline-none bg-[#4d148c] shadow-2xl md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-category" width="26" height="26" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M4 4h6v6h-6z" />
