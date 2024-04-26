@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "../../styles/AnimeDetailsBottom.module.css";
 import Animecards from "../CardComponent/Animecards";
 import { AnimatePresence, motion } from "framer-motion";
+import DisqusComments from "@/components/comments/DisqusComments";
 import Characters from "./Characters";
 import Overview from "./tabs/Overview";
 
@@ -92,8 +93,7 @@ function AnimeDetailsBottom({ data }) {
                 name: "aniwatchcommunity",
   
               }}
-            />
-        <Episodesection data={data} id={id} setUrl={setUrl} progress={progress}/> </div>
+            /> </div>
             )}
           </motion.div>
         </AnimatePresence>
