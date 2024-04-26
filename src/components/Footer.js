@@ -142,7 +142,6 @@ function Footer() {
                             </label>
                         </div>
                     </div>
-                </div>
             </footer>
         </div>
     )
