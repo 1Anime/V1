@@ -85,8 +85,7 @@ function AnimeDetailsTop({ data, list, session, setList, url }) {
         className={styles.detailsbgimage}
         style={{ backgroundImage: `url(${data?.bannerImage || data?.coverImage.extraLarge || null})`, backgroundPosition: "center", backgroundSize: "cover", height: "100%" }}
       ></div>
-      <div className={styles.gradientOverlay}></div>
-      </>            )}
+      <div className={styles.gradientOverlay}></div> </div> )}
 
 export async function Ephistory(session, aniId, epNum){
   try {
