@@ -10,6 +10,14 @@ import DisqusComments from "@/components/comments/DisqusComments";
 import { WatchPageInfo } from "@/lib/AnilistUser";
 import { getAuthSession } from "../../../api/auth/[...nextauth]/route";
 import { redis } from '@/lib/rediscache';
+import Image from 'next/image'
+import styles from '../../styles/AnimeDetailsTop.module.css'
+import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
+import Link from 'next/link'
+import Addtolist from './Addtolist';
+import { signIn } from 'next-auth/react';
+import { useTitle } from '@/lib/store';
+import { useStore } from 'zustand';
 
 
 async function getInfo(id) {
@@ -57,6 +65,28 @@ export async function generateMetadata({ params, searchParams }) {
     },
   }
 }
+
+
+function AnimeDetailsTop({ data, list, session, setList, url }) {
+  const animetitle = useStore(useTitle, (state) => state.animetitle);
+  const [openlist, setOpenlist] = useState(false);
+
+  const isAnime = data?.type === 'ANIME' || true;
+
+  function Handlelist() {
+    setOpenlist(!openlist);
+  }
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  return (
+    <div className={styles.detailsbanner}>
+      <div
+        className={styles.detailsbgimage}
+        style={{ backgroundImage: `url(${data?.bannerImage || data?.coverImage.extraLarge || null})`, backgroundPosition: "center", backgroundSize: "cover", height: "100%" }}
+      ></div>
+      <div className={styles.gradientOverlay}></div>
+      </>            )}
 
 export async function Ephistory(session, aniId, epNum){
   try {
