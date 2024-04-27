@@ -11,10 +11,10 @@ import { WatchPageInfo } from "@/lib/AnilistUser";
 import { getAuthSession } from "../../../api/auth/[...nextauth]/route";
 import { redis } from '@/lib/rediscache';
 import Image from 'next/image'
-import styles from '../../styles/AnimeDetailsTop.module.css'
+import styles from '@/components/../../styles/AnimeDetailsTop.module.css'
 import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
 import Link from 'next/link'
-import Addtolist from './Addtolist';
+import Addtolist from '@/components/details/Addtolist';
 import { signIn } from 'next-auth/react';
 import { useTitle } from '@/lib/store';
 import { useStore } from 'zustand';
