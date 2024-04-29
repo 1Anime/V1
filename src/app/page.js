@@ -10,6 +10,7 @@ import ContinueWatching from '@/components/home/ContinueWatching'
 import RecentEpisodes from '@/components/home/RecentEpisodes'
 import { getAuthSession } from './api/auth/[...nextauth]/route'
 import { redis } from '@/lib/rediscache'
+// import { getWatchHistory } from '@/lib/EpHistoryfunctions'
 
 async function getHomePage() {
   try {
@@ -61,27 +62,28 @@ async function Home() {
         >
           <ContinueWatching session={session} />
         </div>
-        <div>
-                  <Animecard data={herodata} cardid="Trending Now" />
+        <div
+        >
+          <RecentEpisodes cardid="Recent Episodes" />
         </div>
-        <div>
-          
-          {/* AD HERE */}
-          <div className="ad-container">
+        <div
+        >
+            {/* AD HERE */}
+            <div className="ad-container">
             <a href="https://linktr.ee/1anime">
               <img src="https://media.discordapp.net/attachments/1001735269466259461/1232667338285907968/SupportUs_1.gif?ex=6630392b&is=662ee7ab&hm=bbdde687e9d3d874710444a14d90edc046b4b98fa4625fb4d58062800dfec8d0&=&width=687&height=85" alt="Support Us" className="ad-image" />
             </a>
           </div>
-          
-          <RecentEpisodes cardid="Recent Episodes" />
-        </div>
-        <div>
-        <Animecard data={populardata} cardid="All Time Popular" />
+          <Animecard data={herodata} cardid="Trending Now" />
         </div>
         <div
         >
-  <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
-            <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 10 Anime" />
+          <Animecard data={populardata} cardid="All Time Popular" />
+        </div>
+        <div
+        >
+          <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
+            <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 100 Anime" />
             <VerticalList data={seasonaldata} id="Seasonal Anime" />
           </div>
         </div>
