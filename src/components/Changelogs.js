@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v2024.4.26"
+const newVersion = "v2024.4.29"
 
 const releaseLogs = [
     // {
@@ -46,9 +46,10 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v2024.4.26",
+        version: "v2024.4.29",
         changes: [
-            "Upgraded Anime Info page",
+            "1 MONTH ANNIVERSARY EVENT ON DISCORD JOIN NOW!",
+            "Upgraded Homepage",
             "Join our discord: discord.gg/1Anime",
             "Report any bugs and request features in Feedback. It's FREE!",
             "Code is now opensource again. Learn more: 1anime.co/github",
