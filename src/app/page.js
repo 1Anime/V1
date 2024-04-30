@@ -70,8 +70,8 @@ async function Home() {
         >
             {/* AD HERE */}
             <div className="ad-container">
-            <a href="https://linktr.ee/1anime">
-              <img src="https://media.discordapp.net/attachments/1001735269466259461/1232667338285907968/SupportUs_1.gif?ex=6630392b&is=662ee7ab&hm=bbdde687e9d3d874710444a14d90edc046b4b98fa4625fb4d58062800dfec8d0&=&width=687&height=85" alt="Support Us" className="ad-image" />
+            <a href="https://novels.1anime.co">
+              <img src="https://media.discordapp.net/attachments/1001735269466259462/1234848519735738452/ad-novel.jpg?ex=663239cd&is=6630e84d&hm=5fe313c0de1dc70186e050550129bdcfc1c322a0cb7c962bc08c8d0046d68fdb&=&format=webp&width=687&height=75" alt="Support Us" className="ad-image" />
             </a>
           </div>
           <Animecard data={herodata} cardid="Trending Now" />
