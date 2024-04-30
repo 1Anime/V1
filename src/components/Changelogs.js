@@ -46,10 +46,10 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v2024.4.29",
+        version: "v2024.4.30",
         changes: [
             "1 MONTH ANNIVERSARY EVENT ON DISCORD JOIN NOW!",
-            "Upgraded Homepage",
+            "1Anime NOVELS ARE NOW LIVE",
             "Join our discord: discord.gg/1Anime",
             "Report any bugs and request features in Feedback. It's FREE!",
             "Code is now opensource again. Learn more: 1anime.co/github",
