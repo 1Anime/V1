@@ -71,7 +71,7 @@ async function Home() {
             {/* AD HERE */}
             <div className="ad-container">
             <a href="https://novels.1anime.co">
-              <img src="https://media.discordapp.net/attachments/1001735269466259462/1234848519735738452/ad-novel.jpg?ex=663239cd&is=6630e84d&hm=5fe313c0de1dc70186e050550129bdcfc1c322a0cb7c962bc08c8d0046d68fdb&=&format=webp&width=687&height=75" alt="Support Us" className="ad-image" />
+              <img src="https://1anime.co/ad-novel.jpg" alt="Support Us" className="ad-image" />
             </a>
           </div>
           <Animecard data={herodata} cardid="Trending Now" />
