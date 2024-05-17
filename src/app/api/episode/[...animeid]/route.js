@@ -27,8 +27,8 @@ async function fetchConsumet(id) {
 
     const array = [
       {
-        consumet: true,
-        providerId: "gogoanime",
+        consumet: false,
+        providerId: "v2",
         episodes: {
           ...(subData && subData.length > 0 && { sub: subData }),
           ...(dubData && dubData.length > 0 && { dub: dubData }),
@@ -104,7 +104,7 @@ async function fetchGogoanime(sub, dub) {
   try {
     async function fetchData(id) {
       const { data } = await axios.get(
-        `${process.env.CONSUMET_URI}/anime/gogoanime/info/${id}`
+        `${process.env.CONSUMET_URI}/v2/info/${id}`
       );
       if (data?.message === "Anime not found" && data?.episodes?.length < 1) {
         return [];
@@ -119,8 +119,8 @@ async function fetchGogoanime(sub, dub) {
 
     const array = [
       {
-        consumet: true,
-        providerId: "gogoanime",
+        consumet: false,
+        providerId: "v2",
         episodes: {
           ...(subData && subData.length > 0 && { sub: subData }),
           ...(dubData && dubData.length > 0 && { dub: dubData }),
