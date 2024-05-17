@@ -12,7 +12,7 @@ async function fetchConsumet(id) {
   try {
     async function fetchData(dub) {
       const { data } = await axios.get(
-        `${process.env.CONSUMET_URI}/episode/${id}${dub ? "?dub=true" : ""}`
+        `${process.env.CONSUMET_URI}/meta/anilist/episodes/${id}${dub ? "?dub=true" : ""}`
       );
       if (data?.message === "Anime not found" && data?.length < 1) {
         return [];
@@ -27,8 +27,8 @@ async function fetchConsumet(id) {
 
     const array = [
       {
-        consumet: false,
-        providerId: "v2",
+        consumet: true,
+        providerId: "gogoanime",
         episodes: {
           ...(subData && subData.length > 0 && { sub: subData }),
           ...(dubData && dubData.length > 0 && { dub: dubData }),
@@ -84,7 +84,7 @@ async function MalSync(id) {
         const remove = 'https://anitaku.to/category/';
         const dub = data.find(item => item.title.toLowerCase().endsWith(" (dub)"));
         const duburl = dub?.url?.replace(remove,'');
-        const sub = data.find(item => item.title.toLowerCase().includes(" (uncensored)"))?.url?.replace(remove,'') ?? data.find((item) => item?.url === dub?.url?.replace(/-dub$/, ''))?.url?.replace(remove,'') ?? data.find(item => !item.title.toLowerCase().includes(")"))?.url?.replace(remove,'');
+        const sub = data.find(item => item.title.toLowerCase().includes(""))?.url?.replace(remove,'') ?? data.find((item) => item?.url === dub?.url?.replace(/-dub$/, ''))?.url?.replace(remove,'') ?? data.find(item => !item.title.toLowerCase().includes(")"))?.url?.replace(remove,'');
         finaldata.push({ providerId, sub: sub || "", dub: duburl || "" });
       } else {
         const remove = 'https://hianime.to/';
@@ -104,7 +104,7 @@ async function fetchGogoanime(sub, dub) {
   try {
     async function fetchData(id) {
       const { data } = await axios.get(
-        `${process.env.CONSUMET_URI}/v2/info/${id}`
+        `${process.env.CONSUMET_URI}/anime/gogoanime/info/${id}`
       );
       if (data?.message === "Anime not found" && data?.episodes?.length < 1) {
         return [];
@@ -119,8 +119,8 @@ async function fetchGogoanime(sub, dub) {
 
     const array = [
       {
-        consumet: false,
-        providerId: "v2",
+        consumet: true,
+        providerId: "gogoanime",
         episodes: {
           ...(subData && subData.length > 0 && { sub: subData }),
           ...(dubData && dubData.length > 0 && { dub: dubData }),
