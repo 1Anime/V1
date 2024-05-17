@@ -12,7 +12,7 @@ async function fetchConsumet(id) {
   try {
     async function fetchData(dub) {
       const { data } = await axios.get(
-        `${process.env.CONSUMET_URI}/meta/anilist/episodes/${id}${dub ? "?dub=true" : ""}`
+        `${process.env.CONSUMET_URI}/episode/${id}${dub ? "?dub=true" : ""}`
       );
       if (data?.message === "Anime not found" && data?.length < 1) {
         return [];
