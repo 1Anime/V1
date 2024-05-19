@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v2024.5.9"
+const newVersion = "v2024.5.19"
 
 const releaseLogs = [
     // {
@@ -46,11 +46,11 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v2024.5.9",
+        version: "v2024.5.19",
         changes: [
             "GoGoAnime servers are down, Use Zoro for the meantime. Sorry for inconvenience",
-            "1Anime NOVELS ARE NOW LIVE",
-            "Join our discord: discord.gg/1Anime",
+            "Our Discord got deleted",
+            "Join our discord: https://https://discord.gg/pWgPSJ2U83/pWgPSJ2U83",
             "Report any bugs and request features in Feedback. It's FREE!",
             "Code is now opensource again. Learn more: 1anime.co/github",
             ],
@@ -120,7 +120,7 @@ export default function Changelogs() {
                                             </Link>
                                             {/* Discord Icon */}
                                             <Link
-                                                href="https://discord.gg/1Anime"
+                                                href="https://https://discord.gg/pWgPSJ2U83/pWgPSJ2U83"
                                                 target="_blank"
                                                 className="w-6 h-6 hover:opacity-75"
                                             >
