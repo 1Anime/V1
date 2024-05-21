@@ -70,8 +70,8 @@ async function Home() {
         >
             {/* AD HERE */}
             <div className="ad-container">
-            <a href="https://novels.1anime.co">
-              <img src="https://1anime.co/ad-novel.jpg" alt="Support Us" className="ad-image" />
+            <a href="https://discord.gg/1anime">
+              <img src="https://1anime.co/announcement.gif" alt="Warning: AniList is saying goodbye" className="ad-image" />
             </a>
           </div>
           <Animecard data={herodata} cardid="Trending Now" />
