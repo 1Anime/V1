@@ -44,5 +44,9 @@
     "tailwindcss": "^3.3.0",
     "typescript": "^5.3.3",
     "webpack": "^5.89.0"
+  },
+  "browser": {
+    "net": false,
+    "tls": false
   }
 }
