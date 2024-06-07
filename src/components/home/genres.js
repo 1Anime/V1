@@ -42,7 +42,7 @@ export default function Genres() {
           <div className="flex lg:gap-10 gap-4">
             {g.map((a, index) => (
               <Link
-                href={`https://oneanimoopa.vercel.app/en/search/anime/?genres=${a.name}`}
+                href={`/anime/catalog/?genres=${a.name}`}
                 key={index}
                 className="relative hover:shadow-lg hover:scale-105 duration-200 cursor-pointer ease-out h-[190px] w-[135px] lg:h-[265px] lg:w-[230px] rounded-md shrink-0"
               >

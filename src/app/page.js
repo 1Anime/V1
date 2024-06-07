@@ -79,7 +79,11 @@ async function Home() {
         </div>
         <div
         >
-          <Animecard data={populardata} cardid="All Time Popular" />
+          <Animecard data={populardata} cardid="Most Favorites" />
+        </div>
+        <div
+        >
+          <Animecard data={seasonaldata} cardid="Popular this season" />
         </div>
         <div
         >
