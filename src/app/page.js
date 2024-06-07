@@ -11,7 +11,7 @@ function NotFound() {
             <Navbarcomponent home={true} />
             <div className='flex items-center flex-col justify-center h-full'>
                 <div className='text-[25px] font-semibold'>
-                    Ooopsie!
+                    Maintenance!
                 </div>
                 <div className='!max-w-[750px] !max-h-[300px] px-3 mt-5 mb-6'>
                     <Image src="/construction.svg" alt='' width={200} height={200} className='object-contain w-full h-full' />
