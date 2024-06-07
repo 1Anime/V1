@@ -182,8 +182,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                     <h2 className='text-[20px]'>{data?.title?.[animetitle] || data?.title?.romaji}</h2>
                     <h2 className='text-[16px] text-[#ffffffb2]'>{` EPISODE ${epNum} `}</h2>
                 </div>
-                
-          <div className="w-[98%] mx-auto lg:w-full">
+                <div>
           <a
                             type="button"
                             rel="nofollow"
