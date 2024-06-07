@@ -6,7 +6,6 @@ import { TrendingAnilist, PopularAnilist, Top100Anilist, SeasonalAnilist } from 
 import React from 'react'
 import { MotionDiv } from '@/utils/MotionDiv'
 import VerticalList from '@/components/home/VerticalList'
-import Genres from "@/components/home/genres";
 import ContinueWatching from '@/components/home/ContinueWatching'
 import RecentEpisodes from '@/components/home/RecentEpisodes'
 import { getAuthSession } from './api/auth/[...nextauth]/route'
@@ -71,35 +70,18 @@ async function Home() {
         >
             {/* AD HERE */}
             <div className="ad-container">
-            <a href="/schedule">
-              <img src="https://1anime.co/schedule.gif" alt="Check Schedules" className="ad-image" />
+            <a href="https://discord.gg/1anime">
+              <img src="https://1anime.co/announcement.gif" alt="Warning: AniList is saying goodbye" className="ad-image" />
             </a>
           </div>
           <Animecard data={herodata} cardid="Trending Now" />
         </div>
         <div
         >
-          <Animecard data={populardata} cardid="Popular" />
+          <Animecard data={populardata} cardid="All Time Popular" />
         </div>
         <div
         >
-          <Animecard data={top100data} cardid="Most Favorites" />
-        </div>
-        <div
-        >
-          <Animecard data={seasonaldata} cardid="Popular This Season" />
-        </div>
-        <div
-        >
-           <div // Add motion.div to each child component
-              key="Genres"
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <Genres />
-            </div>
           <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
             <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 100 Anime" />
             <VerticalList data={seasonaldata} id="Seasonal Anime" />
