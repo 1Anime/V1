@@ -1,9 +1,8 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import styles from "../../styles/AnimeDetailsBottom.module.css";
 import Animecards from "../CardComponent/Animecards";
 import { AnimatePresence, motion } from "framer-motion";
-import DisqusComments from "@/components/comments/DisqusComments";
 import Characters from "./Characters";
 import Overview from "./tabs/Overview";
 
@@ -21,43 +20,29 @@ function AnimeDetailsBottom({ data }) {
       name: "Characters",
       label: "Characters",
     },
-    {
-      name: "Reviews",
-      label: "Reviews",
-    },
   ];
 
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
-  const handleClick = (e, tab) => {
-    e.preventDefault();
-
-    setActiveTab(tab);
+  const handleSelectChange = (e) => {
+    const selectedTab = tabs.find((tab) => tab.name === e.target.value);
+    setActiveTab(selectedTab);
   };
-
-  const isSelected = (tab) => activeTab.name === tab.name;
 
   return (
     <div>
       <div className={styles.detailstabs}>
-        <div className={styles.tabHeader}>
+        <select
+          value={activeTab.name}
+          onChange={handleSelectChange}
+          className={styles.tabDropdown}
+        >
           {tabs.map((tab) => (
-            <div
-              key={tab.name}
-              className={[
-                styles.tabItem,
-                isSelected(tab) ? styles.selected : "",
-              ].join(" ")}
-            >
-              <div key={tab.name} onClick={(e) => handleClick(e, tab)}>
-                {tab.label}
-              </div>
-              {isSelected(tab) && (
-                <motion.div layoutId="indicator" className={styles.indicator} />
-              )}
-            </div>
+            <option key={tab.name} value={tab.name}>
+              {tab.label}
+            </option>
           ))}
-        </div>
+        </select>
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab.name || "empty"}
@@ -84,16 +69,6 @@ function AnimeDetailsBottom({ data }) {
                 <h3 className={styles.relationsheading}>Anime Characters</h3>
                 <Characters data={data?.characters?.edges} />
               </div>
-            )}
-            {activeTab.name === "Reviews" && (
-              <div className={styles.detailscard}>    <DisqusComments
-              post={{
-                id: id,
-                title: data?.title?.english || data?.title?.romaji,
-                name: "aniwatchcommunity",
-  
-              }}
-            /> </div>
             )}
           </motion.div>
         </AnimatePresence>

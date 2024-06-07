@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v2024.6.6"
+const newVersion = "v.BIG.3.0"
 
 const releaseLogs = [
     // {
@@ -46,15 +46,17 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v2024.6.6",
+        version: "v.BIG.3.0",
         changes: [
-            "GoGoAnime servers are back",
-            "Our Discord got deleted",
-            "Join our discord: https://discord.gg/1anime",
-            "Report any bugs and request features in Feedback. It's FREE!",
-            "Code is now opensource again. Learn more: 1anime.co/github",
+            "+ Server-1 is back. Please report if having issues",
+            "+ Manga is now ready to come out!",
+            "+ Revamped Search UI, Fixed Issues",
+            "+ Added Share Button, Download Button, Info Button",
+            "- Our Discord got deleted, Please join our new server",
+            "Join our new discord: https://discord.gg/1anime",
+            "Report any bugs and request features in Feedback or Discord. It's FREE!",
             ],
-    },
+        },
 ];
 
 export default function Changelogs() {
@@ -88,36 +90,6 @@ export default function Changelogs() {
                                     <div className="flex justify-between items-center gap-2">
                                         <p className="text-lg sm:text-xl">Changelogs</p>
                                         <div className="flex gap-3 items-center">
-                                            {/* Github Icon */}
-                                            <Link
-                                                href="https://github.com/Luckyhv/aniplay"
-                                                target="_blank"
-                                                className="w-5 h-5 hover:opacity-75"
-                                            >
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    fill="#fff"
-                                                    viewBox="0 0 20 20"
-                                                >
-                                                    <g>
-                                                        <g
-                                                            fill="none"
-                                                            fillRule="evenodd"
-                                                            stroke="none"
-                                                            strokeWidth="1"
-                                                        >
-                                                            <g
-                                                                fill="#fff"
-                                                                transform="translate(-140 -7559)"
-                                                            >
-                                                                <g transform="translate(56 160)">
-                                                                    <path d="M94 7399c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051a9.396 9.396 0 00-2.505-.345 9.375 9.375 0 00-2.503.345c-1.911-1.326-2.751-1.051-2.751-1.051-.543 1.412-.2 2.455-.097 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493-3.974-1.355-6.839-5.199-6.839-9.729 0-5.663 4.478-10.253 10-10.253"></path>
-                                                                </g>
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </svg>
-                                            </Link>
                                             {/* Discord Icon */}
                                             <Link
                                                 href="https://discord.gg/1anime"
@@ -135,12 +107,24 @@ export default function Changelogs() {
                                                     ></path>
                                                 </svg>
                                             </Link>
+                                                {/* Just a Check */}
+                                                <Link
+                                                href="https://1anime.co"
+                                                target="_blank"
+                                                className="w-6 h-6 hover:opacity-75"
+                                            >
+                                           <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8.032 12 1.984 1.984 4.96-4.96m4.55 5.272.893-.893a1.984 1.984 0 0 0 0-2.806l-.893-.893a1.984 1.984 0 0 1-.581-1.403V7.04a1.984 1.984 0 0 0-1.984-1.984h-1.262a1.983 1.983 0 0 1-1.403-.581l-.893-.893a1.984 1.984 0 0 0-2.806 0l-.893.893a1.984 1.984 0 0 1-1.403.581H7.04A1.984 1.984 0 0 0 5.055 7.04v1.262c0 .527-.209 1.031-.581 1.403l-.893.893a1.984 1.984 0 0 0 0 2.806l.893.893c.372.372.581.876.581 1.403v1.262a1.984 1.984 0 0 0 1.984 1.984h1.262c.527 0 1.031.209 1.403.581l.893.893a1.984 1.984 0 0 0 2.806 0l.893-.893a1.985 1.985 0 0 1 1.403-.581h1.262a1.984 1.984 0 0 0 1.984-1.984V15.7c0-.527.209-1.031.581-1.403Z"/>
+</svg>
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className="mt-4">
                                         <p className="text-sm text-gray-400">
-                                            Hi there! 🎉 Welcome to the Changelogs section! 🌟 Here, explore the latest updates made to the site! 🚀
-                                        </p>
+                                        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path fill-rule="evenodd" d="M18.458 3.11A1 1 0 0 1 19 4v16a1 1 0 0 1-1.581.814L12 16.944V7.056l5.419-3.87a1 1 0 0 1 1.039-.076ZM22 12c0 1.48-.804 2.773-2 3.465v-6.93c1.196.692 2 1.984 2 3.465ZM10 8H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6V8Zm0 9H5v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3Z" clip-rule="evenodd"/>
+</svg>
+  Welcome to 1Anime, Here's the latest updates   </p>
                                     </div>
                                     <div className="my-3 flex items-center justify-evenly flex-col">
                                         <p className="whitespace-nowrap font-medium mx-2 font-inter">
@@ -156,10 +140,18 @@ export default function Changelogs() {
                                         </div>
                                     ))}
                                 </div>
+                                           {/* AD HERE */}
+          <div className="ad-container">
+            <a href="https://novels.1anime.co">
+              <img src="https://1anime.co/ad-novel.jpg" alt="Support Us" className="ad-image" />
+            </a>
+          </div>
                             </ModalBody>
                             <ModalFooter>
                                 <Button className="bg-[#4D148C] rounded-lg" onPress={onClose}>
-                                Dismiss
+                                Okay, got it!     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+</svg>
                                 </Button>
                             </ModalFooter>
                         </>

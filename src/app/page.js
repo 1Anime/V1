@@ -1,59 +1,113 @@
-"use client"
-import React from 'react';
-import Image from 'next/image';
+"use server"
+import Animecard from '@/components/CardComponent/Animecards'
+import Herosection from '@/components/home/Herosection'
 import Navbarcomponent from '@/components/navbar/Navbar'
-import { useRouter } from 'next-nprogress-bar';
+import { TrendingAnilist, PopularAnilist, Top100Anilist, SeasonalAnilist } from '@/lib/Anilistfunctions'
+import React from 'react'
+import { MotionDiv } from '@/utils/MotionDiv'
+import VerticalList from '@/components/home/VerticalList'
+import Genres from "@/components/home/genres";
+import ContinueWatching from '@/components/home/ContinueWatching'
+import RecentEpisodes from '@/components/home/RecentEpisodes'
+import { getAuthSession } from './api/auth/[...nextauth]/route'
+import { redis } from '@/lib/rediscache'
+// import { getWatchHistory } from '@/lib/EpHistoryfunctions'
 
-function NotFound() {
-    const router = useRouter();
-    return (
-        <div className='h-[100vh]'>
-            <Navbarcomponent home={true} />
-            <div className='flex items-center flex-col justify-center h-full'>
-                <div className='text-[25px] font-semibold'>
-                    Maintenance!
-                </div>
-                <div className='!max-w-[750px] !max-h-[300px] px-3 mt-5 mb-6'>
-                    <Image src="/construction.svg" alt='' width={200} height={200} className='object-contain w-full h-full' />
-                </div>
-                <div className='text-[25px] font-semibold text-[#DBDCDD]'>
-                    We'll be right back. In the meantime, you can check out our Proxy List.
-                </div>
-                <div className='flex flex-row gap-5 mt-3 items-center'>
-            {/*        <button className='flex flex-row items-center notf' onClick={() => { router.back(); }} >
-                         <div class="button">
-                            <div class="button-box">
-                                <span class="button-elem">
-                                    <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
-                                        ></path>
-                                    </svg>
-                                </span>
-                                <span class="button-elem">
-                                    <svg viewBox="0 0 46 40">
-                                        <path
-                                            d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
-                                        ></path>
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div className='bg-white text-black p-2 rounded-lg font-medium'>Go back</div>
-                    </button> */}
-                    <button
-                        type="button"
-                        onClick={() => {
-                            router.push("https://1anime.co/proxy");
-                        }}
-                        className="bg-white text-black font-medium px-2 h-[40px] rounded-lg"
-                    >
-                        Check out Proxy
-                    </button> 
-                </div>
-            </div>
-        </div>
-    )
+async function getHomePage() {
+  try {
+    let cachedData;
+    if (redis) {
+      cachedData = await redis.get(`homepage`);
+      if (cachedData) {
+        const parsedData = JSON.parse(cachedData);
+        if (Object.keys(parsedData).length === 0) { // Check if data is an empty object
+          await redis.del(`homepage`);
+          cachedData = null;
+        }
+      }
+    }
+    if (cachedData) {
+      const { herodata, populardata, top100data, seasonaldata } = JSON.parse(cachedData);
+      return { herodata, populardata, top100data, seasonaldata };
+    } else {
+      const [herodata, populardata, top100data, seasonaldata] = await Promise.all([
+        TrendingAnilist(),
+        PopularAnilist(),
+        Top100Anilist(),
+        SeasonalAnilist()
+      ]);
+      const cacheTime = 60 * 60 * 2;
+      if (redis) {
+        await redis.set(`homepage`, JSON.stringify({ herodata, populardata, top100data, seasonaldata }), "EX", cacheTime);
+      }
+      return { herodata, populardata, top100data, seasonaldata };
+    }
+  } catch (error) {
+    console.error("Error fetching homepage from anilist: ", error);
+    return null;
+  }
 }
 
-export default NotFound
+async function Home() {
+  const session = await getAuthSession();
+  const { herodata = [], populardata = [], top100data = [], seasonaldata = [] } = await getHomePage();
+  // const history = await getWatchHistory();
+  // console.log(history)
+
+  return (
+    <div>
+      <Navbarcomponent home={true} />
+      <Herosection data={herodata} />
+      <div className='sm:max-w-[97%] md:max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] mx-auto flex flex-col md:gap-11 sm:gap-7 gap-5 mt-8'>
+        <div
+        >
+          <ContinueWatching session={session} />
+        </div>
+        <div
+        >
+          <RecentEpisodes cardid="Recent Episodes" />
+        </div>
+        <div
+        >
+            {/* AD HERE */}
+            <div className="ad-container">
+            <a href="/schedule">
+              <img src="https://1anime.co/schedule.gif" alt="Check Schedules" className="ad-image" />
+            </a>
+          </div>
+          <Animecard data={herodata} cardid="Trending Now" />
+        </div>
+        <div
+        >
+          <Animecard data={populardata} cardid="Popular" />
+        </div>
+        <div
+        >
+          <Animecard data={top100data} cardid="Most Favorites" />
+        </div>
+        <div
+        >
+          <Animecard data={seasonaldata} cardid="Popular This Season" />
+        </div>
+        <div
+        >
+           <div // Add motion.div to each child component
+              key="Genres"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Genres />
+            </div>
+          <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
+            <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 100 Anime" />
+            <VerticalList data={seasonaldata} id="Seasonal Anime" />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Home

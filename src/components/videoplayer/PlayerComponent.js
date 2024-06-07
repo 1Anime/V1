@@ -7,6 +7,8 @@ import { Spinner } from '@vidstack/react';
 import { toast } from 'sonner';
 import { useTitle, useNowPlaying, useDataInfo } from '../../lib/store';
 import { useStore } from "zustand";
+import { ShareIcon,InformationCircleIcon,ArrowDownTrayIcon } from "@heroicons/react/24/solid";
+import { AniListIcon,MyAnimeListIcon } from "@/lib/SvgIcons";
 
 function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, savedep }) {
     const animetitle = useStore(useTitle, (state) => state.animetitle);
@@ -112,6 +114,24 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
         fetchSources();
     }, [id, provider, epId, epNum, subdub]);
 
+    const handleShareClick = async () => {
+        try {
+          if (navigator.share) {
+            await navigator.share({
+              title: `Watch Now - ${data?.title?.english}`,
+               text: `Watch [${data?.title?.romaji}] and more on 1Anime. Join us for endless anime entertainment"`,
+              url: window.location.href,
+            });
+          } else {
+            // Web Share API is not supported, provide a fallback or show a message
+            alert("Web Share API is not supported in this browser.");
+          }
+        } catch (error) {
+          console.error("Error sharing:", error);
+        }
+      };
+
+
     useEffect(() => {
         if (episodeData) {
             const previousep = episodeData?.find(
@@ -162,13 +182,62 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                     <h2 className='text-[20px]'>{data?.title?.[animetitle] || data?.title?.romaji}</h2>
                     <h2 className='text-[16px] text-[#ffffffb2]'>{` EPISODE ${epNum} `}</h2>
                 </div>
-                
-          {/* AD HERE */}
-          <div className="ad-container">
-            <a href="https://novels.1anime.co">
-              <img src="https://1anime.co/ad-novel.jpg" alt="Support Us" className="ad-image" />
-            </a>
-          </div>
+                <div>
+          <a
+                            type="button"
+                            rel="nofollow"
+                            href={`/anime/info/${data.id}`}
+                            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+                        >
+                            <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
+                                See Anime Info
+                            </span>
+                            <InformationCircleIcon className="w-7 h-7" /></a>
+                            <a
+                            type="button"
+                            target="_blank"
+            rel="noopener noreferrer"
+                            href={`https://anilist.co/anime/${id}`}
+                            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+                        >
+                            <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
+                                AniList
+                            </span>
+                            <AniListIcon className="w-7 h-7" /></a>
+                        
+                            <a
+                            type="button"
+                            target="_blank"
+            rel="noopener noreferrer"
+                            href={`https://myanimelist.net/anime/${data?.idMal}`}
+                            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+                        >
+                            <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
+                                MAL
+                            </span>
+                            <MyAnimeListIcon className="w-7 h-7" /></a> <a
+                            type="button"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={`http://1animedownloader.kesug.com/${epId}`}
+                            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+                        >
+                            <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
+                                Download Anime
+                            </span>
+                            <ArrowDownTrayIcon className="w-7 h-7" /></a>
+
+
+   <a
+            type="button"
+            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+            onClick={handleShareClick}
+          >
+            <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
+              Share Anime
+            </span>
+            <ShareIcon className="w-7 h-7" />
+      </a>  </div>
             </div>
             <div className='w-[98%] mx-auto lg:w-full'>
                 <PlayerEpisodeList id={id} data={data} setwatchepdata={setepisodeData} onprovider={provider} epnum={epNum} />

@@ -99,7 +99,7 @@ function Search() {
                                         <Combobox.Input
                                             ref={focusInput}
                                             className="p-4 text-white w-full bg-transparent border-0 outline-none"
-                                            placeholder="Search Anime..."
+                                            placeholder="Search an anime... - Alya-san"
                                             onChange={(event) => setQuery(event.target.value)}
                                             onKeyDown={(event) => {
                                                 if (event.key === "Enter") {
@@ -163,7 +163,7 @@ function Search() {
                                                     :
                                                     (query !== '' &&
                                                         <p className="flex items-center justify-center py-4 gap-1">
-                                                            No results found.
+                                                            I didn't find what u're looking for. - Alya-san
                                                         </p>
                                                     )}
                                                 {data && nextPage && (
@@ -183,7 +183,7 @@ function Search() {
                                         ) : (
                                             query !== "" &&
                                             <div className="flex items-center justify-center py-4">
-                                                Loading...
+                                                Finding it... - Alya-san
                                             </div>
                                         )}
                                     </Combobox.Options>

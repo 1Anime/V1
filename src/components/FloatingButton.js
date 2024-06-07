@@ -4,6 +4,7 @@ import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@
 import Link from 'next/link';
 import { CatalogIcon, LoginIcon, SettingsIcon, LogoutIcon } from '@/lib/SvgIcons';
 import { signIn, signOut } from 'next-auth/react';
+import { ArrowPathIcon,ClockIcon,ChatBubbleBottomCenterIcon } from '@heroicons/react/24/outline';
 
 function FloatingButton({session}) {
     const iconClasses = "w-5 h-5 text-xl text-default-500 pointer-events-none flex-shrink-0";
@@ -27,6 +28,18 @@ function FloatingButton({session}) {
             <DropdownMenu variant="flat" aria-label="Profile Actions">
                 <DropdownItem key="catalog" startContent={<CatalogIcon className={iconClasses} />}>
                     <Link href={`/anime/catalog`} className='w-full h-full block '>Explore</Link>
+                </DropdownItem>
+                <DropdownItem key="chat" startContent={<ChatBubbleBottomCenterIcon className={iconClasses} />}>
+                    <Link href={`https://discord.gg/1anime`} className='w-full h-full block '>Discord</Link>
+                </DropdownItem>
+                <DropdownItem key="schedule" startContent={<ClockIcon className={iconClasses} />}>
+                    <Link href={`/schedule`} className='w-full h-full block '>Schedule</Link>
+                </DropdownItem>
+                <DropdownItem key="random" startContent={<ArrowPathIcon className={iconClasses} />}>
+                    <Link href={`/anime/random`} className='w-full h-full block '>Random Anime</Link>
+                </DropdownItem>
+                <DropdownItem disabled key="manga" startContent={<CatalogIcon className={iconClasses} />}>
+                    <Link disabled href={`#`} className='w-full h-full block '>Manga (Unavailable)</Link>
                 </DropdownItem>
                 <DropdownItem key="settings" startContent={<SettingsIcon className={iconClasses} />}>
                     <Link href={`/settings`} className='w-full h-full block '>Settings</Link>
