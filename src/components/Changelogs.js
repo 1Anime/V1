@@ -49,7 +49,7 @@ const releaseLogs = [
         version: "v.BIG.3.0",
         changes: [
             "+ Server-1 is back. Please report if having issues",
-            "+ Manga is now out!",
+            "+ Manga is now ready to come out!",
             "+ Revamped Search UI, Fixed Issues",
             "+ Added Share Button, Download Button, Info Button",
             "- Our Discord got deleted, Please join our new server",
