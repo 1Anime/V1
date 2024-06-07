@@ -54,10 +54,10 @@ async function fetchAnify(id) {
 
     const filtereddata = epdata?.filter((episodes) => episodes.providerId !== "9anime");
     const mappedData = filtereddata?.map((i) => {
-      if (i?.providerId === "gg"){
+      if (i?.providerId === "gogoanime"){
        return {
         episodes: i.episodes,
-        providerId: "gb",
+        providerId: "gogobackup",
       }
     };
       return i;
@@ -75,12 +75,12 @@ async function MalSync(id) {
 
     const data = response?.data;
     const sites = Object.keys(data.Sites).map(providerId => ({ providerId: providerId.toLowerCase(), data: Object.values(data.Sites[providerId]) }));
-    const newdata = sites.filter(site => site.providerId === 'gg' || site.providerId === 'luro');
+    const newdata = sites.filter(site => site.providerId === 'gogoanime' || site.providerId === 'zoro');
     const finaldata = [];
     console.log(newdata)
     newdata.forEach(item => {
       const { providerId, data } = item;
-      if (providerId === 'gg') {
+      if (providerId === 'gogoanime') {
         const remove = 'https://anitaku.to/category/';
         const dub = data.find(item => item.title.toLowerCase().endsWith(" (dub)"));
         const duburl = dub?.url?.replace(remove,'');
@@ -120,7 +120,7 @@ async function fetchGogoanime(sub, dub) {
     const array = [
       {
         consumet: true,
-        providerId: "gg",
+        providerId: "gogoanime",
         episodes: {
           ...(subData && subData.length > 0 && { sub: subData }),
           ...(dubData && dubData.length > 0 && { dub: dubData }),
@@ -142,7 +142,7 @@ async function fetchZoro(id) {
 
     const array = [
       {
-        providerId: "luro",
+        providerId: "zoro",
         episodes: data?.episodes,
       },
     ];
@@ -188,8 +188,8 @@ const fetchAndCacheData = async (id, meta, redis, cacheTime, refresh) => {
   const promises = [];
   
   if (malsync) {
-    const gogop = malsync.find((i) => i.providerId === 'gg');
-    const zorop = malsync.find((i) => i.providerId === 'luro');
+    const gogop = malsync.find((i) => i.providerId === 'gogoanime');
+    const zorop = malsync.find((i) => i.providerId === 'zoro');
   
     if (gogop) {
       promises.push(fetchGogoanime(gogop.sub, gogop.dub));
