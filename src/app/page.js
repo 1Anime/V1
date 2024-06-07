@@ -6,6 +6,7 @@ import { TrendingAnilist, PopularAnilist, Top100Anilist, SeasonalAnilist } from 
 import React from 'react'
 import { MotionDiv } from '@/utils/MotionDiv'
 import VerticalList from '@/components/home/VerticalList'
+import Genres from "@/components/home/genres";
 import ContinueWatching from '@/components/home/ContinueWatching'
 import RecentEpisodes from '@/components/home/RecentEpisodes'
 import { getAuthSession } from './api/auth/[...nextauth]/route'
@@ -82,6 +83,15 @@ async function Home() {
         </div>
         <div
         >
+           <div // Add motion.div to each child component
+              key="Genres"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Genres />
+            </div>
           <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
             <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 100 Anime" />
             <VerticalList data={seasonaldata} id="Seasonal Anime" />

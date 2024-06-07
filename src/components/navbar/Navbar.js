@@ -118,7 +118,8 @@ function Navbarcomponent({ home = false }) {
                     <Link href="/anime/catalog" className={styles.navItem}>Explore</Link>
                     <Link href="/anime/catalog?sortby=TRENDING_DESC" className={styles.navItem}>Trending</Link>
                     <Link href="/anime/catalog?format=MOVIE" className={styles.navItem}>Movies</Link>
-                    <Link href="https://novels.1anime.co" className={styles.navItem}>Novels</Link>
+                    <Link href="/anime/random" className={styles.navItem}>Random Anime</Link>
+                    <Link Disabled href="#" className={styles.navItem}>Manga (Unavailable)</Link>
                 </div>
             </div>
             <div className={styles.navright}>

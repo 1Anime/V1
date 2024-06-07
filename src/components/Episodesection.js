@@ -376,23 +376,23 @@ function Episodesection({ data, id, progress, setUrl }) {
       )}
       {loading && (
         <>
-          {data?.type === 'MANGA' ? (
+           {data?.type === 'MANGA' ? (
             <div className="text-[17px] font-semibold">
-              <p className="text-center mt-4">Coming Soon! </p>
-              <p className="text-center mb-4 ">Cannot Fetch Manga, Feature Coming Soon.</p>
+              <p className="text-center mt-4">Manga not available on main app. </p>
+              <p className="text-center mb-4 ">Read the manga in <a href="https://manga.1anime.co">1Manga </a>instead </p>
             </div>
           ) : data?.status === 'NOT_YET_RELEASED' ? (
             <div className="text-[17px] font-semibold">
-              <p className="text-center mt-4">Coming Soon! </p>
+              <p className="text-center mt-4">This anime/manga is not out yet! </p>
               <p className="text-center mb-4">Sorry, this anime isn't out yet. Keep an eye out for updates!</p>
             </div>
 
           ) : (
             <div className="text-[17px] font-semibold">
-              <p className="text-center mt-4 mb-1">Please Wait... </p>
-              <p className="text-center mb-4">Loading Episode Data</p>
+              <p className="text-center mt-4 mb-1">Pwease Wait... :3 </p>
+              <p className="text-center mb-4">Trying to find the Episode list, master</p>
             </div>
-          )}
+           )}
         </>
       )}
 
