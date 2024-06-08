@@ -7,10 +7,17 @@ import { Spinner } from '@vidstack/react';
 import { toast } from 'sonner';
 import { useTitle, useNowPlaying, useDataInfo } from '../../lib/store';
 import { useStore } from "zustand";
-import { ShareIcon,InformationCircleIcon,ArrowDownTrayIcon } from "@heroicons/react/24/solid";
+import { ShareIcon,InformationCircleIcon,ArrowDownTrayIcon,BookmarkIcon } from "@heroicons/react/24/solid";
 import { AniListIcon,MyAnimeListIcon } from "@/lib/SvgIcons";
+import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
+import Link from 'next/link'
+import Addtolist from '@/components/details/Addtolist';
+import { signIn } from 'next-auth/react';
+import Image from 'next/image'
 
-function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, savedep }) {
+
+function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, savedep, list, setList, url }) {
+    const [openlist, setOpenlist] = useState(false);
     const animetitle = useStore(useTitle, (state) => state.animetitle);
     const [episodeData, setepisodeData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -20,6 +27,10 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
     const [thumbnails, setThumbnails] = useState(null);
     const [skiptimes, setSkipTimes] = useState(null);
     const [error, setError] = useState(false);
+
+  function Handlelist() {
+    setOpenlist(!openlist);
+  }
 
     useEffect(() => {
         useDataInfo.setState({ dataInfo: data });
@@ -152,6 +163,9 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
         }
     }, [episodeData, epId, provider, epNum, subdub]);
 
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    
     return (
         <div className='xl:w-[99%]'>
             <div>
@@ -169,7 +183,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                                     <p>If the problem persists, consider changing servers. or try <a href="https://1anime.co/proxy.html">1Anime Proxy</a></p>
                                 </div>) : (
                                 <div className="pointer-events-none absolute inset-0 z-50 flex h-full w-full items-center justify-center">
-                                    <Spinner.Root className="text-white animate-spin opacity-100" size={84}>
+                                    <Spinner.Root className="text-black animate-spin opacity-100" size={84}>
                                         <Spinner.Track className="opacity-25" width={8} />
                                         <Spinner.TrackFill className="opacity-75" width={8} />
                                     </Spinner.Root>
@@ -187,7 +201,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             type="button"
                             rel="nofollow"
                             href={`/anime/info/${data.id}`}
-                            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 See Anime Info
@@ -198,7 +212,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             target="_blank"
             rel="noopener noreferrer"
                             href={`https://anilist.co/anime/${id}`}
-                            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 AniList
@@ -210,7 +224,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             target="_blank"
             rel="noopener noreferrer"
                             href={`https://myanimelist.net/anime/${data?.idMal}`}
-                            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 MAL
@@ -220,7 +234,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             target="_blank"
                             rel="noopener noreferrer"
                             href={`http://1animedownloader.kesug.com/${epId}`}
-                            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 Download Anime
@@ -230,15 +244,66 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
 
    <a
             type="button"
-            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
             onClick={handleShareClick}
           >
             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
               Share Anime
             </span>
             <ShareIcon className="w-7 h-7" />
-      </a>  </div>
-            </div>
+      </a>  <button className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={Handlelist}><BookmarkIcon className="w-7 h-7" /></button>
+            {session?.user ? (
+              <Modal isOpen={openlist} onOpenChange={Handlelist} size={"3xl"} backdrop="opaque" hideCloseButton={true} placement="center" radius="sm" scrollBehavior="outside"
+                classNames={{
+                  body: "p-0",
+                }}>
+                <ModalContent>
+                  {(onClose) => (
+                    <>
+                      <ModalBody className=''>
+                        <div className='relative'>
+                          <div
+                            className="w-full !h-40 brightness-50 rounded-t-md"
+                            style={{ backgroundImage: `url(${data?.bannerImage || data?.coverImage.extraLarge || null})`, backgroundPosition: "center", backgroundSize: "cover", height: "100%", }}
+                          ></div>
+                          <div className='absolute z-10 bottom-1 sm:bottom-0 sm:top-[65%] left-0 sm:left-3 md:left-10 flex flex-row items-center'>
+                            <Image src={data?.coverImage?.extraLarge} alt='Image' width={120} height={120} className="hidden sm:flex rounded-md" priority={true}/>
+                            <div className='px-2 sm:px-4 mb-4 font-medium !text-xl text-white max-w-full line-clamp-2'>{data?.title?.[animetitle] || data?.title?.romaji}</div>
+                          </div>
+                        </div>
+                        <div className='mt-2 sm:mt-20 md:px-[5%] px-[2%] mb-2'>
+                          <Addtolist session={session} setList={setList} list={list}
+                            id={data?.id} eplength={data?.episodes || data?.nextAiringEpisode?.episode - 1 || 24} Handlelist={Handlelist} />
+                        </div>
+                      </ModalBody>
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
+            ) : (
+              <Modal isOpen={openlist} onOpenChange={Handlelist} size={"xs"} backdrop="opaque" hideCloseButton={true} placement="center" radius="sm"
+                classNames={{
+                  body: "py-6 px-3",
+                }}
+              >
+                <ModalContent>
+                  {(onClose) => (
+                    <>
+                      <ModalBody className=''>
+                        <div className="text-center flex flex-col justify-center items-center">
+                          <p className="text-lg mb-3">Login to edit your list.</p>
+                          <button className="font-semibold outline-none border-none py-2 px-4 bg-[#4d148c] rounded-md flex items-center" onClick={() => signIn('AniListProvider')}>
+                            <Image alt="anilist-icon" loading="lazy" width="25" height="25" src="/anilist.svg" className='mr-2' />
+                            Login With Anilist</button>
+                        </div>
+                      </ModalBody>
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
+            )}
+          </div> 
+              </div>
             <div className='w-[98%] mx-auto lg:w-full'>
                 <PlayerEpisodeList id={id} data={data} setwatchepdata={setepisodeData} onprovider={provider} epnum={epNum} />
             </div>
