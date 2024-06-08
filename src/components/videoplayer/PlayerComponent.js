@@ -169,7 +169,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                                     <p>If the problem persists, consider changing servers. or try <a href="https://1anime.co/proxy.html">1Anime Proxy</a></p>
                                 </div>) : (
                                 <div className="pointer-events-none absolute inset-0 z-50 flex h-full w-full items-center justify-center">
-                                    <Spinner.Root className="text-white animate-spin opacity-100" size={84}>
+                                    <Spinner.Root className="text-black animate-spin opacity-100" size={84}>
                                         <Spinner.Track className="opacity-25" width={8} />
                                         <Spinner.TrackFill className="opacity-75" width={8} />
                                     </Spinner.Root>
@@ -187,7 +187,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             type="button"
                             rel="nofollow"
                             href={`/anime/info/${data.id}`}
-                            className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
+                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 See Anime Info
@@ -198,7 +198,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             target="_blank"
             rel="noopener noreferrer"
                             href={`https://anilist.co/anime/${id}`}
-                            className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
+                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 AniList
@@ -210,7 +210,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             target="_blank"
             rel="noopener noreferrer"
                             href={`https://myanimelist.net/anime/${data?.idMal}`}
-                            className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
+                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 MAL
@@ -220,7 +220,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             target="_blank"
                             rel="noopener noreferrer"
                             href={`http://1animedownloader.kesug.com/${epId}`}
-                            className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
+                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 Download Anime
@@ -230,7 +230,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
 
    <a
             type="button"
-            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
             onClick={handleShareClick}
           >
             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
