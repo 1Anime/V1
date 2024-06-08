@@ -113,14 +113,14 @@ function Search() {
                 >
                   <PhotoIcon className="w-6 h-6 mr-2"
                   />
-                </button> </div> <div> <select
+                </button> <select
                     value={query}
                     onChange={handleSelectChange}
                     className="bg-transparent border-none focus:outline-none"
                   >
                     <option value="Anime">Anime</option>
-                    <option value="Manga">Manga</option>
-                  </select></div>
+                    <option value="Manga">Manga (Unavailable)</option>
+                  </select>
                                     </div>
                                     <div className="flex items-center text-base font-medium rounded-lg bg-[#1a1a1f]">
                                         <Combobox.Input
