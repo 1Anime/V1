@@ -13,6 +13,7 @@ import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } fr
 import Link from 'next/link'
 import Addtolist from '@/components/details/Addtolist';
 import { signIn } from 'next-auth/react';
+import Image from 'next/image'
 
   function Handlelist() {
     setOpenlist(!openlist);
