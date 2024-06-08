@@ -117,7 +117,7 @@ function Search() {
                   </select></div>
                           <button
                   onClick={handleImageClick}
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition duration-300"
+                  className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"
                 >
                   <PhotoIcon className="w-6 h-6 mr-2"
                   />
