@@ -8,6 +8,7 @@ import { AdvancedSearch } from "@/lib/Anilistfunctions";
 import { useRouter } from 'next/navigation';
 import { useTitle, useSearchbar } from '@/lib/store';
 import { useStore } from 'zustand';
+import { PhotoIcon } from '@heroicons/react/24/outline';
 
 function Search() {
     const router = useRouter();
@@ -110,6 +111,13 @@ function Search() {
                     <option value="Anime">Anime</option>
                     <option value="Manga">Manga</option>
                   </select></div>
+                          <button
+                  onClick={handleImageClick}
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition duration-300"
+                >
+                  <PhotoIcon className="w-6 h-6 mr-2"
+                  />
+                </button>
                                     </div>
                                     <div className="flex items-center text-base font-medium rounded-lg bg-[#1a1a1f]">
                                         <Combobox.Input
