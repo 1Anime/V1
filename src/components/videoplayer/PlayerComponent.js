@@ -7,8 +7,16 @@ import { Spinner } from '@vidstack/react';
 import { toast } from 'sonner';
 import { useTitle, useNowPlaying, useDataInfo } from '../../lib/store';
 import { useStore } from "zustand";
-import { ShareIcon,InformationCircleIcon,ArrowDownTrayIcon } from "@heroicons/react/24/solid";
+import { ShareIcon,InformationCircleIcon,ArrowDownTrayIcon,BookmarkIcon } from "@heroicons/react/24/solid";
 import { AniListIcon,MyAnimeListIcon } from "@/lib/SvgIcons";
+import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
+import Link from 'next/link'
+import Addtolist from './Addtolist';
+import { signIn } from 'next-auth/react';
+
+  function Handlelist() {
+    setOpenlist(!openlist);
+  }
 
 function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, savedep }) {
     const animetitle = useStore(useTitle, (state) => state.animetitle);
@@ -152,6 +160,9 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
         }
     }, [episodeData, epId, provider, epNum, subdub]);
 
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    
     return (
         <div className='xl:w-[99%]'>
             <div>
@@ -237,7 +248,58 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
               Share Anime
             </span>
             <ShareIcon className="w-7 h-7" />
-      </a>  </div>
+      </a>  <a className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={Handlelist}><BookmarkIcon className="w-7 h-7" /></a>
+            {session?.user ? (
+              <Modal isOpen={openlist} onOpenChange={Handlelist} size={"3xl"} backdrop="opaque" hideCloseButton={true} placement="center" radius="sm" scrollBehavior="outside"
+                classNames={{
+                  body: "p-0",
+                }}>
+                <ModalContent>
+                  {(onClose) => (
+                    <>
+                      <ModalBody className=''>
+                        <div className='relative'>
+                          <div
+                            className="w-full !h-40 brightness-50 rounded-t-md"
+                            style={{ backgroundImage: `url(${data?.bannerImage || data?.coverImage.extraLarge || null})`, backgroundPosition: "center", backgroundSize: "cover", height: "100%", }}
+                          ></div>
+                          <div className='absolute z-10 bottom-1 sm:bottom-0 sm:top-[65%] left-0 sm:left-3 md:left-10 flex flex-row items-center'>
+                            <Image src={data?.coverImage?.extraLarge} alt='Image' width={120} height={120} className="hidden sm:flex rounded-md" priority={true}/>
+                            <div className='px-2 sm:px-4 mb-4 font-medium !text-xl text-white max-w-full line-clamp-2'>{data?.title?.[animetitle] || data?.title?.romaji}</div>
+                          </div>
+                        </div>
+                        <div className='mt-2 sm:mt-20 md:px-[5%] px-[2%] mb-2'>
+                          <Addtolist session={session} setList={setList} list={list}
+                            id={data?.id} eplength={data?.episodes || data?.nextAiringEpisode?.episode - 1 || 24} Handlelist={Handlelist} />
+                        </div>
+                      </ModalBody>
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
+            ) : (
+              <Modal isOpen={openlist} onOpenChange={Handlelist} size={"xs"} backdrop="opaque" hideCloseButton={true} placement="center" radius="sm"
+                classNames={{
+                  body: "py-6 px-3",
+                }}
+              >
+                <ModalContent>
+                  {(onClose) => (
+                    <>
+                      <ModalBody className=''>
+                        <div className="text-center flex flex-col justify-center items-center">
+                          <p className="text-lg mb-3">Login to edit your list.</p>
+                          <button className="font-semibold outline-none border-none py-2 px-4 bg-[#4d148c] rounded-md flex items-center" onClick={() => signIn('AniListProvider')}>
+                            <Image alt="anilist-icon" loading="lazy" width="25" height="25" src="/anilist.svg" className='mr-2' />
+                            Login With Anilist</button>
+                        </div>
+                      </ModalBody>
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
+            )}
+          </div> </div>
             </div>
             <div className='w-[98%] mx-auto lg:w-full'>
                 <PlayerEpisodeList id={id} data={data} setwatchepdata={setepisodeData} onprovider={provider} epnum={epNum} />
