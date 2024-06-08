@@ -50,13 +50,13 @@ function Search() {
         const selectedOption = e.target.value;
         if (selectedOption === "Manga") {
           // Redirect to manga search page
-          router.push("/manga-search"); // Replace with your actual manga search route
+          router.push("#"); // Replace with your actual manga search route
         }
       };
 
       const handleImageClick = () => {
     // Redirect logic for the image button
-    router.push("/your-target-route"); // Replace with your desired target route
+    router.push("#"); // Replace with your desired target route
   };
 
     return (
@@ -113,7 +113,7 @@ function Search() {
                 >
                   <PhotoIcon className="w-6 h-6 mr-2"
                   />
-                </button> <select
+                </button> </div> <div> <select
                     value={query}
                     onChange={handleSelectChange}
                     className="bg-transparent border-none focus:outline-none"
