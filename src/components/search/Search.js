@@ -120,7 +120,7 @@ function Search() {
                   >
                     <option value="Anime">Anime</option>
                     <option value="Manga">Manga (Unavailable)</option>
-                  </select>
+                  </select> </div>
                                     </div>
                                     <div className="flex items-center text-base font-medium rounded-lg bg-[#1a1a1f]">
                                         <Combobox.Input
