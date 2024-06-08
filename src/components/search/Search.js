@@ -45,6 +45,15 @@ function Search() {
         useSearchbar.setState({ Isopen: false });
     }
 
+    const handleSelectChange = (e) => {
+        const selectedOption = e.target.value;
+        if (selectedOption === "Manga") {
+          // Redirect to manga search page
+          router.push("/manga-search"); // Replace with your actual manga search route
+        }
+      };
+    
+
     return (
         <Transition appear show={Isopen} as={Fragment}>
             <Dialog
@@ -93,7 +102,14 @@ function Search() {
                                             <span>+</span>
                                             <div className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md">S</div>
                                         </div>
-                                        <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center">Anime</div>
+                                        <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"> <select
+                    value={query}
+                    onChange={handleSelectChange}
+                    className="bg-transparent border-none focus:outline-none"
+                  >
+                    <option value="Anime">Anime</option>
+                    <option value="Manga">Manga</option>
+                  </select></div>
                                     </div>
                                     <div className="flex items-center text-base font-medium rounded-lg bg-[#1a1a1f]">
                                         <Combobox.Input
