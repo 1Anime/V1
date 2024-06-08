@@ -11,7 +11,7 @@ import { ShareIcon,InformationCircleIcon,ArrowDownTrayIcon,BookmarkIcon } from "
 import { AniListIcon,MyAnimeListIcon } from "@/lib/SvgIcons";
 import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
 import Link from 'next/link'
-import Addtolist from './Addtolist';
+import Addtolist from '@/components/details/Addtolist';
 import { signIn } from 'next-auth/react';
 
   function Handlelist() {
