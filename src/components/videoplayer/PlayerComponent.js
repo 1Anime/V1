@@ -299,8 +299,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                 </ModalContent>
               </Modal>
             )}
-          </div> </div>
-            </div>
+          </div> 
             <div className='w-[98%] mx-auto lg:w-full'>
                 <PlayerEpisodeList id={id} data={data} setwatchepdata={setepisodeData} onprovider={provider} epnum={epNum} />
             </div>
