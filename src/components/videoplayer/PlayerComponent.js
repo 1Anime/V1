@@ -251,7 +251,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
               Share Anime
             </span>
             <ShareIcon className="w-7 h-7" />
-      </a>  <a className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={Handlelist}><BookmarkIcon className="w-7 h-7" /></a>
+      </a>  <button className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={Handlelist}><BookmarkIcon className="w-7 h-7" /></button>
             {session?.user ? (
               <Modal isOpen={openlist} onOpenChange={Handlelist} size={"3xl"} backdrop="opaque" hideCloseButton={true} placement="center" radius="sm" scrollBehavior="outside"
                 classNames={{
