@@ -15,9 +15,6 @@ import Addtolist from '@/components/details/Addtolist';
 import { signIn } from 'next-auth/react';
 import Image from 'next/image'
 
-  function Handlelist() {
-    setOpenlist(!openlist);
-  }
 
 function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, savedep, list, setList, url }) {
     const [openlist, setOpenlist] = useState(false);
@@ -30,6 +27,10 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
     const [thumbnails, setThumbnails] = useState(null);
     const [skiptimes, setSkipTimes] = useState(null);
     const [error, setError] = useState(false);
+
+  function Handlelist() {
+    setOpenlist(!openlist);
+  }
 
     useEffect(() => {
         useDataInfo.setState({ dataInfo: data });
