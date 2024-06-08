@@ -107,7 +107,13 @@ function Search() {
                                             <span>+</span>
                                             <div className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md">S</div>
                                         </div>
-                                        <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"> <select
+                                        <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"> <button
+                  onClick={handleImageClick}
+                  className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
+                >
+                  <PhotoIcon className="w-6 h-6 mr-2"
+                  />
+                </button> <select
                     value={query}
                     onChange={handleSelectChange}
                     className="bg-transparent border-none focus:outline-none"
@@ -115,13 +121,6 @@ function Search() {
                     <option value="Anime">Anime</option>
                     <option value="Manga">Manga</option>
                   </select></div>
-                          <button
-                  onClick={handleImageClick}
-                  className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"
-                >
-                  <PhotoIcon className="w-6 h-6 mr-2"
-                  />
-                </button>
                                     </div>
                                     <div className="flex items-center text-base font-medium rounded-lg bg-[#1a1a1f]">
                                         <Combobox.Input
