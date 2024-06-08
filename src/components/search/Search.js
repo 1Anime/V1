@@ -53,7 +53,11 @@ function Search() {
           router.push("/manga-search"); // Replace with your actual manga search route
         }
       };
-    
+
+      const handleImageClick = () => {
+    // Redirect logic for the image button
+    router.push("/your-target-route"); // Replace with your desired target route
+  };
 
     return (
         <Transition appear show={Isopen} as={Fragment}>
