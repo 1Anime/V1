@@ -99,7 +99,7 @@ function AnimeDetailsTop({ data, list, session, setList, url }) {
             )}
                                  <button
             type="button"
-            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
             onClick={handleShareClick}
           >
             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
@@ -111,7 +111,7 @@ function AnimeDetailsTop({ data, list, session, setList, url }) {
             target="_blank"
             rel="noopener noreferrer"
             href={`https://anilist.co/${data.type.toLowerCase()}/${data.id}`}
-            className="bg-white text-black font-medium py-1 px-2 rounded-lg"
+            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
           >
             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
               See on AniList
