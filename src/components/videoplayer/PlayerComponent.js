@@ -19,7 +19,8 @@ import Image from 'next/image'
     setOpenlist(!openlist);
   }
 
-function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, savedep }) {
+function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, savedep, list, setList, url }) {
+    const [openlist, setOpenlist] = useState(false);
     const animetitle = useStore(useTitle, (state) => state.animetitle);
     const [episodeData, setepisodeData] = useState(null);
     const [loading, setLoading] = useState(true);
