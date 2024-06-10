@@ -30,15 +30,18 @@ function Catalog({ searchParams }) {
 
     useEffect(() => {
         // Parse URL parameters and update state accordingly
-        if (genre) {
-          setGenrevalue(Array.isArray(genre) ? genre : [genre]);
+        const urlParams = new URLSearchParams(window.location.search);
+        const genreParam = urlParams.get('genre');
+      
+        if (genreParam) {
+          setGenrevalue([genreParam]);
         }
         // Handle other URL parameters similarly
-    
+      
         // ... (other URL parameter handling)
-    
-      }, [genre, /* other URL parameters */]);
-        
+      
+      }, []);
+              
 
     const handleResize = () => {
         if (window.innerWidth <= 1024) {
