@@ -11,7 +11,7 @@ function Catalog({ searchParams }) {
     const [selectedYear, setSelectedYear] = useState(null);
     const [seasonvalue, setSeasonvalue] = useState(null);
     const [formatvalue, setFormatvalue] = useState(null);
-    const [genrevalue, setGenrevalue] = useState([])
+    const [genrevalue, setGenrevalue] = useState('')
     const [query, setQuery] = useState('')
     const [sortbyvalue, setSortbyvalue] = useState(null);
  const [airingvalue, setAiringvalue] = useState(null);
@@ -22,7 +22,7 @@ function Catalog({ searchParams }) {
         setSelectedYear(year || null);
         setSeasonvalue(season || null);
         setFormatvalue(format || null);
-        setGenrevalue(genre || []);
+        setGenrevalue(genre || '');
         setSortbyvalue(sortby || null);
         setSearchvalue(search || "");
     }, [year, season, format, genre, search, sortby]);
@@ -50,7 +50,7 @@ function Catalog({ searchParams }) {
         setSelectedYear(null);
         setSeasonvalue(null);
         setFormatvalue(null);
-        setGenrevalue([]);
+        setGenrevalue('');
         setQuery('');
         setSortbyvalue(null);
         setSearchvalue("");
