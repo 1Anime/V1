@@ -115,12 +115,28 @@ function Navbarcomponent({ home = false }) {
                     </Link>
                 </div>
                 <div className={styles.navItemsContainer}>
-                    <Link href="/anime/catalog" className={styles.navItem}>Explore</Link>
-                    <Link href="/anime/catalog?sortby=TRENDING_DESC" className={styles.navItem}>Trending</Link>
-                    <Link href="/anime/catalog?format=MOVIE" className={styles.navItem}>Movies</Link>
-                    <Link href="/anime/random" className={styles.navItem}>Random Anime</Link>
-                    <Link Disabled href="#" className={styles.navItem}>Manga (Unavailable)</Link>
-                </div>
+  <select
+    className="{styles.navItem} mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"
+    onChange={(e) => {
+      const selectedOption = e.target.value;
+      if (selectedOption === "/anime/catalog") {
+        window.location.href = selectedOption;
+      } else if (selectedOption === "/anime/catalog?sortby=TRENDING_DESC") {
+        window.location.href = selectedOption;
+      } else if (selectedOption === "/anime/catalog?format=MOVIE") {
+        window.location.href = selectedOption;
+      } else if (selectedOption === "/anime/random") {
+        window.location.href = selectedOption;
+      }
+    }}
+  >
+    <option value="">Navigate</option>
+    <option value="/anime/catalog">Explore</option>
+    <option value="/anime/catalog?sortby=TRENDING_DESC">Trending</option>
+    <option value="/anime/catalog?format=MOVIE">Movies</option>
+    <option value="/anime/random">Random Anime</option>
+  </select>
+</div>
             </div>
             <div className={styles.navright}>
                 <button
