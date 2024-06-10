@@ -27,7 +27,7 @@ function Catalog({ searchParams }) {
         setSearchvalue(search || "");
     }, [year, season, format, genre, search, sortby]);
     // console.log(sortbyvalue)
-
+    
     useEffect(() => {
         // Parse URL parameters and update state accordingly
         const urlParams = new URLSearchParams(window.location.search);
@@ -35,13 +35,15 @@ function Catalog({ searchParams }) {
       
         if (genreParam) {
           setGenrevalue([genreParam]);
+        } else {
+          setGenrevalue([]); // Set to an empty array if no genre parameter is provided
         }
         // Handle other URL parameters similarly
       
         // ... (other URL parameter handling)
       
       }, []);
-              
+             
 
     const handleResize = () => {
         if (window.innerWidth <= 1024) {

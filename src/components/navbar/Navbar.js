@@ -130,7 +130,7 @@ function Navbarcomponent({ home = false }) {
       }
     }}
   >
-    <option value="">Home</option>
+    <option value="">Navigate</option>
     <option value="/anime/catalog">Explore</option>
     <option value="/anime/catalog?sortby=TRENDING_DESC">Trending</option>
     <option value="/anime/catalog?format=MOVIE">Movies</option>
