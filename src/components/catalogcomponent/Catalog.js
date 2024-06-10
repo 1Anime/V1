@@ -84,7 +84,7 @@ function Catalog({ searchParams }) {
 
     return (
         <div className={styles.catalog}>
-            {/* <h2 className={styles.catalogtitle}>Catalog</h2> */}
+ <h2 className={styles.catalogtitle}>Explore</h2> 
             <div className={styles.catalogtop}>
                 <div className={styles.searchmobil}>
                     <div className={styles.search}>
@@ -121,9 +121,8 @@ function Catalog({ searchParams }) {
                         <div className={styles.genres}>
                             <h3 className={styles.searchlabel}>Genres</h3>
                             <Combobox value={genrevalue} onChange={setGenrevalue} multiple>
-                                <div className="relative w-full cursor-default overflow-hidden rounded-[0.6rem] text-left shadow-md focus:outline-none sm:text-sm">
-                                    
-                                    <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
+                                <div className="w-full border-none py-[9px] pl-3 pr-10 text-sm leading-5 bg-[#27272a] text-[#b2b2b2] focus:ring-0 outline-none relative w-full cursor-default overflow-hidden rounded-[0.6rem] text-left shadow-md focus:outline-none sm:text-sm">
+                                    <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2"    placeholder="Select Genres" onChange={(event) => setQuery(event.target.value)}>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon" className="h-5 w-5 text-gray-400"><path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd"></path></svg>
                                     </Combobox.Button>
                                 </div>
