@@ -14,7 +14,7 @@ function Catalog({ searchParams }) {
     const [genrevalue, setGenrevalue] = useState([])
     const [query, setQuery] = useState('')
     const [sortbyvalue, setSortbyvalue] = useState(null);
-    // const [airingvalue, setAiringvalue] = useState(null);
+ const [airingvalue, setAiringvalue] = useState(null);
     const [searchvalue, setSearchvalue] = useState("");
     const [showTopBottom, setShowTopBottom] = useState(true);
 
