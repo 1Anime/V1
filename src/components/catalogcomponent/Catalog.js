@@ -27,7 +27,7 @@ function Catalog({ searchParams }) {
         setSearchvalue(search || "");
     }, [year, season, format, genre, search, sortby]);
     // console.log(sortbyvalue)
-    
+
     useEffect(() => {
         // Parse URL parameters and update state accordingly
         const urlParams = new URLSearchParams(window.location.search);
@@ -44,6 +44,14 @@ function Catalog({ searchParams }) {
       
       }, []);
              
+      const handleSelectChange = (e) => {
+        const selectedOption = e.target.value;
+        if (selectedOption === "Manga") {
+          // Redirect to manga search page
+          router.push("#"); // Replace with your actual manga search route
+        }
+      };
+
 
     const handleResize = () => {
         if (window.innerWidth <= 1024) {
@@ -106,6 +114,14 @@ function Catalog({ searchParams }) {
                 <div className={styles.searchmobil}>
                     <div className={styles.search}>
                         <h3 className={styles.searchlabel}>Search</h3>
+                        <select
+                    value={query}
+                    onChange={handleSelectChange}
+                    className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
+                  >
+                    <option value="Anime">Anime</option>
+                    <option value="Manga">Manga (Unavailable)</option>
+                  </select> 
                         <Input
                             key={"outside"}
                             type="text"
