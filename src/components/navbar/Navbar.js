@@ -116,7 +116,7 @@ function Navbarcomponent({ home = false }) {
                 </div>
                 <div className={styles.navItemsContainer}>
   <select
-    className={styles.navItem}
+    className="{styles.navItem} mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"
     onChange={(e) => {
       const selectedOption = e.target.value;
       if (selectedOption === "/anime/catalog") {

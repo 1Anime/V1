@@ -11,7 +11,7 @@ function Catalog({ searchParams }) {
     const [selectedYear, setSelectedYear] = useState(null);
     const [seasonvalue, setSeasonvalue] = useState(null);
     const [formatvalue, setFormatvalue] = useState(null);
-    const [genrevalue, setGenrevalue] = useState('')
+    const [genrevalue, setGenrevalue] = useState([])
     const [query, setQuery] = useState('')
     const [sortbyvalue, setSortbyvalue] = useState(null);
  const [airingvalue, setAiringvalue] = useState(null);
@@ -22,11 +22,23 @@ function Catalog({ searchParams }) {
         setSelectedYear(year || null);
         setSeasonvalue(season || null);
         setFormatvalue(format || null);
-        setGenrevalue(genre || '');
+        setGenrevalue(genre || []);
         setSortbyvalue(sortby || null);
         setSearchvalue(search || "");
     }, [year, season, format, genre, search, sortby]);
     // console.log(sortbyvalue)
+
+    useEffect(() => {
+        // Parse URL parameters and update state accordingly
+        if (genre) {
+          setGenrevalue(Array.isArray(genre) ? genre : [genre]);
+        }
+        // Handle other URL parameters similarly
+    
+        // ... (other URL parameter handling)
+    
+      }, [genre, /* other URL parameters */]);
+        
 
     const handleResize = () => {
         if (window.innerWidth <= 1024) {
@@ -50,7 +62,7 @@ function Catalog({ searchParams }) {
         setSelectedYear(null);
         setSeasonvalue(null);
         setFormatvalue(null);
-        setGenrevalue('');
+        setGenrevalue([]);
         setQuery('');
         setSortbyvalue(null);
         setSearchvalue("");
