@@ -11,11 +11,11 @@ export default function AuthPage({
   return (
     <>
       <Navbarcomponent/>
-      <div className="flex h-screen flex-col items-center justify-center gap-8">
+      <div className="bg-gray-200 rounded-lg p-4 flex h-screen flex-col items-center justify-center gap-8">
         <h2 className="text-center font-bold text-3xl leading-tight">
           Welcome to the new 1Anime Auth, Choose a way to login or signup!
         </h2>
-        <p className="text-center font-bold leading-tight">by using 1Anime, you agree to our <a href="">Privacy Policy + Terms of Service</a></p>
+        <p className="text-center font-bold leading-tight">by using 1Anime, you agree to our <a className="text-blue-500 hover:text-blue-600" href="">Privacy Policy + Terms of Service</a></p>
         <div className="flex flex-row gap-4">
           <button className="bg-white text-black font-medium py-2 px-3 rounded-lg"
             onClick={() => {
