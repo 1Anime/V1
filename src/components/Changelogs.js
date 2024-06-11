@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v.BIG.3.1"
+const newVersion = "v.BIG.3.2"
 
 const releaseLogs = [
     // {
@@ -46,11 +46,10 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v.BIG.3.1",
+        version: "v.BIG.3.2",
         changes: [
-            "+ Server-1 is back. Please report if having issues",
-            "+ Added Save Button, Share Button, Download Button, Info Button",
-            "- Our Discord got deleted, Please join our new server",
+            "Server (HD-2) is down, Please note that we're fixing it",
+            "+ Fixed some UI - Upgraded Auth - Feedback form upgrades",
             "Join our new discord: https://discord.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
             ],
