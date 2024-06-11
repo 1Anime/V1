@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { CatalogIcon, LoginIcon, SettingsIcon, LogoutIcon } from '@/lib/SvgIcons';
 import { signIn, signOut } from 'next-auth/react';
 import { ArrowPathIcon,ClockIcon,ChatBubbleBottomCenterIcon } from '@heroicons/react/24/outline';
-import { useRouter } from 'next-nprogress-bar';import { useRouter } from 'next-nprogress-bar';
+import { useRouter } from 'next-nprogress-bar';
 
 function FloatingButton({session}) {
     const iconClasses = "w-5 h-5 text-xl text-default-500 pointer-events-none flex-shrink-0";
