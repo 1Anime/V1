@@ -11,7 +11,7 @@ export default function AuthPage({
   return (
     <>
       <Navbarcomponent/>
-      <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg">
+      <div className="bg-[#1a1a1f] rounded-lg p-4 flex h-screen flex-col items-center justify-center gap-8">
         <h2 className="text-center font-bold text-3xl leading-tight">
           Welcome to the new 1Anime Auth, Choose a way to login or signup!
         </h2>
