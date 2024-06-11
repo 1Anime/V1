@@ -62,12 +62,12 @@ async function Home() {
         <div
         >                      
         
- <div className='mx-3 bg-[#1a1a1f] px-5 py-3 rounded-lg text-[30px] text-bold flex flex-row items-center'>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-<path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+ <div className='mx-3 bg-[#1a1a1f] px-5 py-3 rounded-lg text-[18px] text-bold flex flex-row items-center'>
+ <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
 </svg>
-            Official Domains
-            <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'> Official Domains are: 1anime.co, 1anime.info, animeyee.lol (Proxy)</p></div>
+            Support us~
+            <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'> 1Anime helps you remove ads and give you the best experience, meaning we have server costs. Help us by donating or sharing the app!</p></div>
           <ContinueWatching session={session} />
         </div>
         <div
@@ -76,13 +76,7 @@ async function Home() {
         </div>
         <div
         >
-            {/* AD HERE */}
-            <div className="ad-container">
-            <a href="/schedule">
-              <img src="https://1anime.co/schedule.gif" alt="Check Schedules" className="ad-image" />
-            </a>
-          </div>
-          <Animecard data={herodata} cardid="Trending Now" />
+ <Animecard data={herodata} cardid="Trending Now" />
         </div>
         <div
         >
