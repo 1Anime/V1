@@ -357,6 +357,24 @@ function Navbarcomponent({ home = false }) {
                                 <button className="font-semibold outline-none border-none w-full h-full block text-left"  onClick={() => {
                 router.push("/authv2/");
             }}>SignUp/LogIn</button>
+             <DropdownItem key="donate" startContent={<BanknotesIcon className={iconClasses} />}>
+                    <Link href={`https://ko-fi.com/1Anime`} className='w-full h-full block '>Support us/Donate</Link>
+                </DropdownItem>
+                <DropdownItem key="AIChat" startContent={<ChatBubbleOvalLeftEllipsisIcon className={iconClasses} />}>
+                    <Link href={`#`} className='w-full h-full block '>Waifu AI (Coming Soon)</Link>
+                </DropdownItem>
+                <DropdownItem key="chat" startContent={<ChatBubbleBottomCenterIcon className={iconClasses} />}>
+                    <Link href={`https://discord.gg/1anime`} className='w-full h-full block '>Community*Discord</Link>
+                </DropdownItem>
+                <DropdownItem key="schedule" startContent={<ClockIcon className={iconClasses} />}>
+                    <Link href={`/schedule`} className='w-full h-full block '>Schedule</Link>
+                </DropdownItem>
+                <DropdownItem key="random" startContent={<ArrowPathIcon className={iconClasses} />}>
+                    <Link href={`/anime/random`} className='w-full h-full block '>Random Anime</Link>
+                </DropdownItem>
+                <DropdownItem disabled key="manga" startContent={<BookOpenIcon className={iconClasses} />}>
+                    <Link disabled href={`#`} className='w-full h-full block '>Manga (Unavailable)</Link>
+                </DropdownItem>
                             </DropdownItem>
                             <DropdownItem key="notloghelp_and_feedback" onPress={onOpen} startContent={<FeedbackIcon className={iconClasses} />}>Help & Feedback</DropdownItem>
                             <DropdownItem key="settings" startContent={<SettingsIcon className={iconClasses} />}>
