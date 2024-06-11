@@ -129,13 +129,16 @@ function Navbarcomponent({ home = false }) {
         window.location.href = selectedOption;
       } else if (selectedOption === "/anime/random") {
         window.location.href = selectedOption;
-      }
+    } else if (selectedOption === "/schedule") {
+        window.location.href = selectedOption;
+    }
     }}
   >
     <option value="">Navigate</option>
     <option value="/anime/catalog">Explore</option>
     <option value="/anime/catalog?sortby=TRENDING_DESC">Trending</option>
     <option value="/anime/catalog?format=MOVIE">Movies</option>
+    <option value="/schedule">Schedule</option>
     <option value="/anime/random">Random Anime</option>
   </select>
 </div>
