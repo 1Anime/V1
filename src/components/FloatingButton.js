@@ -4,7 +4,7 @@ import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@
 import Link from 'next/link';
 import { CatalogIcon, LoginIcon, SettingsIcon, LogoutIcon } from '@/lib/SvgIcons';
 import { signIn, signOut } from 'next-auth/react';
-import { ArrowPathIcon,ClockIcon,ChatBubbleBottomCenterIcon,BookOpenIcon } from '@heroicons/react/24/outline';
+import { ArrowPathIcon,ClockIcon,ChatBubbleBottomCenterIcon,BookOpenIcon,BanknotesIcon,ChatBubbleOvalLeftEllipsisIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next-nprogress-bar';
 
 function FloatingButton({session}) {
@@ -30,8 +30,14 @@ function FloatingButton({session}) {
                 <DropdownItem key="catalog" startContent={<CatalogIcon className={iconClasses} />}>
                     <Link href={`/anime/catalog`} className='w-full h-full block '>Explore</Link>
                 </DropdownItem>
+                <DropdownItem key="donate" startContent={<BanknotesIcon className={iconClasses} />}>
+                    <Link href={`https://ko-fi.com/1Anime`} className='w-full h-full block '>Support us/Donate</Link>
+                </DropdownItem>
+                <DropdownItem key="AIChat" startContent={<ChatBubbleOvalLeftEllipsisIcon className={iconClasses} />}>
+                    <Link href={`#`} className='w-full h-full block '>Waifu AI (Coming Soon)</Link>
+                </DropdownItem>
                 <DropdownItem key="chat" startContent={<ChatBubbleBottomCenterIcon className={iconClasses} />}>
-                    <Link href={`https://discord.gg/1anime`} className='w-full h-full block '>Discord</Link>
+                    <Link href={`https://discord.gg/1anime`} className='w-full h-full block '>Community*Discord</Link>
                 </DropdownItem>
                 <DropdownItem key="schedule" startContent={<ClockIcon className={iconClasses} />}>
                     <Link href={`/schedule`} className='w-full h-full block '>Schedule</Link>
