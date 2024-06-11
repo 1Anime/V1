@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { CatalogIcon, LoginIcon, SettingsIcon, LogoutIcon } from '@/lib/SvgIcons';
 import { signIn, signOut } from 'next-auth/react';
 import { ArrowPathIcon,ClockIcon,ChatBubbleBottomCenterIcon } from '@heroicons/react/24/outline';
+import { useRouter } from 'next-nprogress-bar';import { useRouter } from 'next-nprogress-bar';
 
 function FloatingButton({session}) {
     const iconClasses = "w-5 h-5 text-xl text-default-500 pointer-events-none flex-shrink-0";
-
+    const router = useRouter();
     return (
         <Dropdown backdrop="blur" placement="bottom-end" classNames={{
             base: "before:bg-default-200",
@@ -50,7 +51,9 @@ function FloatingButton({session}) {
                     </DropdownItem>
                 ) : (
                     <DropdownItem key="login" color="danger" startContent={<LoginIcon className={iconClasses} />}>
-                        <button className="font-semibold outline-none border-none w-full h-full block text-left" onClick={() => signIn('AniListProvider')}>LogIn With Anilist</button>
+                        <button className="font-semibold outline-none border-none w-full h-full block text-left" onClick={() => {
+                router.push("/authv2/");
+            }}>LogIn With Anilist</button>
                     </DropdownItem>
                 )}
             </DropdownMenu>

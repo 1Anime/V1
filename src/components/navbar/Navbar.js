@@ -12,6 +12,7 @@ import { NotificationTime } from '@/utils/TimeFunctions';
 import { useTitle, useSearchbar } from '@/lib/store';
 import { useStore } from 'zustand';
 import Image from 'next/image';
+import { useRouter } from 'next-nprogress-bar';
 
 function Navbarcomponent({ home = false }) {
     const animetitle = useStore(useTitle, (state) => state.animetitle);
@@ -26,6 +27,7 @@ function Navbarcomponent({ home = false }) {
     const [notifications, setNotifications] = useState([]);
     const [todayNotifications, setTodayNotifications] = useState([]);
     const [selectedTimeframe, setSelectedTimeframe] = useState('Today');
+    const router = useRouter();
 
     const handleTimeframeChange = (e) => {
         setSelectedTimeframe(e.target.value);
@@ -330,7 +332,9 @@ function Navbarcomponent({ home = false }) {
                     ) : (
                         <DropdownMenu aria-label="Profile Actions" variant="flat">
                             <DropdownItem key="notlogprofile" startContent={<LoginIcon className={iconClasses} />}>
-                                <button className="font-semibold outline-none border-none w-full h-full block text-left" onClick={() => signIn('AniListProvider')}>Login With Anilist</button>
+                                <button className="font-semibold outline-none border-none w-full h-full block text-left"  onClick={() => {
+                router.push("/authv2/");
+            }}>Login With Anilist</button>
                             </DropdownItem>
                             <DropdownItem key="notloghelp_and_feedback" onPress={onOpen} startContent={<FeedbackIcon className={iconClasses} />}>Help & Feedback</DropdownItem>
                             <DropdownItem key="settings" startContent={<SettingsIcon className={iconClasses} />}>
