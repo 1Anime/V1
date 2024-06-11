@@ -17,21 +17,21 @@ export default function AuthPage({
         </h2>
         <p className="text-center font-bold leading-tight">by using 1Anime, you agree to our <a className="text-blue-500 hover:text-blue-600" href="">Privacy Policy + Terms of Service</a></p>
         <div className="flex flex-row gap-4">
-          <button className="bg-white text-black font-medium py-2 px-3 rounded-lg"
+          <button className="bg-[#FF5733] text-black font-medium py-2 px-3 rounded-lg"
             onClick={() => {
                 router.push("/");
             }}
           >
             Go back home
           </button>
-          <button disabled className="bg-white text-black font-medium py-2 px-3 rounded-lg"
+          <button disabled className="bg-[#BCBBBB] text-black font-medium py-2 px-3 rounded-lg"
             onClick={() => {
                 router.push("#");
             }}
           >
             Email (Coming soon)
           </button>
-          <button disabled className="bg-white text-black font-medium py-2 px-3 rounded-lg"
+          <button disabled className="bg-[#BCBBBB] text-black font-medium py-2 px-3 rounded-lg"
             onClick={() => {
                 router.push("#");
             }}

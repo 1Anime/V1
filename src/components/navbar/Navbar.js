@@ -334,7 +334,7 @@ function Navbarcomponent({ home = false }) {
                             <DropdownItem key="notlogprofile" startContent={<LoginIcon className={iconClasses} />}>
                                 <button className="font-semibold outline-none border-none w-full h-full block text-left"  onClick={() => {
                 router.push("/authv2/");
-            }}>Login With Anilist</button>
+            }}>SignUp/LogIn</button>
                             </DropdownItem>
                             <DropdownItem key="notloghelp_and_feedback" onPress={onOpen} startContent={<FeedbackIcon className={iconClasses} />}>Help & Feedback</DropdownItem>
                             <DropdownItem key="settings" startContent={<SettingsIcon className={iconClasses} />}>

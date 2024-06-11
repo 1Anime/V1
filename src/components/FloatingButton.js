@@ -4,7 +4,7 @@ import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@
 import Link from 'next/link';
 import { CatalogIcon, LoginIcon, SettingsIcon, LogoutIcon } from '@/lib/SvgIcons';
 import { signIn, signOut } from 'next-auth/react';
-import { ArrowPathIcon,ClockIcon,ChatBubbleBottomCenterIcon } from '@heroicons/react/24/outline';
+import { ArrowPathIcon,ClockIcon,ChatBubbleBottomCenterIcon,BookOpenIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next-nprogress-bar';
 
 function FloatingButton({session}) {
@@ -39,7 +39,7 @@ function FloatingButton({session}) {
                 <DropdownItem key="random" startContent={<ArrowPathIcon className={iconClasses} />}>
                     <Link href={`/anime/random`} className='w-full h-full block '>Random Anime</Link>
                 </DropdownItem>
-                <DropdownItem disabled key="manga" startContent={<CatalogIcon className={iconClasses} />}>
+                <DropdownItem disabled key="manga" startContent={<BookOpenIcon className={iconClasses} />}>
                     <Link disabled href={`#`} className='w-full h-full block '>Manga (Unavailable)</Link>
                 </DropdownItem>
                 <DropdownItem key="settings" startContent={<SettingsIcon className={iconClasses} />}>
@@ -53,7 +53,7 @@ function FloatingButton({session}) {
                     <DropdownItem key="login" color="danger" startContent={<LoginIcon className={iconClasses} />}>
                         <button className="font-semibold outline-none border-none w-full h-full block text-left" onClick={() => {
                 router.push("/authv2/");
-            }}>LogIn With Anilist</button>
+            }}>SignUp/LogIn</button>
                     </DropdownItem>
                 )}
             </DropdownMenu>
