@@ -116,7 +116,7 @@ function Search() {
                     <option value="Manga">Manga (Unavailable)</option>
                   </select> <button
                   onClick={handleImageClick}
-                  className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
+                  className="bg-[#3A1D5D] text-white font-medium py-2 px-3 rounded-lg"
                 >
                   <PhotoIcon className="w-6 h-6 mr-2"
                   />

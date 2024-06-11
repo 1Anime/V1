@@ -35,7 +35,7 @@ function SettingsPage() {
     return (
         <div>
             <div className='relative h-[240px] md:h-[340px]'>
-                <div className='absolute w-full h-full' style={{ backgroundImage: `url('https://media.discordapp.net/attachments/1001735269466259460/1233302536904118313/roshidere.jpeg?ex=662c99fe&is=662b487e&hm=8409c1e198ded16656faa518e08420ceaa3c5eab50c636ae5b2cb0bf6ce406e0&=&format=webp')`, backgroundPosition: "center", backgroundSize: "cover", height: "100%" }}></div>
+                <div className='absolute w-full h-full' style={{ backgroundImage: `url('https://media.discordapp.net/attachments/1241662959894396934/1250016856035561502/Watch_Anime_-_free_no_ads_1.png?ex=6669686a&is=666816ea&hm=fa218de742da306dd8de0a3b9aa750e94ec550b16f860f710b9d6dd9d70a785c&=&format=webp&quality=lossless')`, backgroundPosition: "center", backgroundSize: "cover", height: "100%" }}></div>
                 <div className='bg-gradient-to-t from-black from-2% to-transparent absolute h-[101%] w-full z-[4] bottom-[-1px] inset-0'></div>
                 <div className='absolute left-[2%] lg:left-[7%] xl:left-[9.5%] bottom-6 lg:bottom-10  z-[6] text-[35px] text-bold flex flex-row items-center'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 mr-2 hover:animate-spin">
@@ -49,7 +49,7 @@ function SettingsPage() {
                     <div className=' items-center flex justify-center text-semibold text-[22px]'>Loading...</div>
                 ) : (
                     <>
-                      <div className='flex items-center w-[100%] justify-between'>
+                      <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>Homepage Trailer</p>
                                 <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'> Toggle this feature to stop video previews on homepage. Enabled by default for a streamlined experience, consumes more data. </p>
@@ -59,7 +59,7 @@ function SettingsPage() {
                                 onValueChange={(value) => useSettings.setState({ settings: { ...useSettings.getState().settings, herotrailer: value } })}
                             />
                         </div>
-                        <div className='flex items-center w-[100%] justify-between'>
+                        <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>AutoSkip</p>
                                 <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>Experience uninterrupted content with our autoskip feature! It automatically skips through intros, outros, so you can enjoy without clicking.</p>
@@ -69,7 +69,7 @@ function SettingsPage() {
                                 onValueChange={(value) => useSettings.setState({ settings: { ...useSettings.getState().settings, autoskip: value } })}
                                 />
                         </div>
-                        <div className='flex items-center w-[100%] justify-between'>
+                        <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>AutoPlay</p>
                                 <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>Let the entertainment roll with our autoplay feature! No need to press play—the next video starts automatically, ensuring a seamless viewing experience.</p>
@@ -79,7 +79,7 @@ function SettingsPage() {
                                 onValueChange={(value) => useSettings.setState({ settings: { ...useSettings.getState().settings, autoplay: value } })}
                             />
                         </div>
-                        <div className='flex items-center w-[100%] justify-between'>
+                        <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>AutoNext</p>
                                 <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>Experience non-stop entertainment with our autonext feature! It automatically plays the next video, so you can enjoy a continuous streaming experience without lifting a finger.</p>
@@ -89,7 +89,7 @@ function SettingsPage() {
                                 onValueChange={(value) => useSettings.setState({ settings: { ...useSettings.getState().settings, autonext: value } })                            }
                             />
                         </div>
-                        <div className='flex items-center w-[100%] justify-between'>
+                        <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>Mute Audio</p>
                                 <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>Choose whether to mute the audio or not.</p>
@@ -101,7 +101,7 @@ function SettingsPage() {
                         </div>
                         <div className='flex flex-col w-[100%]'>
                             <p className='text-[18px] md:text-[21px] font-medium mb-2'>Choose How Video Loads</p>
-                            <div className='flex items-center w-[100%] justify-between mb-3'>
+                            <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
                                     <p className='text-[15px] md:text-[18px] font-medium'>1&#41; Idle</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
@@ -113,7 +113,7 @@ function SettingsPage() {
                                     onValueChange={(value) => useSettings.setState({ settings: { ...useSettings.getState().settings,  load: value ? 'idle' : settings.load } })                            }
                                 />
                             </div>
-                            <div className='flex items-center w-[100%] justify-between mb-3'>
+                            <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
                                     <p className='text-[15px] md:text-[18px] font-medium'>2&#41; Visible</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
@@ -125,7 +125,7 @@ function SettingsPage() {
                                     onValueChange={(value) => useSettings.setState({ settings: { ...useSettings.getState().settings,  load: value ? 'visible' : settings.load } })                            }
                                 />
                             </div>
-                            <div className='flex items-center w-[100%] justify-between'>
+                            <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
                                     <p className='text-[15px] md:text-[18px] font-medium'>3&#41; Eager</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>

@@ -4,6 +4,7 @@ import { toast } from 'sonner';
 
 export default function Feedbackform({ isOpen, onOpenChange }) {
     const [title, setTitle] = useState("");
+    const [email, setEmail] = useState("");
     const [description, setDescription] = useState("");
     const [feedbackType, setFeedbackType] = useState("");
     const [severityLevel, setSeverityLevel] = useState("");
@@ -23,8 +24,8 @@ export default function Feedbackform({ isOpen, onOpenChange }) {
     ];
 
     const handleSubmit = async () => {
-        if (!title || !description) {
-            toast.error('Title and Description are required!');
+        if (!email || !title || !description) {
+            toast.error('Title, Description, and Email are required!');
             return;
         }
     
@@ -35,6 +36,7 @@ export default function Feedbackform({ isOpen, onOpenChange }) {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
+                    email,
                     title,
                     description,
                     type: feedbackType,
@@ -43,6 +45,7 @@ export default function Feedbackform({ isOpen, onOpenChange }) {
             });
             if (response.status === 201) {
                 toast.success('Feedback report successfully submitted');
+                setEmail("");
                 setTitle("");
                 setDescription("");
                 setFeedbackType("");
@@ -69,6 +72,14 @@ export default function Feedbackform({ isOpen, onOpenChange }) {
                         <>
                             <ModalHeader className="flex flex-col gap-1">Feedback Form</ModalHeader>
                             <ModalBody>
+                            <Input
+                                    type="text"
+                                    label="Email"
+                                    placeholder="Email Address so we can let you know"
+                                    isRequired
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
                                 <Input
                                     type="text"
                                     label="Title"
@@ -119,7 +130,7 @@ export default function Feedbackform({ isOpen, onOpenChange }) {
                                 <Button color="danger" variant="flat" onPress={onClose}>
                                     Cancel
                                 </Button>
-                                <Button className={`bg-[#4D148c] ${!title || !description ? 'pointer-events-none' : ''}`} onClick={handleSubmit} onPress={onClose} >
+                                <Button className={`bg-[#4D148c] ${!email || !title || !description ? 'pointer-events-none' : ''}`} onClick={handleSubmit} onPress={onClose} >
                                     Submit
                                 </Button>
                             </ModalFooter>
