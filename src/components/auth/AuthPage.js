@@ -65,7 +65,8 @@ function AuthPage() {
                        onClick={() => signIn('AniListProvider')}
 >
             Login with AniList
-          </button>      </div>     <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
+          </button>  
+               <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>User Agreenent</p>
                             <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -73,7 +74,7 @@ function AuthPage() {
 </svg>
                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'> By signing up/logging in, you agree to our <a className="text-blue-500 hover:text-blue-600" href="">Privacy Policy + Terms of Service</a></p></div></div>
               </div>
-                </div></div>
+                </div></div></div>
                 )}
         </div> 
             )
