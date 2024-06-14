@@ -19,7 +19,7 @@ function AuthPage() {
     return (
         <div>
             <div className='relative h-[240px] md:h-[340px]'>
-                <div className='absolute w-full h-full' style={{ backgroundImage: `url('https://media.discordapp.net/attachments/1241662959894396934/1250016856035561502/Watch_Anime_-_free_no_ads_1.png?ex=6669686a&is=666816ea&hm=fa218de742da306dd8de0a3b9aa750e94ec550b16f860f710b9d6dd9d70a785c&=&format=webp&quality=lossless')`, backgroundPosition: "center", backgroundSize: "cover", height: "100%" }}></div>
+                <div className='absolute w-full h-full' style={{ backgroundImage: `url('/watchnow.png')`, backgroundPosition: "center", backgroundSize: "cover", height: "100%" }}></div>
                 <div className='bg-gradient-to-t from-black from-2% to-transparent absolute h-[101%] w-full z-[4] bottom-[-1px] inset-0'></div>
                 <div className='absolute left-[2%] lg:left-[7%] xl:left-[9.5%] bottom-6 lg:bottom-10  z-[6] text-[35px] text-bold flex flex-row items-center'>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 mr-2 hover:animate-spin">
