@@ -355,7 +355,7 @@ function Navbarcomponent({ home = false }) {
                         <DropdownMenu aria-label="Profile Actions" variant="flat">
                             <DropdownItem key="notlogprofile" startContent={<LoginIcon className={iconClasses} />}>
                                 <button className="font-semibold outline-none border-none w-full h-full block text-left"  onClick={() => {
-                router.push("/authv2/");
+                router.push("/authv2/v2/");
             }}>SignUp/LogIn</button>
              <DropdownItem key="donate" startContent={<BanknotesIcon className={iconClasses} />}>
                     <Link href={`https://ko-fi.com/1Anime`} className='w-full h-full block '>Support us/Donate</Link>
