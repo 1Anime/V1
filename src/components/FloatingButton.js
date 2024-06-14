@@ -58,7 +58,7 @@ function FloatingButton({session}) {
                 ) : (
                     <DropdownItem key="login" color="danger" startContent={<LoginIcon className={iconClasses} />}>
                         <button className="font-semibold outline-none border-none w-full h-full block text-left" onClick={() => {
-                router.push("/authv2/");
+                router.push("/authv2/v2/");
             }}>SignUp/LogIn</button>
                     </DropdownItem>
                 )}
