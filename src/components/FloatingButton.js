@@ -17,14 +17,9 @@ function FloatingButton({session}) {
         }}>
             <DropdownTrigger>
                 <button className="fixed bottom-5 right-4 w-[45px] h-[45px] text-white rounded-full flex items-center justify-center box-border outline-none bg-[#4d148c] shadow-2xl md:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-category" width="26" height="26" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#ffffff" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M4 4h6v6h-6z" />
-                        <path d="M14 4h6v6h-6z" />
-                        <path d="M4 14h6v6h-6z" />
-                        <path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-                    </svg>
-                </button>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>                </button>
             </DropdownTrigger>
             <DropdownMenu variant="flat" aria-label="Profile Actions">
                 <DropdownItem key="catalog" startContent={<CatalogIcon className={iconClasses} />}>
@@ -34,10 +29,10 @@ function FloatingButton({session}) {
                     <Link href={`https://ko-fi.com/1Anime`} className='w-full h-full block '>Support us/Donate</Link>
                 </DropdownItem>
                 <DropdownItem key="AIChat" startContent={<ChatBubbleOvalLeftEllipsisIcon className={iconClasses} />}>
-                    <Link href={`#`} className='w-full h-full block '>Waifu AI (Coming Soon)</Link>
+                    <Link href={`#`} className='w-full h-full block '>AI Chats (Coming Soon)</Link>
                 </DropdownItem>
                 <DropdownItem key="chat" startContent={<ChatBubbleBottomCenterIcon className={iconClasses} />}>
-                    <Link href={`https://discord.gg/1anime`} className='w-full h-full block '>Community*Discord</Link>
+                    <Link href={`https://discord.gg/1anime`} className='w-full h-full block '>Community/Discord</Link>
                 </DropdownItem>
                 <DropdownItem key="schedule" startContent={<ClockIcon className={iconClasses} />}>
                     <Link href={`/schedule`} className='w-full h-full block '>Schedule</Link>
