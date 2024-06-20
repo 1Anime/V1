@@ -97,6 +97,22 @@ export default async function RootLayout({ children }) {
   gtag('config', 'G-TYKL9CYSFS');`}
       </Script>
       <head>
+      <script
+            type="text/javascript"
+            dangerouslySetInnerHTML={{
+              __html: `
+                var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                (function(){
+                  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                  s1.async=true;
+                  s1.src='https://embed.tawk.to/6672bb5c19f6c616eadbe4fe/1i0o2nord';
+                  s1.charset='UTF-8';
+                  s1.setAttribute('crossorigin','*');
+                  s0.parentNode.insertBefore(s1,s0);
+                })();
+              `,
+            }}
+          />
         <meta name="google-site-verification" content="9Cj5Gd0-OuGDtGb4HpRqNfBXy3FuFCcFNWSvTPOlTzE" />
         <link rel="apple-touch-icon" sizes="180x180" href="https://1anime.co/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="192x192" href="https://1anime.co/android-chrome-192x192.png" />
