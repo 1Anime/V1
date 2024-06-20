@@ -71,7 +71,7 @@ async function fetchAnify(id) {
 
 async function MalSync(id) {
   try {
-    const response = await axios.get(`${process.env.MALSYNC_URI}${id}`);
+    const response = await axios.get(`https://api.malsync.moe/mal/anime/anilist:${id}`);
 
     const data = response?.data;
     const sites = Object.keys(data.Sites).map(providerId => ({ providerId: providerId.toLowerCase(), data: Object.values(data.Sites[providerId]) }));
@@ -81,7 +81,7 @@ async function MalSync(id) {
     newdata.forEach(item => {
       const { providerId, data } = item;
       if (providerId === 'gogoanime') {
-        const remove = 'https://anitaku.to/category/';
+        const remove = 'https://anitaku.so/category/';
         const dub = data.find(item => item.title.toLowerCase().endsWith(" (dub)"));
         const duburl = dub?.url?.replace(remove,'');
         const sub = data.find(item => item.title.toLowerCase().includes(""))?.url?.replace(remove,'') ?? data.find((item) => item?.url === dub?.url?.replace(/-dub$/, ''))?.url?.replace(remove,'') ?? data.find(item => !item.title.toLowerCase().includes(")"))?.url?.replace(remove,'');
