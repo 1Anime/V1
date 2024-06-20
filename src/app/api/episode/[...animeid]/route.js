@@ -71,7 +71,7 @@ async function fetchAnify(id) {
 
 async function MalSync(id) {
   try {
-    const response = await axios.get(`${process.env.MALSYNC_URI}${id}`);
+    const response = await axios.get(`https://api.malsync.moe/mal/anime/anilist:${id}`);
 
     const data = response?.data;
     const sites = Object.keys(data.Sites).map(providerId => ({ providerId: providerId.toLowerCase(), data: Object.values(data.Sites[providerId]) }));
