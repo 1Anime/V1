@@ -96,6 +96,7 @@ export default async function RootLayout({ children }) {
 
   gtag('config', 'G-TYKL9CYSFS');`}
       </Script>
+      <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
       <head>
       <script
             type="text/javascript"
