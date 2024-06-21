@@ -1,6 +1,5 @@
-// pages/IframePage.js (or .jsx)
+// pages/IframePage.js
 import Navbarcomponent from '@/components/navbar/Navbar';
-import React from 'react';
 import dynamic from 'next/dynamic'; // Import dynamic for loading the x-frame-bypass component
 
 const DynamicIframe = dynamic(() => import('@megatunger/x-frame-bypass'), {
@@ -13,7 +12,7 @@ const IframePage = () => {
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
       <Navbarcomponent />
-      <DynamicIframe  is="x-frame-bypass" src={Url} frameBorder="0" allowFullScreen style={{ width: '100%', height: '100%' }} />
+      <DynamicIframe src={Url} frameBorder="0" allowFullScreen style={{ width: '100%', height: '100%' }} />
     </div>
   );
 };
