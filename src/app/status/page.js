@@ -4,7 +4,7 @@ import Navbarcomponent from '@/components/navbar/Navbar'
 import React from 'react';
 
 const IframePage = () => {
-  const Url = 'https://oneanimoopa.vercel.app/en/schedule'; // Replace with your URL
+  const Url = 'https://stats.uptimerobot.com/3rm7LS7nJK'; // Replace with your URL
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
