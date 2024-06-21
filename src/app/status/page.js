@@ -1,21 +1,19 @@
 // pages/IframePage.js (or .jsx)
-
-import Navbarcomponent from '@/components/navbar/Navbar'
+import Navbarcomponent from '@/components/navbar/Navbar';
 import React from 'react';
+import dynamic from 'next/dynamic'; // Import dynamic for loading the x-frame-bypass component
+
+const DynamicIframe = dynamic(() => import('@megatunger/x-frame-bypass'), {
+  ssr: false, // Disable server-side rendering for this component
+});
 
 const IframePage = () => {
   const Url = 'https://stats.uptimerobot.com/3rm7LS7nJK'; // Replace with your URL
 
   return (
     <div style={{ width: '100vw', height: '100vh' }}>
-      <Navbarcomponent/>
-      <iframe
-        src={Url}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        style={{ width: '100%', height: '100%' }}
-      ></iframe>
+      <Navbarcomponent />
+      <DynamicIframe  is="x-frame-bypass" src={Url} frameBorder="0" allowFullScreen style={{ width: '100%', height: '100%' }} />
     </div>
   );
 };
