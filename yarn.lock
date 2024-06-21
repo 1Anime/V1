@@ -1206,6 +1206,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@megatunger/x-frame-bypass@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@megatunger/x-frame-bypass/-/x-frame-bypass-1.0.2.tgz"
+  integrity sha512-ku63DAz+t0NT97jxZpuwq9GzT7rU5rAEdEG9Qc+p2SQF/sllCQUK4M1H13gMj465bRfXkKS/lBUZyYKePT/G8A==
+
 "@mongodb-js/saslprep@^1.1.0":
   version "1.1.4"
   resolved "https://registry.npmjs.org/@mongodb-js/saslprep/-/saslprep-1.1.4.tgz"
