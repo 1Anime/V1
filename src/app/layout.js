@@ -12,12 +12,6 @@ import { Toaster } from 'sonner'
 import Changelogs from '../components/Changelogs';
 import FloatingButton from '@/components/FloatingButton';
 import { AuthProvider } from './SessionProvider';
-import Hotjar from '@hotjar/browser';
-
-const siteId = 5029644;
-const hotjarVersion = 6;
-
-Hotjar.init(siteId, hotjarVersion);
 
 const inter = Inter({ subsets: ['latin'] })
 const myfont = localFont({ src: "../static-fonts/archivo.ttf" })
@@ -96,6 +90,8 @@ export default async function RootLayout({ children }) {
 
   gtag('config', 'G-TYKL9CYSFS');`}
       </Script>
+      <script src="https://unpkg.com/@ungap/custom-elements-builtin" async />
+      <script src="https://unpkg.com/x-frame-bypass" async />
       <head>
       <script
             type="text/javascript"

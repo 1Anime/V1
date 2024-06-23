@@ -56,7 +56,7 @@ function Search() {
 
       const handleImageClick = () => {
     // Redirect logic for the image button
-    router.push("#"); // Replace with your desired target route
+    router.push("/scenesearch"); // Replace with your desired target route
   };
 
     return (
@@ -107,20 +107,20 @@ function Search() {
                                             <span>+</span>
                                             <div className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md">S</div>
                                         </div>
-                                        <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center">  <select
+                                        <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"> <button
+                  onClick={handleImageClick}
+                  className="bg-white text-black font-medium py-2 px-3 rounded-lg"
+                >
+                  <PhotoIcon className="w-6 h-6 mr-2"
+                  />
+                </button> <select
                     value={query}
                     onChange={handleSelectChange}
                     className="bg-transparent border-none focus:outline-none"
                   >
                     <option value="Anime">Anime</option>
                     <option value="Manga">Manga (Unavailable)</option>
-                  </select> <button
-                  onClick={handleImageClick}
-                  className="bg-[#3A1D5D] text-white font-medium py-2 px-3 rounded-lg"
-                >
-                  <PhotoIcon className="w-6 h-6 mr-2"
-                  />
-                </button> </div>
+                  </select>  </div>
                                     </div>
                                     <div className="flex items-center text-base font-medium rounded-lg bg-[#1a1a1f]">
                                         <Combobox.Input
