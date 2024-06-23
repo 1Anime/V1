@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v.BIG.3.2"
+const newVersion = "v.NEXT.1.BETA"
 
 const releaseLogs = [
     // {
@@ -46,10 +46,12 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v.BIG.3.2",
+        version: "v.NEXT.1.BETA",
         changes: [
-            "Server (HD-2) is down, Please note that we're fixing it",
-            "+ Fixed some UI - Upgraded Auth - Feedback form upgrades",
+            "🥰 1Anime NEXT version is officially here - More big updates incoming!",
+            "⚠️ Server (HD-3-4) is officially shut down - will add more soon",
+            "🗣️ Added Greetings & Scene Search",
+            "🔥 Fixed some UI - Upgraded Auth",
             "Join our new discord: https://dsc.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
             ],
@@ -85,7 +87,7 @@ export default function Changelogs() {
                             <ModalBody>
                                 <div className="flex flex-col">
                                     <div className="flex justify-between items-center gap-2">
-                                        <p className="text-lg sm:text-xl">Changelogs</p>
+                                        <p className="text-lg sm:text-xl">NEXT Changelogs</p>
                                         <div className="flex gap-3 items-center">
                                             {/* Discord Icon */}
                                             <Link
