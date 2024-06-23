@@ -11,6 +11,7 @@ import ContinueWatching from '@/components/home/ContinueWatching'
 import RecentEpisodes from '@/components/home/RecentEpisodes'
 import { getAuthSession } from './api/auth/[...nextauth]/route'
 import { redis } from '@/lib/rediscache'
+import styles from '@/styles/Animecard.module.css';
 // import { getWatchHistory } from '@/lib/EpHistoryfunctions'
 
 async function getHomePage() {
@@ -73,7 +74,13 @@ if (hour >= 5 && hour < 12) {
       <Herosection data={herodata} />
       <div className='sm:max-w-[97%] md:max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] mx-auto flex flex-col md:gap-11 sm:gap-7 gap-5 mt-8'>
         <div
-        >                      
+        >              
+    <div className={styles.animecard}>
+    {show && (
+        <div className={styles.cardhead}>
+        <span className={styles.bar}></span>
+        <h1 className={styles.headtitle}>{greeting}</h1>
+      </div>
         
  <div className='mx-3 bg-[#1a1a1f] px-5 py-3 rounded-lg text-bold flex flex-row items-center'>
  <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
