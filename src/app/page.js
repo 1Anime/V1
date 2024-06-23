@@ -81,6 +81,7 @@ if (hour >= 5 && hour < 12) {
         <span className={styles.bar}></span>
         <h1 className={styles.headtitle}>{greeting}</h1>
       </div>
+    <div>
         
  <div className='mx-3 bg-[#1a1a1f] px-5 py-3 rounded-lg text-bold flex flex-row items-center'>
  <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
