@@ -70,7 +70,7 @@ async function Home() {
         >
             {/* AD HERE */}
             <div className="ad-container">
-            <a href="https://discord.gg/1anime">
+            <a href="https://dsc.gg/1anime">
               <img src="https://1anime.co/announcement.gif" alt="Warning: AniList is saying goodbye" className="ad-image" />
             </a>
           </div>

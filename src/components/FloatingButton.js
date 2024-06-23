@@ -32,7 +32,7 @@ function FloatingButton({session}) {
                     <Link href={`#`} className='w-full h-full block '>AI Chats (Coming Soon)</Link>
                 </DropdownItem>
                 <DropdownItem key="chat" startContent={<ChatBubbleBottomCenterIcon className={iconClasses} />}>
-                    <Link href={`https://discord.gg/1anime`} className='w-full h-full block '>Community/Discord</Link>
+                    <Link href={`https://dsc.gg/1anime`} className='w-full h-full block '>Community/Discord</Link>
                 </DropdownItem>
                 <DropdownItem key="schedule" startContent={<ClockIcon className={iconClasses} />}>
                     <Link href={`/schedule`} className='w-full h-full block '>Schedule</Link>

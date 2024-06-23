@@ -50,7 +50,7 @@ const releaseLogs = [
         changes: [
             "Server (HD-2) is down, Please note that we're fixing it",
             "+ Fixed some UI - Upgraded Auth - Feedback form upgrades",
-            "Join our new discord: https://discord.gg/1anime",
+            "Join our new discord: https://dsc.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
             ],
         },
@@ -89,7 +89,7 @@ export default function Changelogs() {
                                         <div className="flex gap-3 items-center">
                                             {/* Discord Icon */}
                                             <Link
-                                                href="https://discord.gg/1anime"
+                                                href="https://dsc.gg/1anime"
                                                 target="_blank"
                                                 className="w-6 h-6 hover:opacity-75"
                                             >
