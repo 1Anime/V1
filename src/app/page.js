@@ -73,14 +73,9 @@ if (hour >= 5 && hour < 12) {
       <Navbarcomponent home={true} />
       <Herosection data={herodata} />
       <div className='sm:max-w-[97%] md:max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] mx-auto flex flex-col md:gap-11 sm:gap-7 gap-5 mt-8'>
-        <div
-        >  
-
-    <div className={styles.animecard}>
-    {show && (
-        <div className={styles.cardhead}>
-        <span className={styles.bar}></span>
-        <h1 className={styles.headtitle}>{greeting}</h1>
+        </div>  
+        <div className=''>
+        <h1 className="text-[18px] md:text-[21px] font-medium mb-2">{greeting}</h1>
       <div>
         
  <div className='mx-3 bg-[#1a1a1f] px-5 py-3 rounded-lg text-bold flex flex-row items-center'>
@@ -129,6 +124,7 @@ if (hour >= 5 && hour < 12) {
       </div>
     </div>
   )
+}
 }
 
 export default Home
