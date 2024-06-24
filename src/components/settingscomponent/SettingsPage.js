@@ -135,7 +135,7 @@ function SettingsPage() {
                         </div>
                         <div className='flex flex-col w-[100%]'>
                             <p className='text-[15px] md:text-[21px] font-medium mb-2'>Load Strategies</p>
-                            <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
+                            <p className='text-[11px] md:text-[13px] text-[#bfc6d0] line-clamp-3'>
                             Automatically determines when the video or poster image starts loading. Loading too early can slow down your app, so choose carefully.
                                     </p>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
@@ -158,7 +158,7 @@ function SettingsPage() {
                             </div>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>3&#41; Eager (Fast)</p>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>3&#41; Eager (Fast, Advanced)</p>
                                 </div>
                                 <SwitchSetting
                                     value={settings.load === 'eager'}
@@ -167,10 +167,22 @@ function SettingsPage() {
                             </div>
                         </div>
                         <div className='flex flex-col w-[100%]'>
+                            <p className='text-[18px] md:text-[21px] font-medium mb-2'>Appearance</p>
+                            <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
+                                <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>Color Themes (Coming soon)</p>
+                                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
+                                        Change the app's color theme
+                                    </p>
+                                </div>
+                          <select className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"><option>Purple (Main) </option></select>
+                            </div>
+                       </div>
+                        <div className='flex flex-col w-[100%]'>
                             <p className='text-[18px] md:text-[21px] font-medium mb-2'>Privacy & Account</p>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>Clear Cookies</p>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>Clear Cookies (Beta)</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
                                         This will reset your app/browser's Cookies (Clears Watch History in local, and logs out your AniList if logged in)
                                     </p>
@@ -179,20 +191,31 @@ function SettingsPage() {
                             </div>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>Incognito Mode</p>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>Incognito Mode (Beta)</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
                                     Prevent saving your watch history and adding anime to your lists. Plus, Anilist tracking is also disabled. (Note: You'll be logged out of your AniList account, Log in again to turn this off)
                                     </p>
                                 </div>
                                 <button className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={() => signOut('AniListProvider')}>Turn on Incognito Mode </button>
                             </div>
+                            <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
+                                <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>Account Settings (Dangerous)</p>
+                                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
+                                    Check what we collect, your Account information, your AI Chats history, or delete your account from our records
+                                    </p>
+                                </div>
+                                <button className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" >Go to Accounts Panel </button>
+                            </div>
                         </div>
+                        <div className='flex flex-col w-[100%]'>
+                            <p className='text-[18px] md:text-[21px] font-medium mb-2'>App Information</p>
                         <div className='mx-3 bg-[#1a1a1f] px-5 py-3 rounded-lg text-bold flex flex-row items-center'>
                 <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
 </svg>
                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'> Official Domains are: 1anime.co, 1anime.info, animeyee.lol (Proxy)</p></div>
-                    </>
+                  </div>  </>
                 )}
             </div>
         </div>
