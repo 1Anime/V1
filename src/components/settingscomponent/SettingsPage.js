@@ -5,6 +5,17 @@ import { useSettings } from '../../lib/store';
 import { useStore } from "zustand";
 
 const SwitchSetting = ({ value, onValueChange }) => {
+    const animetitle = useStore(useTitle, (state) => state.animetitle);
+    
+    const handleToggle = () => {
+        if (animetitle === 'english') {
+            useTitle.setState({ animetitle: 'romaji' })
+        } else {
+            useTitle.setState({ animetitle: 'english' })
+        }
+    };
+
+
     return (
         <Switch
             isSelected={value}
@@ -49,6 +60,24 @@ function SettingsPage() {
                     <div className=' items-center flex justify-center text-semibold text-[22px]'>Loading...</div>
                 ) : (
                     <>
+                         <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
+                            <div className='mr-4 w-full'>
+                                <p className='text-[18px] md:text-[21px] font-medium'>Title Language</p>
+                                <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'> Change Anime Titles to English or Japanese (Romaji). </p>
+                            </div>
+                            <label className="relative cursor-pointer">
+                                {animetitle && (
+                                    <input
+                                        type="checkbox"
+                                        className="inline-flex flex-row-reverse w-full bg-none hover:bg-none items-center"
+                                        checked={animetitle === 'english'}
+                                        onChange={handleToggle}
+                                    />
+                                )}
+                                <div className="w-[40px] text-xs h-4 flex items-center bg-[#EAEEFB] rounded-full  peer-checked:text-[#18181b] text-[black] font-bold after:flex after:items-center after:justify-center peer after:content-['JP'] peer-checked:after:content-['EN'] peer-checked:after:translate-x-3/4 after:absolute peer-checked:after:border-white after:bg-white after:border after:border-gray-300 after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-[#EAEEFB]">
+                                </div>
+                            </label>
+                        </div>
                       <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>Homepage Trailer</p>
