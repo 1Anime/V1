@@ -69,7 +69,7 @@ function SettingsPage() {
                                 {animetitle && (
                                     <input
                                         type="checkbox"
-                                        className="inline-flex flex-row-reverse w-full bg-none hover:bg-none items-center"
+                                        className="sr-only peer"
                                         checked={animetitle === 'english'}
                                         onChange={handleToggle}
                                     />
