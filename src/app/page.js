@@ -14,7 +14,7 @@ import { redis } from '@/lib/rediscache'
 import Greeting from '@/components/Greeting';
 // import { getWatchHistory } from '@/lib/EpHistoryfunctions'
 
-async function getHomePage({data}) {
+async function getHomePage() {
   try {
     let cachedData;
     if (redis) {
@@ -52,21 +52,10 @@ async function getHomePage({data}) {
 async function Home() {
   const session = await getAuthSession();
   const { herodata = [], populardata = [], top100data = [], seasonaldata = [] } = await getHomePage();
+  const { data } = useSession();
   // const history = await getWatchHistory();
   // console.log(history)
 
-const now = new Date();
-const hour = now.getHours();
-
-let greeting = '';
-if (hour >= 5 && hour < 12) {
-  greeting = 'Good morning';
-} else if (hour >= 12 && hour < 18) {
-  greeting = 'Good afternoon';
-} else {
-  greeting = 'Good evening';
-}
-  
   return (
     <div>
       <Navbarcomponent home={true} />
@@ -74,9 +63,9 @@ if (hour >= 5 && hour < 12) {
       <div className='sm:max-w-[97%] md:max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] mx-auto flex flex-col md:gap-11 sm:gap-7 gap-5 mt-8'>
         <div>
         <Greeting />
-        {data?.recommendations?.nodes?.length > 0 && (
+        {data?.recommendations?.user?.name.length > 0 && (
         <div className="recommendationglobal">
-          <Animecards data={data.recommendations.nodes} cardid={"Recommendations"} />
+          <Animecard data={data.recommendations.user?.name} cardid={"Recommendations"} />
         </div>
       )} 
  <div className='mx-3 bg-[#1a1a1f] px-5 py-3 rounded-lg text-bold flex flex-row items-center'>
