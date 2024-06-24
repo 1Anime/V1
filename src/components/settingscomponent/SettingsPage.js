@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Switch, cn } from "@nextui-org/react";
 import { useSettings } from '../../lib/store';
 import { useStore } from "zustand";
+import { useTitle } from '@/lib/store';
 
 const SwitchSetting = ({ value, onValueChange }) => {
     const animetitle = useStore(useTitle, (state) => state.animetitle);
