@@ -4,7 +4,8 @@ import { Switch, cn } from "@nextui-org/react";
 import { useSettings } from '../../lib/store';
 import { useStore } from "zustand";
 import { useTitle } from '@/lib/store';
-
+import { signIn, signOut } from 'next-auth/react';
+import Cookies from 'js-cookie';
 
 const SwitchSetting = ({ value, onValueChange }) => {
     return (
@@ -42,7 +43,11 @@ function SettingsPage() {
             useTitle.setState({ animetitle: 'english' })
         }
     };
-
+        const handleClearCookies = () => {
+            Cookies.remove('foo', { path: '', domain: 'app.1anime.co' }); // Replace with your cookie name
+            // You can add more cookies to remove if needed
+        };
+    
     return (
         <div>
             <div className='relative h-[240px] md:h-[340px]'>
@@ -63,7 +68,7 @@ function SettingsPage() {
                          <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>Title Language</p>
-                                <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'> Change Anime Titles to English or Japanese (Romaji). </p>
+                                <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'> To switch between Japanese (Romaji) and English titles, simply toggle the language option here. </p>
                             </div>
                             <label className="relative cursor-pointer">
                                 {animetitle && (
@@ -129,13 +134,13 @@ function SettingsPage() {
                             />
                         </div>
                         <div className='flex flex-col w-[100%]'>
-                            <p className='text-[18px] md:text-[21px] font-medium mb-2'>Choose How Video Loads</p>
+                            <p className='text-[15px] md:text-[21px] font-medium mb-2'>Load Strategies</p>
+                            <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
+                            Automatically determines when the video or poster image starts loading. Loading too early can slow down your app, so choose carefully.
+                                    </p>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>1&#41; Idle</p>
-                                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                        Video will be loaded after the page has loaded completely. (Recommended)
-                                    </p>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>1&#41; Idle (Recommended)</p>
                                 </div>
                                 <SwitchSetting
                                     value={settings.load === 'idle'}
@@ -144,11 +149,8 @@ function SettingsPage() {
                             </div>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>2&#41; Visible</p>
-                                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                        Video will only start loading when it becomes visible on the screen.
-                                    </p>
-                                </div>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>2&#41; Visible (Normal)</p>
+                                                                </div>
                                 <SwitchSetting
                                     value={settings.load === 'visible'}
                                     onValueChange={(value) => useSettings.setState({ settings: { ...useSettings.getState().settings,  load: value ? 'visible' : settings.load } })                            }
@@ -156,15 +158,33 @@ function SettingsPage() {
                             </div>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>3&#41; Eager</p>
-                                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                        Video will be loaded immediately.Consumes more Internet. (Advanced)
-                                    </p>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>3&#41; Eager (Fast)</p>
                                 </div>
                                 <SwitchSetting
                                     value={settings.load === 'eager'}
                                     onValueChange={(value) => useSettings.setState({ settings: { ...useSettings.getState().settings,  load: value ? 'eager' : settings.load } })                            }
                                 />
+                            </div>
+                        </div>
+                        <div className='flex flex-col w-[100%]'>
+                            <p className='text-[18px] md:text-[21px] font-medium mb-2'>Privacy & Account</p>
+                            <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
+                                <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>Clear Cookies</p>
+                                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
+                                        This will reset your app/browser's Cookies (Clears Watch History in local, and logs out your AniList if logged in)
+                                    </p>
+                                </div>
+                                <button className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={handleClearCookies}>Clear Cookies </button>
+                            </div>
+                            <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
+                                <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>Incognito Mode</p>
+                                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
+                                    Prevent saving your watch history and adding anime to your lists. Plus, Anilist tracking is also disabled. (Note: You'll be logged out of your AniList account, Log in again to turn this off)
+                                    </p>
+                                </div>
+                                <button className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={() => signOut('AniListProvider')}>Turn on Incognito Mode </button>
                             </div>
                         </div>
                         <div className='mx-3 bg-[#1a1a1f] px-5 py-3 rounded-lg text-bold flex flex-row items-center'>
