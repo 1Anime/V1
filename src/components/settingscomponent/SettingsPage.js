@@ -5,18 +5,8 @@ import { useSettings } from '../../lib/store';
 import { useStore } from "zustand";
 import { useTitle } from '@/lib/store';
 
-const animetitle = useStore(useTitle, (state) => state.animetitle);
-    
-const handleToggle = () => {
-    if (animetitle === 'english') {
-        useTitle.setState({ animetitle: 'romaji' })
-    } else {
-        useTitle.setState({ animetitle: 'english' })
-    }
-};
 
 const SwitchSetting = ({ value, onValueChange }) => {
-
     return (
         <Switch
             isSelected={value}
@@ -43,6 +33,15 @@ const SwitchSetting = ({ value, onValueChange }) => {
 function SettingsPage() {
     const settings = useStore(useSettings, (state) => state.settings);
     const [loading, setLoading] = useState(false);
+    const animetitle = useStore(useTitle, (state) => state.animetitle);
+    
+    const handleToggle = () => {
+        if (animetitle === 'english') {
+            useTitle.setState({ animetitle: 'romaji' })
+        } else {
+            useTitle.setState({ animetitle: 'english' })
+        }
+    };
 
     return (
         <div>
