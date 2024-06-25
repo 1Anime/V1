@@ -7,6 +7,25 @@ import { ShareIcon } from "@heroicons/react/24/solid";
 function Overview({data}) {
     const [showFullDescription, setShowFullDescription] = useState(false);
 
+    
+  const handleShareClick = async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: `${isAnime ? "Watch" : "Read"} Now - ${data?.title?.english}`,
+           text: `Watch [${data?.title?.romaji}] and more on 1Anime. Join us for endless anime entertainment"`,
+          url: window.location.href,
+        });
+      } else {
+        // Web Share API is not supported, provide a fallback or show a message
+        alert("Web Share API is not supported in this browser.");
+      }
+    } catch (error) {
+      console.error("Error sharing:", error);
+    }
+  };
+
+
     const toggleDescription = () => {
         setShowFullDescription(!showFullDescription);
     };
@@ -58,6 +77,7 @@ function Overview({data}) {
         <div className={styles.detailscard}>
             <div className={styles.card1}>
                 <h3 className={styles.detailsheading}>Details</h3>
+            
                 <div className={styles.detailscontent}>
                   {data?.status==='RELEASING' && 
                     <div className={styles.singlecontent}>

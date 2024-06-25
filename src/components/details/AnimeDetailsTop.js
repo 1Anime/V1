@@ -8,7 +8,6 @@ import Addtolist from './Addtolist';
 import { signIn } from 'next-auth/react';
 import { useTitle } from '@/lib/store';
 import { useStore } from 'zustand';
-import { ShareIcon } from "@heroicons/react/24/solid";
 
 function AnimeDetailsTop({ data, list, session, setList, url }) {
   const animetitle = useStore(useTitle, (state) => state.animetitle);
@@ -19,7 +18,6 @@ function AnimeDetailsTop({ data, list, session, setList, url }) {
   function Handlelist() {
     setOpenlist(!openlist);
   }
-
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
@@ -80,7 +78,6 @@ function AnimeDetailsTop({ data, list, session, setList, url }) {
                 Read at 1Manga -manga.1anime.co-
               </button>
             )}
-                                
             <Button className={styles.detailsaddlist} onClick={Handlelist}>{
               list && list?.status !== null
                 ? 'Edit List'
