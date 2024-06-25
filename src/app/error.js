@@ -3,9 +3,18 @@ import React from 'react';
 import Navbarcomponent from "@/components/navbar/Navbar";
 import { useRouter } from 'next-nprogress-bar';
 
-function ErrorPage({ statusCode }) {
+function ErrorPage({ statusCode, reset }) {
 
     const navigations = [
+      {
+       icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+       <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+     </svg>
+     ,
+       title: "Retry",
+       desc: "Refresh this page",
+       href:  () => reset(),
+      },
         {
             icon:
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -48,7 +57,7 @@ function ErrorPage({ statusCode }) {
                         {statusCode ? `An error ${statusCode} occurred on server` : 'An error occurred on client'}
                         </p>
                         <p>
-                            Sorry, the page you are looking for could not be found or has been removed.
+                            Sorry, You have encountered an error. Try agaim or choose below
                         </p>
                     </div>
                     <div className="mt-12">
