@@ -39,13 +39,13 @@ function ErrorPage({ statusCode }) {
         <main>
 <Navbarcomponent/>
             <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-start h-screen md:px-8">
-                <div className="max-w-lg mx-auto text-gray-600">
+                <div className="max-w-lg mx-auto text-white-600">
                     <div className="space-y-3 text-center">
                         <h3 className="text-indigo-600 font-semibold">
-                            { statusCode}
+                            {statusCode}
                         </h3>
-                        <p className="text-gray-800 text-4xl font-semibold sm:text-5xl">
-                            Page not found
+                        <p className="text-white-800 text-4xl font-semibold sm:text-5xl">
+                        {statusCode ? `An error ${statusCode} occurred on server` : 'An error occurred on client'}
                         </p>
                         <p>
                             Sorry, the page you are looking for could not be found or has been removed.
@@ -60,7 +60,7 @@ function ErrorPage({ statusCode }) {
                                             {item.icon}
                                         </div>
                                         <div className="space-y-1">
-                                            <h4 className="text-gray-800 font-medium">{item.title}</h4>
+                                            <h4 className="text-white-800 font-medium">{item.title}</h4>
                                             <p>
                                                 {item.desc}
                                             </p>
@@ -81,4 +81,10 @@ function ErrorPage({ statusCode }) {
         </main>
     )
 }
+
+ErrorPage.getInitialProps = ({ res, err }) => {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+  return { statusCode };
+};
+
 export default ErrorPage;
