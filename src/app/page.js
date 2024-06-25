@@ -55,18 +55,6 @@ async function Home() {
   // const history = await getWatchHistory();
   // console.log(history)
 
-const now = new Date();
-const hour = now.getHours();
-
-let greeting = '';
-if (hour >= 5 && hour < 12) {
-  greeting = 'Good morning';
-} else if (hour >= 12 && hour < 18) {
-  greeting = 'Good afternoon';
-} else {
-  greeting = 'Good evening';
-}
-  
   return (
     <div>
       <Navbarcomponent home={true} />

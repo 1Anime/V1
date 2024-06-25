@@ -20,6 +20,7 @@ function AnimeDetailsBottom({ data }) {
       name: "Characters",
       label: "Characters",
     },
+  
   ];
 
   const [activeTab, setActiveTab] = useState(tabs[0]);
@@ -29,6 +30,7 @@ function AnimeDetailsBottom({ data }) {
     setActiveTab(selectedTab);
   };
 
+  
   return (
     <div>
       <div className={styles.detailstabs}>
