@@ -1,5 +1,4 @@
-"use client" // Layout fixed
-import React, { useEffect } from 'react'
+import { useEffect } from 'react';
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { NextUiProvider } from "./NextUiProvider";
