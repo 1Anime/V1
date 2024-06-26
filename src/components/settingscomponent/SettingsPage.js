@@ -188,7 +188,8 @@ function SettingsPage() {
                                         Change the app's color theme
                                     </p>
                                 </div>
-                          <select className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"  onChange={handleThemeChange}><option>Purple (Main) </option></select>
+                          <select className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"  onChange={handleThemeChange}><option value="purple">Purple (Main)</option>
+                          <option value="blue">Blue (Modified)</option></select>
                             </div>
                        </div>
                         <div className='flex flex-col w-[100%]'>
