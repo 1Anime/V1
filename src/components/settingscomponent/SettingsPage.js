@@ -44,9 +44,9 @@ function SettingsPage() {
         }
     };
         const handleClearCookies = () => {
-            Cookies.remove('foo', { path: '/', domain: 'app.1anime.co' }); // Replace with your cookie name
-            Cookies.remove('foo', { path: '/', domain: 'app.1anime.info' });
-            Cookies.remove('foo', { path: '/', domain: 'beta.1anime.co' });
+            Cookies.remove('', { path: '/', domain: 'app.1anime.co' }); // Replace with your cookie name
+            Cookies.remove('', { path: '/', domain: 'app.1anime.info' });
+            Cookies.remove('', { path: '/', domain: 'beta.1anime.co' });
         };
     
         const handleThemeChange = (event) => {
@@ -57,7 +57,7 @@ function SettingsPage() {
             if (selectedTheme === 'default') {
                 document.documentElement.style.setProperty('color', '#ffffff'); // Update primary color CSS variable
                 document.documentElement.style.setProperty('background-color', '#000000');
-                document.cookie = "selectedTheme=purple; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+                document.cookie = "selectedTheme=default; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
            else if (selectedTheme === 'purple') {
               document.documentElement.style.setProperty('color', '#8e50cc'); // Update primary color CSS variable

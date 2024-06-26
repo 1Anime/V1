@@ -8,7 +8,11 @@ const ThemeManager = () => {
         const savedTheme = getCookie("selectedTheme");
         if (savedTheme) {
           // Apply the saved theme to the site's CSS
-          if (savedTheme === 'purple') {
+          if (savedTheme === 'default') {
+            document.documentElement.style.setProperty('color', '#ffffff'); // Update primary color CSS variable
+            document.documentElement.style.setProperty('background-color', '#000000');
+          }
+         else if (savedTheme === 'purple') {
             document.documentElement.style.setProperty('color', '#8e50cc'); // Update primary color CSS variable
             document.documentElement.style.setProperty('background-color', '#14101E');
           } else if (savedTheme === 'blue') {
