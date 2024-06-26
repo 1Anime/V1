@@ -12,6 +12,7 @@ import { Toaster } from 'sonner'
 import Changelogs from '../components/Changelogs';
 import FloatingButton from '@/components/FloatingButton';
 import { AuthProvider } from './SessionProvider';
+import ThemeManager from './ThemeManager';
 
 const inter = Inter({ subsets: ['latin'] })
 const myfont = localFont({ src: "../static-fonts/archivo.ttf" })
@@ -78,6 +79,7 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en" className='dark text-foreground bg-background' suppressHydrationWarning={true}>
+        <ThemeManager />
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-TYKL9CYSFS"
         strategy="afterInteractive"

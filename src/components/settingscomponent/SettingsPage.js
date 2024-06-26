@@ -44,11 +44,56 @@ function SettingsPage() {
         }
     };
         const handleClearCookies = () => {
-            Cookies.remove('foo', { path: '/', domain: 'app.1anime.co' }); // Replace with your cookie name
-            Cookies.remove('foo', { path: '/', domain: 'app.1anime.info' });
-            Cookies.remove('foo', { path: '/', domain: 'beta.1anime.co' });
+            Cookies.remove('', { path: '/', domain: 'app.1anime.co' }); // Replace with your cookie name
+            Cookies.remove('', { path: '/', domain: 'app.1anime.info' });
+            Cookies.remove('', { path: '/', domain: 'beta.1anime.co' });
         };
     
+        const handleThemeChange = (event) => {
+            const selectedTheme = event.target.value;
+            // Apply the selected theme to the site's CSS
+            // For example, you can update CSS variables or apply different classes based on the selected theme
+            // Example:
+            if (selectedTheme === 'default') {
+                document.documentElement.style.setProperty('color', '#ffffff'); // Update primary color CSS variable
+                document.documentElement.style.setProperty('background-color', '#000000');
+                document.cookie = "selectedTheme=default; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+              }
+           else if (selectedTheme === 'purple') {
+              document.documentElement.style.setProperty('color', '#8e50cc'); // Update primary color CSS variable
+              document.documentElement.style.setProperty('background-color', '#14101E');
+              document.cookie = "selectedTheme=purple; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+            } else if (selectedTheme === 'blue') {
+              document.documentElement.style.setProperty('color', '#027AEF'); // Update primary color CSS variable
+              document.documentElement.style.setProperty('background-color', '#10151E');
+              document.cookie = "selectedTheme=blue; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+            }
+            else if (selectedTheme === 'green') {
+                document.documentElement.style.setProperty('color', '#02EF12'); // Update primary color CSS variable
+                document.documentElement.style.setProperty('background-color', '#111E10');
+                document.cookie = "selectedTheme=green; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+              }
+              else if (selectedTheme === 'pink') {
+                document.documentElement.style.setProperty('color', '#EF02ED'); // Update primary color CSS variable
+                document.documentElement.style.setProperty('background-color', '#1E101C');
+                document.cookie = "selectedTheme=pink; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+              }
+              else if (selectedTheme === 'yellow') {
+                document.documentElement.style.setProperty('color', '#F0C335'); // Update primary color CSS variable
+                document.documentElement.style.setProperty('background-color', '#1E1C10');
+                document.cookie = "selectedTheme=yellow; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+              }
+              else if (selectedTheme === 'red') {
+                document.documentElement.style.setProperty('color', '#C12727'); // Update primary color CSS variable
+                document.documentElement.style.setProperty('background-color', '#1E1210');
+                document.cookie = "selectedTheme=red; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+              }
+              else if (selectedTheme === 'orange') {
+                document.documentElement.style.setProperty('color', '#D28525'); // Update primary color CSS variable
+                document.documentElement.style.setProperty('background-color', '#1E1610');
+                document.cookie = "selectedTheme=orange; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+              }
+          };
     return (
         <div>
             <div className='relative h-[240px] md:h-[340px]'>
@@ -171,12 +216,22 @@ function SettingsPage() {
                             <p className='text-[18px] md:text-[21px] font-medium mb-2'>Appearance</p>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>Color Themes (Coming soon)</p>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>Themes (Beta)</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                        Change the app's color theme
+                                        Change the app's theme | Request more themes in our Discord!
                                     </p>
                                 </div>
-                          <select className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"><option>Purple (Main) </option></select>
+                          <select className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"  onChange={handleThemeChange}>
+                            <option value="">ThemeManager</option>
+                            <option value=""></option>
+                            <option value="default">Default</option>
+                            <option value="purple">Beerus Purple</option>
+                          <option value="blue">Doraemon Blue</option>
+                          <option value="green">Zoro Green</option>
+                          <option value="pink">Kurama/Dennis Pink</option>
+                          <option value="yellow">Sailor Moon Yellow</option>
+                          <option value="red">Sakuragi Red</option>
+                          <option value="orange">Naruto Orange</option></select>
                             </div>
                        </div>
                         <div className='flex flex-col w-[100%]'>
@@ -223,5 +278,10 @@ Privacy & Account</p>
         </div>
     )
 }
+
+const getCookie = (name) => {
+    const cookieValue = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+    return cookieValue ? cookieValue.pop() : '';
+  };  
 
 export default SettingsPage
