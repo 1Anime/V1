@@ -5,32 +5,8 @@ import { useTitle } from '@/lib/store';
 import { useStore } from 'zustand';
 import Image from 'next/image';
 
-function Footer() {
-    const animetitle = useStore(useTitle, (state) => state.animetitle);
-    const year = new Date().getFullYear();
-    const month = new Date().getMonth();
+    export default () => {
 
-    function getSeason(month) {
-        if (month === 12 || month === 1 || month === 2) {
-            return 'WINTER';
-        } else if (month === 3 || month === 4 || month === 5) {
-            return 'SPRING';
-        } else if (month === 6 || month === 7 || month === 8) {
-            return 'SUMMER';
-        } else {
-            return 'FALL';
-        }
-    }
-
-    const format = ['WINTER', 'SPRING', 'SUMMER', 'FALL'];
-
-    function nextSeason(currentSeason) {
-        const currentSeasonIndex = format.indexOf(currentSeason);
-        const nextSeasonIndex = (currentSeasonIndex + 1) % format.length;
-        return format[nextSeasonIndex];
-    }
-
-    
     const footerNavs = [
         {
             href: 'https://1anime.tawk.help/article/terms-of-service',
