@@ -56,16 +56,38 @@ function SettingsPage() {
             // Example:
             if (selectedTheme === 'purple') {
               document.documentElement.style.setProperty('color', '#8e50cc'); // Update primary color CSS variable
+              document.cookie = "selectedTheme=purple; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
             } else if (selectedTheme === 'blue') {
               document.documentElement.style.setProperty('color', '#027AEF'); // Update primary color CSS variable
+              document.cookie = "selectedTheme=blue; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
             }
             else if (selectedTheme === 'green') {
                 document.documentElement.style.setProperty('color', '#02EF12'); // Update primary color CSS variable
+                document.cookie = "selectedTheme=green; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
               else if (selectedTheme === 'pink') {
-                document.documentElement.style.setProperty('color', '#02EF12'); // Update primary color CSS variable
+                document.documentElement.style.setProperty('color', '#EF02ED'); // Update primary color CSS variable
+                document.cookie = "selectedTheme=pink; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
           };
+
+          useEffect(() => {
+            // Check for the presence of a saved theme in the cookie when the component mounts
+            const savedTheme = getCookie("selectedTheme");
+            if (savedTheme) {
+              // Apply the saved theme to the site's CSS
+              if (savedTheme === 'purple') {
+                document.documentElement.style.setProperty('color', '#8e50cc'); // Update primary color CSS variable
+              } else if (savedTheme === 'blue') {
+                document.documentElement.style.setProperty('color', '#027AEF'); // Update primary color CSS variable
+              } else if (savedTheme === 'green') {
+                document.documentElement.style.setProperty('color', '#02EF12'); // Update primary color CSS variable
+              } else if (savedTheme === 'pink') {
+                document.documentElement.style.setProperty('color', '#EF02ED'); // Update primary color CSS variable
+              }
+            }
+          }, []);
+        
 
     return (
         <div>
