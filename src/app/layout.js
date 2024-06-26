@@ -1,3 +1,5 @@
+"use client" // Layout fixed
+import React, { useEffect } from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { NextUiProvider } from "./NextUiProvider";
@@ -12,7 +14,6 @@ import { Toaster } from 'sonner'
 import Changelogs from '../components/Changelogs';
 import FloatingButton from '@/components/FloatingButton';
 import { AuthProvider } from './SessionProvider';
-import React, { useState, useEffect } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 const myfont = localFont({ src: "../static-fonts/archivo.ttf" })
