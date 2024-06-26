@@ -30,12 +30,17 @@
 .herogradient {
     width: 100%;
     height: 101%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, #000000 100%), linear-gradient(180deg, rgba(0, 0, 0, .6235294118) 0%, rgba(255, 255, 255, 0) 60%), linear-gradient(270deg, rgba(253, 253, 253, 0) 40%, rgba(0, 0, 0, .5411764706) 80%);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 60%, /* Transparent white */
+      var(background-color) 100% /* Use your desired background color variable */
+    );
     position: absolute;
     bottom: -1px;
     left: 0;
     right: 0;
-}
+  }
+  
 
 .herotrending {
     position: absolute;
