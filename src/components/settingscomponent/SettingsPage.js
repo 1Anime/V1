@@ -54,38 +54,43 @@ function SettingsPage() {
             // Apply the selected theme to the site's CSS
             // For example, you can update CSS variables or apply different classes based on the selected theme
             // Example:
-            if (selectedTheme === 'purple') {
+            if (selectedTheme === 'default') {
+                document.documentElement.style.setProperty('color', '#ffffff'); // Update primary color CSS variable
+                document.documentElement.style.setProperty('background-color', '#000000');
+                document.cookie = "selectedTheme=purple; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+              }
+           else if (selectedTheme === 'purple') {
               document.documentElement.style.setProperty('color', '#8e50cc'); // Update primary color CSS variable
-              document.documentElement.style.setProperty('background-color', '#271632');
+              document.documentElement.style.setProperty('background-color', '#14101E');
               document.cookie = "selectedTheme=purple; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
             } else if (selectedTheme === 'blue') {
               document.documentElement.style.setProperty('color', '#027AEF'); // Update primary color CSS variable
-              document.documentElement.style.setProperty('background-color', '#161832');
+              document.documentElement.style.setProperty('background-color', '#10151E');
               document.cookie = "selectedTheme=blue; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
             }
             else if (selectedTheme === 'green') {
                 document.documentElement.style.setProperty('color', '#02EF12'); // Update primary color CSS variable
-                document.documentElement.style.setProperty('background-color', '#16321F');
+                document.documentElement.style.setProperty('background-color', '#111E10');
                 document.cookie = "selectedTheme=green; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
               else if (selectedTheme === 'pink') {
                 document.documentElement.style.setProperty('color', '#EF02ED'); // Update primary color CSS variable
-                document.documentElement.style.setProperty('background-color', '#321631');
+                document.documentElement.style.setProperty('background-color', '#1E101C');
                 document.cookie = "selectedTheme=pink; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
               else if (selectedTheme === 'yellow') {
                 document.documentElement.style.setProperty('color', '#F0C335'); // Update primary color CSS variable
-                document.documentElement.style.setProperty('background-color', '#504522');
+                document.documentElement.style.setProperty('background-color', '#1E1C10');
                 document.cookie = "selectedTheme=yellow; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
               else if (selectedTheme === 'red') {
                 document.documentElement.style.setProperty('color', '#C12727'); // Update primary color CSS variable
-                document.documentElement.style.setProperty('background-color', '#321616');
+                document.documentElement.style.setProperty('background-color', '#1E1210');
                 document.cookie = "selectedTheme=red; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
               else if (selectedTheme === 'orange') {
                 document.documentElement.style.setProperty('color', '#D28525'); // Update primary color CSS variable
-                document.documentElement.style.setProperty('background-color', '#322716');
+                document.documentElement.style.setProperty('background-color', '#1E1610');
                 document.cookie = "selectedTheme=orange; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
           };
@@ -217,6 +222,8 @@ function SettingsPage() {
                                     </p>
                                 </div>
                           <select className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"  onChange={handleThemeChange}>
+                            <option value="">ThemeManager</option>
+                            <option value="default">Default</option>
                             <option value="purple">Beerus Purple</option>
                           <option value="blue">Doraemon Blue</option>
                           <option value="green">Zoro Green</option>
