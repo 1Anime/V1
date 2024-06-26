@@ -56,21 +56,21 @@ function SettingsPage() {
             // Example:
             if (selectedTheme === 'purple') {
               document.documentElement.style.setProperty('color', '#8e50cc'); // Update primary color CSS variable
-              document.documentElement.style.setProperty('background-color', '#2b183d');
+              document.documentElement.style.setProperty('background-color', '#271632');
               document.cookie = "selectedTheme=purple; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
             } else if (selectedTheme === 'blue') {
               document.documentElement.style.setProperty('color', '#027AEF'); // Update primary color CSS variable
-              document.documentElement.style.setProperty('background-color', '#222F50');
+              document.documentElement.style.setProperty('background-color', '#161832');
               document.cookie = "selectedTheme=blue; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
             }
             else if (selectedTheme === 'green') {
                 document.documentElement.style.setProperty('color', '#02EF12'); // Update primary color CSS variable
-                document.documentElement.style.setProperty('background-color', '#305022');
+                document.documentElement.style.setProperty('background-color', '#16321F');
                 document.cookie = "selectedTheme=green; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
               else if (selectedTheme === 'pink') {
                 document.documentElement.style.setProperty('color', '#EF02ED'); // Update primary color CSS variable
-                document.documentElement.style.setProperty('background-color', '#4E2250');
+                document.documentElement.style.setProperty('background-color', '#321631');
                 document.cookie = "selectedTheme=pink; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
               else if (selectedTheme === 'yellow') {
@@ -80,12 +80,12 @@ function SettingsPage() {
               }
               else if (selectedTheme === 'red') {
                 document.documentElement.style.setProperty('color', '#C12727'); // Update primary color CSS variable
-                document.documentElement.style.setProperty('background-color', '#502222');
+                document.documentElement.style.setProperty('background-color', '#321616');
                 document.cookie = "selectedTheme=red; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
               else if (selectedTheme === 'orange') {
                 document.documentElement.style.setProperty('color', '#D28525'); // Update primary color CSS variable
-                document.documentElement.style.setProperty('background-color', '#7B5B22');
+                document.documentElement.style.setProperty('background-color', '#322716');
                 document.cookie = "selectedTheme=orange; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
           };
