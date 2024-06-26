@@ -16,10 +16,6 @@ html {
     letter-spacing:0.05rem;
    }
 
-   body {
-    background-color: #2b183d; /* Set the desired background color */
-  }
-
 ::-webkit-scrollbar {
     width: 6px;
 }
