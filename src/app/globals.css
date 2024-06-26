@@ -15,14 +15,18 @@ html {
      scroll-behavior: smooth !important; 
     letter-spacing:0.05rem;
    }
-   
+
+   body {
+    background-color: #2b183d; /* Set the desired background color */
+  }
+
 ::-webkit-scrollbar {
     width: 6px;
 }
 
 ::-webkit-scrollbar-thumb{
     border-radius: 4px;
-    background-color: #8e50cc;
+    background-color: #767676;
 }
 
 ::-webkit-scrollbar-track{
