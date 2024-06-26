@@ -1,22 +1,12 @@
 "use client"
 import React from 'react'
 import Link from 'next/link'
-import { useTitle } from '@/lib/store';
-import { useStore } from 'zustand';
 import Image from 'next/image';
+import { Badge } from "@nextui-org/react";
 
 function Footer() {
-    const animetitle = useStore(useTitle, (state) => state.animetitle);
     const year = new Date().getFullYear();
     const month = new Date().getMonth();
-
-    const handleToggle = () => {
-        if (animetitle === 'english') {
-            useTitle.setState({ animetitle: 'romaji' })
-        } else {
-            useTitle.setState({ animetitle: 'english' })
-        }
-    };
 
     function getSeason(month) {
         if (month === 12 || month === 1 || month === 2) {
@@ -89,7 +79,9 @@ function Footer() {
                                     <li>
                                         <Link href="https://1anime.co/proxy" className="hover:text-white"> Proxy</Link>
                                     </li>
-
+                                    <li>
+                                        <Link href="https://linktr.ee/1anime" className="hover:text-white"> Contact & Socials</Link>
+                                    </li>
                                     </li>
                                 </ul>
                             </div>
@@ -99,8 +91,14 @@ function Footer() {
                 <div className='bg-tersier border-t border-white/5 mt-2'></div>
                 <div className="mx-auto w-full lg:max-w-[83%] lg:flex lg:items-center lg:justify-between lg:text-[0.8rem] text-[0.7rem] text-[#ffffffb2] py-3">
                     <span className="sm:text-center ms-5 lg:ms-0">© {year} <Link href="/" className="hover:text-white">1Anime</Link> | <span className="font-bold" >Aniplay + 1Anime Development Team</span>
-                    </span>
-                    </div>
+                    </span></div>
+                    <div className="mt-6">
+    <p className="text-gray-700 font-semibold">Status</p>
+    <div className="flex items-center gap-3 mt-3 sm:block">
+      <Badge variant="solid" color="success">
+        System Operational
+      </Badge>
+    </div></div>
             </footer>
         </div>
     )
