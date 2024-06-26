@@ -49,6 +49,18 @@ function SettingsPage() {
             Cookies.remove('foo', { path: '/', domain: 'beta.1anime.co' });
         };
     
+        const handleThemeChange = (event) => {
+            const selectedTheme = event.target.value;
+            // Apply the selected theme to the site's CSS
+            // For example, you can update CSS variables or apply different classes based on the selected theme
+            // Example:
+            if (selectedTheme === 'purple') {
+              document.documentElement.style.setProperty('color', '#8e50cc'); // Update primary color CSS variable
+            } else if (selectedTheme === 'blue') {
+              document.documentElement.style.setProperty('color', '#1E90FF'); // Update primary color CSS variable
+            }
+          };
+
     return (
         <div>
             <div className='relative h-[240px] md:h-[340px]'>
@@ -176,7 +188,7 @@ function SettingsPage() {
                                         Change the app's color theme
                                     </p>
                                 </div>
-                          <select className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"><option>Purple (Main) </option></select>
+                          <select className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"  onChange={handleThemeChange}><option>Purple (Main) </option></select>
                             </div>
                        </div>
                         <div className='flex flex-col w-[100%]'>
