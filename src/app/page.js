@@ -61,7 +61,7 @@ async function Home() {
       <Herosection data={herodata} />
       <div className='sm:max-w-[97%] md:max-w-[95%] lg:max-w-[90%] xl:max-w-[85%] mx-auto flex flex-col md:gap-11 sm:gap-7 gap-5 mt-8'>
         <div>
-        <section className="relative h-screen bg-[#cccccc] md:h-screen">
+        
   {/* Component */}
   <div className="absolute left-1/2 top-[5%] mx-auto flex w-[90%] max-w-[960px] -translate-x-1/2 flex-col items-center rounded-xl bg-black p-4 sm:justify-between sm:px-8 md:flex-row md:py-6 lg:w-full">
     {/* Banner Text  */}
@@ -72,11 +72,10 @@ async function Home() {
 
     {/* Get Started Button */}
     <div className="mt-4 flex flex-row items-center justify-center gap-4 md:mt-0">
-      <a href="#" className="inline-block rounded-xl border border-black bg-white px-10 py-3 font-semibold text-[#1353fe] [box-shadow:rgb(19,_83,_254)_6px_6px]">Try ThemeManager</a>
+      <a href="/settings" className="inline-block rounded-xl border border-black bg-white px-10 py-3 font-semibold text-[#1353fe] [box-shadow:rgb(19,_83,_254)_6px_6px]">Try ThemeManager</a>
       <img src="https://assets.website-files.com/63904f663019b0d8edf8d57c/646723d38ca7fbe390224779_ri_close-circle-fill%20(1).svg" alt="" className="absolute bottom-auto left-auto right-[1%] top-[3%] w-6 md:relative md:right-0 md:w-8" />
     </div>
   </div>
-</section>
         <Greeting />
  <div className='mx-3 bg-[#1a1a1f] px-5 py-3 rounded-lg text-bold flex flex-row items-center'>
  <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
