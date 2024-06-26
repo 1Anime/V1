@@ -5,8 +5,8 @@ import { useTitle } from '@/lib/store';
 import { useStore } from 'zustand';
 import Image from 'next/image';
 
-    export default () => {
-
+function Footer() {
+    
     const footerNavs = [
         {
             href: 'https://1anime.tawk.help/article/terms-of-service',
