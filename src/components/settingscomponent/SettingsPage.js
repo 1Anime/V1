@@ -216,13 +216,14 @@ function SettingsPage() {
                             <p className='text-[18px] md:text-[21px] font-medium mb-2'>Appearance</p>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>Themes (Coming soon)</p>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>Themes</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                        Change the app's theme
+                                        Change the app's theme | Request more themes in our Discord!
                                     </p>
                                 </div>
                           <select className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"  onChange={handleThemeChange}>
                             <option value="">ThemeManager</option>
+                            <option value=""></option>
                             <option value="default">Default</option>
                             <option value="purple">Beerus Purple</option>
                           <option value="blue">Doraemon Blue</option>
