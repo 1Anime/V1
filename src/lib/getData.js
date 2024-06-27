@@ -49,7 +49,7 @@ export const getSources = async (id, provider, epid, epnum, subdub) => {
       throw new Error('Failed to fetch episodes')
     }
     const data = await response.json();
-    // console.log(data);
+    console.log(data);
     return data;
   } catch (error) {
     console.error("Error fetching Episode sources:", error);
