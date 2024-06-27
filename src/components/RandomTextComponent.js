@@ -2,20 +2,20 @@
 import React, { useState } from "react";
 
 const RandomTextComponent = () => {
-    const randomTexts = [
-      { text: "Random Text 1 with link", link: "https://example1.com" },
-      { text: "Random Text 2 with link", link: "https://example2.com" },
-      // Add more random texts with links as needed
-    ];
-  
-    const [randomText] = useState(getRandomText());
-  
-    function getRandomText() {
-      const randomIndex = Math.floor(Math.random() * randomTexts.length);
-      return randomTexts[randomIndex];
-    }
-  
-  
+  const randomTexts = [
+    { text: "Enjoying 1Anime? Help us keep our site alive by donating or sharing the app!", link: "https://1anime.co/donate" },
+    { text: "Have you tried customizing the app with Themes? Try Themes if you haven't!", link: "/settings" },
+    { text: "Did you know? 1Anime secures your AniList account when you sync?", link: "/user/profile" },
+    { text: "Join our Discord for some exciting events, giveaways and more!", link: "https://dsc.gg/1Anime" },
+  ];
+
+  const [randomText] = useState(getRandomText());
+
+  function getRandomText() {
+    const randomIndex = Math.floor(Math.random() * randomTexts.length);
+    return randomTexts[randomIndex];
+  }
+
     return (
         <div className='mx-3 bg-[#1a1a1f] px-5 py-3 rounded-lg text-bold flex flex-row items-center'>
  <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
