@@ -1,5 +1,5 @@
 import { PhotoIcon } from "@heroicons/react/24/outline";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { toast } from "sonner";
 
