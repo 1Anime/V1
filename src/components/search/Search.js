@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import { useTitle, useSearchbar } from '@/lib/store';
 import { useStore } from 'zustand';
 import { PhotoIcon } from '@heroicons/react/24/outline';
+import SearchByImage from "@/components/searchByImage";
 
 function Search() {
     const router = useRouter();
@@ -107,13 +108,8 @@ function Search() {
                                             <span>+</span>
                                             <div className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md">S</div>
                                         </div>
-                                        <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"> <button
-                  onClick={handleImageClick}
-                  className="bg-white text-black font-medium py-2 px-3 rounded-lg"
-                >
-                  <PhotoIcon className="w-6 h-6 mr-2"
-                  />
-                </button> <select
+                                        <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"> <SearchByImage/>
+ <select
                     value={query}
                     onChange={handleSelectChange}
                     className="bg-transparent border-none focus:outline-none"
