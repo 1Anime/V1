@@ -13,6 +13,7 @@ import { getAuthSession } from './api/auth/[...nextauth]/route'
 import { redis } from '@/lib/rediscache'
 import Greeting from '@/components/Greeting';
 import RandomTextComponent from '@/components/RandomTextComponent';
+import UserRecommendation from "@/components/home/recommendation";
 // import { getWatchHistory } from '@/lib/EpHistoryfunctions'
 
 async function getHomePage() {
@@ -84,6 +85,24 @@ async function Home() {
         </div>
         <div
         >
+
+
+{recommendations.length > 0 && (
+                  <div className="space-y-4 lg:space-y-5 mb-5 lg:mb-10">
+                    <div className="px-5">
+                      <p className="text-sm lg:text-base">
+                        Based on Your List
+                        <br/>
+                        <span className="font-karla text-[20px] lg:text-3xl font-bold">
+                      Recommendations
+                    </span>
+                      </p>
+                    </div>
+                    <UserRecommendation data={recommendations}/>
+                  </div>
+              )}
+
+
           <RecentEpisodes cardid="Recent Episodes" />
         </div>
         <div
