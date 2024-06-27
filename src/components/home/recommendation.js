@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 // import data from "../../assets/dummyData.json";
 import {
