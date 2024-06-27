@@ -3,7 +3,7 @@ import React from 'react';
 import Navbarcomponent from "@/components/navbar/Navbar";
 import { useRouter } from 'next-nprogress-bar';
 
-function ErrorPage({ statusCode, reset }) {
+function Error({ statusCode, reset }) {
 
     const navigations = [
       {
@@ -91,9 +91,9 @@ function ErrorPage({ statusCode, reset }) {
     )
 }
 
-ErrorPage.getInitialProps = ({ res, err }) => {
+Error.getInitialProps = ({ res, err }) => {
   const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };
 };
 
-export default ErrorPage;
+export default Error;
