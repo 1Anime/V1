@@ -171,7 +171,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
   const handleDownload = async () => {
     try {
       const response = await fetch(
-        `${process.env.CONSUMET_URI}/meta/anilist/episodes/${epId}${dub ? "?dub=true" : ""}`
+        `${process.env.CONSUMET_URI}/meta/anilist/episodes/${epId}`
       );
       const data = await response.json();
       setDownloadUrl(data.downloadUrl);
