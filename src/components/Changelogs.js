@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v.NEXT.3.BETA"
+const newVersion = "v.NEXT.4.BETA"
 
 const releaseLogs = [
     // {
@@ -46,12 +46,11 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v.NEXT.3.BETA",
+        version: "v.NEXT.4.BETA",
         changes: [
             "🥰 1Anime NEXT version is officially here - More big updates incoming!",
             "😎 Themes is officially out!",
-            "🗣️ Added Greetings & Scene Search",
-            "🔥 Fixed some UI - Upgraded Auth",
+            "🟢 Download Episode is back",
             "⚠️ Let us know your feedback & bugs report in this public beta testing",
             "Join our new discord: https://dsc.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
