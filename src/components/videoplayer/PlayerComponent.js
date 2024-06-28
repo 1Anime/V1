@@ -169,28 +169,15 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
 
   const handleDownload = async () => {
     try {
-        // Fetch the download URL from the API
-        const response = await fetcht(
-          `${process.env.CONSUMET_URI}/meta/anilist/episodes/${epId}${dub ? "?dub=true" : ""}`
-        );
-        const data = await response.json();
-        
-        // Handle the fetched data, e.g., initiate the file download
-        const downloadUrl = data.download;
-        const downloadResponse = await fetch(downloadUrl);
-        const blob = await downloadResponse.blob();
-        const url = window.URL.createObjectURL(new Blob([blob]));
-        const link = document.createElement('a');
-        link.href = url;
-        link.setAttribute('download', `downloadedFile.${blob.type.split('/')[1]}`);
-        document.body.appendChild(link);
-        link.click();
-        link.parentNode.removeChild(link);
+      const response = await fetch(
+        `${process.env.CONSUMET_URI}/meta/anilist/episodes/${epId}${dub ? "?dub=true" : ""}`
+      );
+      const data = await response.json();
+      setDownloadUrl(data.downloadUrl);
     } catch (error) {
-        console.error('Error fetching download URL:', error);
-        // Handle error, e.g., display an error message to the user
+      console.error('Error fetching download URL:', error);
     }
-};
+  };
 
 
     return (
@@ -257,17 +244,18 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 MAL
                             </span>
-                            <MyAnimeListIcon className="w-7 h-7" /></a> <button
+                            <MyAnimeListIcon className="w-7 h-7" /></a> <a
                             type="button"
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={handleDownload}
+                            href="{downloadUrl}"
                             className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 Download Anime
                             </span>
-                            <ArrowDownTrayIcon className="w-7 h-7" /></button>
+                            <ArrowDownTrayIcon className="w-7 h-7" /></a>
 
 
    <a
@@ -279,7 +267,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
               Share Anime
             </span>
             <ShareIcon className="w-7 h-7" />
-      </a>  <button className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={Handlelist}><BookmarkIcon className="w-7 h-7" /></button>
+      </a>  <a className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={Handlelist}><BookmarkIcon className="w-7 h-7" /></a>
             {session?.user ? (
               <Modal isOpen={openlist} onOpenChange={Handlelist} size={"3xl"} backdrop="opaque" hideCloseButton={true} placement="center" radius="sm" scrollBehavior="outside"
                 classNames={{
