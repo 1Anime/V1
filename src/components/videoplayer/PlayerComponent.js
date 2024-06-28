@@ -166,6 +166,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
 
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [downloadUrl, setDownloadUrl] = useState('');
 
   const handleDownload = async () => {
     try {
@@ -249,7 +250,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={handleDownload}
-                            href="{downloadUrl}"
+                            href={downloadUrl}
                             className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
@@ -267,7 +268,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
               Share Anime
             </span>
             <ShareIcon className="w-7 h-7" />
-      </a>  <a className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={Handlelist}><BookmarkIcon className="w-7 h-7" /></a>
+      </a>  <button className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={Handlelist}><BookmarkIcon className="w-7 h-7" /></button>
             {session?.user ? (
               <Modal isOpen={openlist} onOpenChange={Handlelist} size={"3xl"} backdrop="opaque" hideCloseButton={true} placement="center" radius="sm" scrollBehavior="outside"
                 classNames={{
