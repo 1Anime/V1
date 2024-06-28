@@ -131,7 +131,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
           if (navigator.share) {
             await navigator.share({
               title: `Watch Now - ${data?.title?.english}`,
-               text: `Watch [${data?.title?.romaji}] and more on 1Anime. Join us for endless anime entertainment"`,
+               text: `Watch [${data?.title?.romaji}] and more on 1Anime. Join us for endless anime entertainment`,
               url: window.location.href,
             });
           } else {
@@ -166,7 +166,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
 
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-    
+
     return (
         <div className='xl:w-[99%]'>
             <div>
@@ -196,7 +196,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                 <div className=' my-[9px] mx-2 sm:mx-1 px-1 lg:px-0'>
               <RandomTextComponent />
                     <h2 className='text-[20px]'>{data?.title?.[animetitle] || data?.title?.romaji}</h2>
-                    <h2 className='text-[16px] text-[#ffffffb2]'>{` EPISODE ${epNum} `}</h2>
+                    <h2 className='text-[16px] text-[#ffffffb2]'>YOU'RE WATCHING:{` EPISODE ${epNum} `}</h2>
                 </div>
                 <div>
           <a
