@@ -129,16 +129,18 @@ function Overview({data}) {
             </span>
             <ShareIcon className="w-5 h-5" />
           </button>
-          <a
-            target="_blank"
+      <a
+                            type="button"
+                            target="_blank"
             rel="noopener noreferrer"
-            href={`https://anilist.co/${data.type.toLowerCase()}/${data.id}`}
-            className="${styles.detailswatch} bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
-          >
-            <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
-              See on AniList
-            </span>
-            <MyAnimeListIcon className="w-7 h-7" /></a>
+                            href={`https://anilist.co/anime/${data.id}`}
+                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
+                        >
+                            <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
+                                MAL
+                            </span>
+                            <MyAnimeListIcon className="w-7 h-7" /></a>
+
 <a
                             type="button"
                             target="_blank"
