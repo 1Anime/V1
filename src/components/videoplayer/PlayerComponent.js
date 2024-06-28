@@ -166,7 +166,33 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
 
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-    
+
+  const handleDownload = async () => {
+    try {
+        // Fetch the download URL from the API
+        const response = await fetcht(
+          `${process.env.CONSUMET_URI}/meta/anilist/episodes/${epId}${dub ? "?dub=true" : ""}`
+        );
+        const data = await response.json();
+        
+        // Handle the fetched data, e.g., initiate the file download
+        const downloadUrl = data.download;
+        const downloadResponse = await fetch(downloadUrl);
+        const blob = await downloadResponse.blob();
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', `downloadedFile.${blob.type.split('/')[1]}`);
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+    } catch (error) {
+        console.error('Error fetching download URL:', error);
+        // Handle error, e.g., display an error message to the user
+    }
+};
+
+
     return (
         <div className='xl:w-[99%]'>
             <div>
@@ -231,17 +257,17 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 MAL
                             </span>
-                            <MyAnimeListIcon className="w-7 h-7" /></a> <a
+                            <MyAnimeListIcon className="w-7 h-7" /></a> <button
                             type="button"
                             target="_blank"
                             rel="noopener noreferrer"
-                            href={`${episodeData.download}&typesub=1Anime`}
+                            onClick={handleDownload}
                             className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 Download Anime
                             </span>
-                            <ArrowDownTrayIcon className="w-7 h-7" /></a>
+                            <ArrowDownTrayIcon className="w-7 h-7" /></button>
 
 
    <a
