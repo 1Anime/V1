@@ -166,6 +166,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
 
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [downloadUrl, setDownloadUrl] = useState('');
 
   useEffect(() => {
     const fetchDownloadUrl = async () => {
