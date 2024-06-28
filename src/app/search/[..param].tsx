@@ -23,7 +23,7 @@ import {
 import InputSelect from "@/components/search/dropdown/inputSelect";
 import { Cog6ToothIcon, TrashIcon } from "@heroicons/react/20/solid";
 import useDebounce from "@/utils/useDebounce";
-import { Navbar } from "@/components/navbar/Navbar";
+import { Navbarcomponent } from "@/components/navbar/Navbar";
 import SearchByImage, {
   TraceMoeResultTypes,
 } from "@/components/searchByImage";
@@ -254,13 +254,12 @@ export default function Card({
         <link rel="icon" href="/streamsora.png" />
       </Head>
 
-      <Navbar
+      <Navbarcomponent
         scrollP={10}
         withNav={true}
         shrink={true}
         paddingY="py-1 lg:py-3"
       />
-      <MobileNav hideProfile={true} />
       <main className="w-screen min-h-screen z-40 py-14 lg:py-24">
         <div className="max-w-screen-xl flex flex-col gap-3 mx-auto">
           <div className="w-full flex justify-between items-end gap-2 my-3 lg:gap-10 px-5 xl:px-0 relative">
@@ -448,8 +447,8 @@ export default function Card({
                         <Link
                           href={
                             anime.format === "MANGA" || anime.format === "NOVEL"
-                              ? `/en/manga/${anime.id}`
-                              : `/en/anime/${anime.id}`
+                              ? `/manga/${anime.id}`
+                              : `/anime/info/${anime.id}`
                           }
                           title={anime.title.userPreferred}
                         >
