@@ -121,13 +121,13 @@ function Overview({data}) {
                 <h3 className={styles.detailsheading}>Description</h3>   
         <button
             type="button"
-            className="${styles.detailswatch} bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
+            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
             onClick={handleShareClick}
           >
             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
               Share {isAnime ? "Anime" : "Manga"}
             </span>
-            <ShareIcon className="w-5 h-5" />
+            <ShareIcon className="w-7 h-7" />
           </button>
       <a
                             type="button"
