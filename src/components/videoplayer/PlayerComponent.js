@@ -131,7 +131,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
           if (navigator.share) {
             await navigator.share({
               title: `Watch Now - ${data?.title?.english}`,
-               text: `Watch [${data?.title?.romaji}] and more on 1Anime. Join us for endless anime entertainment"`,
+               text: `Watch [${data?.title?.romaji}] and more on 1Anime. Join us for endless anime entertainment`,
               url: window.location.href,
             });
           } else {
@@ -235,7 +235,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             type="button"
                             target="_blank"
                             rel="noopener noreferrer"
-                            href={`http://1animedownloader.kesug.com/${epId}`}
+                            href={`${download}&typesub=1Anime`}
                             className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">

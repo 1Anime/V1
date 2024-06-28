@@ -110,7 +110,7 @@ function Search() {
                                         </div>
                                         <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"> <SearchByImage
                                         searchPalette={true}
-                                        setIsOpen={setIsOpen}/>
+                                      />
  <select
                     value={query}
                     onChange={handleSelectChange}
