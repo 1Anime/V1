@@ -166,19 +166,24 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
 
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [downloadUrl, setDownloadUrl] = useState('');
 
-  const handleDownload = async () => {
-    try {
-      const response = await fetch(
-        `${process.env.CONSUMET_URI}/meta/anilist/episodes/${epId}`
-      );
-      const data = await response.json();
-      setDownloadUrl(data.downloadUrl);
-    } catch (error) {
-      console.error('Error fetching download URL:', error);
-    }
-  };
+  useEffect(() => {
+    const fetchDownloadUrl = async () => {
+      try {
+        const response = await fetch(
+          `https://api-consumet-org-azure.vercel.app/meta/anilist/episodes/${epId}`
+        );
+        const data = await response.json();
+        const downloadUrl = data.download; // Extract the download URL from the API response
+        // Use the downloadUrl as needed (e.g., redirect or display)
+        console.log('Download URL:', downloadUrl);
+      } catch (error) {
+        console.error('Error fetching download URL:', error);
+      }
+    };
+
+    fetchDownloadUrl(); // Fetch the URL when the component mounts
+  }, []);
 
 
     return (
@@ -210,7 +215,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                 <div className=' my-[9px] mx-2 sm:mx-1 px-1 lg:px-0'>
               <RandomTextComponent />
                     <h2 className='text-[20px]'>{data?.title?.[animetitle] || data?.title?.romaji}</h2>
-                    <h2 className='text-[16px] text-[#ffffffb2]'>{` EPISODE ${epNum} `}</h2>
+                    <h2 className='text-[16px] text-[#ffffffb2]'>You're Watching:{` EPISODE ${epNum} `}</h2>
                 </div>
                 <div>
           <a
@@ -249,7 +254,6 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             type="button"
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={handleDownload}
                             href={downloadUrl}
                             className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
