@@ -81,7 +81,7 @@ async function MalSync(id) {
     newdata.forEach(item => {
       const { providerId, data } = item;
       if (providerId === 'gogoanime') {
-        const remove = 'https://anitaku.so/category/';
+        const remove = 'https://anitaku.pe/category/';
         const dub = data.find(item => item.title.toLowerCase().endsWith(" (dub)"));
         const duburl = dub?.url?.replace(remove,'');
         const sub = data.find(item => item.title.toLowerCase().includes(""))?.url?.replace(remove,'') ?? data.find((item) => item?.url === dub?.url?.replace(/-dub$/, ''))?.url?.replace(remove,'') ?? data.find(item => !item.title.toLowerCase().includes(")"))?.url?.replace(remove,'');
