@@ -28,7 +28,7 @@ async function zoroEpisode(provider, episodeid, epnum, id, subtype) {
   async function AnifyEpisode(provider, episodeid, epnum, id, subtype) {
     try {
       const { data } = await axios.get(
-        `https://api.anify.tv/sources?providerId=${provider}&watchId=${encodeURIComponent(
+        `https://anify.eltik.cc/sources?providerId=${provider}&watchId=${encodeURIComponent(
           episodeid
         )}&episodeNumber=${epnum}&id=${id}&subType=${subtype}`
       );

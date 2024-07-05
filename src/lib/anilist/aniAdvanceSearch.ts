@@ -51,7 +51,7 @@ export async function aniAdvanceSearch({
     const controller = new AbortController();
     const signal = controller.signal;
 
-    const response = await fetch("https://api.anify.tv/search-advanced", {
+    const response = await fetch("https://anify.eltik.cc/search-advanced", {
       method: "POST",
       signal: signal,
       body: JSON.stringify({

@@ -26,7 +26,7 @@ function Search() {
     async function searchdata() {
         setLoading(true);
         // const res = await axios.get(
-        //     // `https://api.anify.tv/search/anime/${query} `
+        //     // `https://anify.eltik.cc/search/anime/${query} `
         //     `https://consumet-anime-api.vercel.app/meta/anilist/advanced-search`,{ params: { query:query,sort:["POPULARITY_DESC","SCORE_DESC","FAVOURITES","TRENDING"] } }
 
         // );

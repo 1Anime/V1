@@ -45,7 +45,7 @@ async function fetchConsumet(id) {
 
 async function fetchAnify(id) {
   try {
-    const { data } = await axios.get(`https://api.anify.tv/info/${id}?fields=[episodes]`);
+    const { data } = await axios.get(`https://anify.eltik.cc/info/${id}?fields=[episodes]`);
 
     if (!data || !data?.episodes?.data) {
       return [];
@@ -160,7 +160,7 @@ async function fetchEpisodeMeta(id, available = false) {
       return null;
     }
     // const { data } = await axios.get(
-    //   `https://api.anify.tv/content-metadata/${id}`
+    //   `https://anify.eltik.cc/content-metadata/${id}`
     // );
     // if (!data) return [];
 
