@@ -101,7 +101,7 @@ const getConsumet = async (id: string): Promise<ProviderData[]> => {
   const fetchGogoData = async (i: string, dub = false) => {
     try {
       const res = await bky.get(
-        `${process.env.CONSUMET_API}/meta/anilist/episodes/${i}${
+        `${process.env.CONSUMET_URI}/meta/anilist/episodes/${i}${
           dub ? "?dub=true" : ""
         }`
       );
@@ -127,7 +127,7 @@ const getConsumet = async (id: string): Promise<ProviderData[]> => {
   const fetchHiAnime = async (i: string) => {
     try {
       const res = await bky.get(
-        `${process.env.CONSUMET_API}/meta/anilist/episodes/${i}?provider=zoro`
+        `${process.env.CONSUMET_URI}/meta/anilist/episodes/${i}?provider=zoro`
       );
       const data = await res.json<ConsumetEpisode[]>();
       if (data.length < 1) return [];
@@ -251,7 +251,7 @@ const getMadaraMappings = async (id: string) => {
 const getGogoAnime = async (id: string) => {
   try {
     const res = await bky.get(
-      `${process.env.CONSUMET_API}/anime/gogoanime/info/${id}`
+      `${process.env.CONSUMET_URI}/anime/gogoanime/info/${id}`
     );
     const data = await res.json<GogoAnimeInfo>();
 
