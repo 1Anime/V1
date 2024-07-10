@@ -14,6 +14,7 @@ import Link from 'next/link'
 import { signIn } from 'next-auth/react';
 import Image from 'next/image'
 import RandomTextComponent from '@/components/RandomTextComponent';
+import ModalWithIframe from '@/components/ModalWithIframe';
 
 
 function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, savedep, list, setList, url }) {
@@ -163,6 +164,19 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
+  const [showModal, setShowModal] = useState(false);
+  const iframeSrc = '/anime/info/${data.id}'; 
+  const title = 'Anime Info';
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+
     return (
         <div className='xl:w-[99%]'>
             <div>
@@ -199,13 +213,15 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
           <a
                             type="button"
                             rel="nofollow"
-                            href={`/anime/info/${data.id}`}
+                            onClick={openModal}
                             className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 See Anime Info
                             </span>
                             <InformationCircleIcon className="w-7 h-7" /></a>
+                            {showModal && <ModalWithIframe iframeSrc={iframeSrc} onClose={closeModal} />}
+                            </div>
                             <a
                             type="button"
                             target="_blank"
