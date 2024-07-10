@@ -220,8 +220,8 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                                 See Anime Info
                             </span>
                             <InformationCircleIcon className="w-7 h-7" /></a>
-                            {showModal && <ModalWithIframe iframeSrc={iframeSrc} onClose={closeModal} />}
-                            </div>
+                            {showModal && <ModalWithIframe title={title} iframeSrc={iframeSrc} onClose={closeModal} />}
+                          
                             <a
                             type="button"
                             target="_blank"
