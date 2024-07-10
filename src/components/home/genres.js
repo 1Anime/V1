@@ -49,7 +49,7 @@ function Genres ({}) {
         <span className={`${styles.rightarrow} ${isRightArrowActive ? styles.active : styles.notactive}`}>
           <svg onClick={scrollRight} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m9 18 6-6-6-6"></path></svg>
         </span>
-        <div className={styles.cardcontainer} id={cardid} {...events} ref={containerRef} onScroll={handleScroll}>            {g.map((a, index) => (
+        <div className={styles.cardcontainer}>            {g.map((a, index) => (
               <Link
                 href={`/anime/catalog/?genres=${a.name}`}
                 key={index}
