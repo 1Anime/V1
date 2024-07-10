@@ -108,7 +108,6 @@ function Genres({ data, cardid, show=true }) {
         </div>
         <div className="bg-gradient-to-[#000000] to-transparent z-40 absolute w-7 h-full right-0" />
       </div>
-    </div>
   );
 }
 
