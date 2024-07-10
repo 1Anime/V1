@@ -33,43 +33,7 @@ const g = [
   },
 ];
 
-function Genres({ data, cardid, show=true }) {
-  const containerRef = useRef();
-  const { events } = useDraggable(containerRef);
-  const [isLeftArrowActive, setIsLeftArrowActive] = useState(false);
-  const [isRightArrowActive, setIsRightArrowActive] = useState(false);
-
-  function handleScroll() {
-    const container = containerRef.current;
-    const scrollPosition = container.scrollLeft;
-    const maxScroll = container.scrollWidth - container.clientWidth;
-
-    setIsLeftArrowActive(scrollPosition > 30);
-    setIsRightArrowActive(scrollPosition < maxScroll - 30);
-  }
-
-  const smoothScroll = (amount) => {
-    const container = containerRef.current;
-  
-    if (cont && container) {
-      cont.classList.add('scroll-smooth');
-      container.scrollLeft += amount;
-
-      setTimeout(() => {
-        cont.classList.remove('scroll-smooth');
-      }, 300);
-    }
-  };
-
-
-  function scrollLeft() {
-    smoothScroll(-500);
-  }
-
-  function scrollRight() {
-    smoothScroll(+500);
-  }
-
+function Genres {
   return (
     <div className={styles.animecard}>
       {show && (
