@@ -59,6 +59,11 @@ function SettingsPage() {
                 document.documentElement.style.setProperty('background-color', '#000000');
                 document.cookie = "selectedTheme=default; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
               }
+              else if (selectedTheme === 'st') {
+                document.documentElement.style.setProperty('color', '#F0C335'); // Update primary color CSS variable
+                document.documentElement.style.setProperty('background-color', '#10151E');
+                document.cookie = "selectedTheme=purple; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Save the selected theme in a cookie
+                            }
            else if (selectedTheme === 'purple') {
               document.documentElement.style.setProperty('color', '#8e50cc'); // Update primary color CSS variable
               document.documentElement.style.setProperty('background-color', '#14101E');
@@ -223,6 +228,9 @@ function SettingsPage() {
                                 </div>
                           <select className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"  onChange={handleThemeChange}>
                             <option value="">ThemeManager</option>
+                            <option value=""></option>
+                            <option value="">Special Themes:</option>
+                            <option value="st">☀️ Summer Times</option>
                             <option value=""></option>
                             <option value="default">Default</option>
                             <option value="purple">Beerus Purple</option>

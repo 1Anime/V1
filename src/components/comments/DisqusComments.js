@@ -1,5 +1,5 @@
 "use client";
-
+import React, { useState } from 'react';
 import { DiscussionEmbed } from "disqus-react";
 import styles from './comments.css'; 
 
@@ -13,12 +13,31 @@ const DisqusComments = ({ post }) => {
     title: `${post.title} - Episode ${post.episode}`, // Single post title
   };
 
+  const [showComments, setShowComments] = useState(false);
+
+  const toggleComments = () => {
+    setShowComments(!showComments);
+  };
+
+
   return (
     <div>
+    <button 
+                              className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
+  onClick={toggleComments}>
+    {showComments ? 'Hide Comments' : 'Show Comments'}
+  </button>
+  {showComments && (
+    <div className="comments">
+  <div>
       <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
     </div>
-  );
+      </div>
+  )}
+</div>
+);
 };
+  
 function removeIframesWithHtml() {
   const disqusDiv = document.getElementById('disqus_thread');
 

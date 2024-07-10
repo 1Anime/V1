@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v.NEXT.July"
+const newVersion = "v.3.4.0"
 
 const releaseLogs = [
     // {
@@ -46,10 +46,10 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v.NEXT.July",
+        version: "v.3.4.0",
         changes: [
-            "🥰 1Anime NEXT version is officially here - More big updates incoming!",
-            "😎 Improved Performance - Global Caching",
+            "😎 Improved Performance - Minimized Disqus Comments",
+            "☀️ Added Summer Themes - TRY IT NOW!",
             "Join our new discord: https://dsc.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
             ],

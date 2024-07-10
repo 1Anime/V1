@@ -12,6 +12,10 @@ const ThemeManager = () => {
             document.documentElement.style.setProperty('color', '#ffffff'); // Update primary color CSS variable
             document.documentElement.style.setProperty('background-color', '#000000');
           }
+          else if (savedTheme === 'st') {
+            document.documentElement.style.setProperty('color', '#F0C335'); // Update primary color CSS variable
+            document.documentElement.style.setProperty('background-color', '#10151E');
+          }
          else if (savedTheme === 'purple') {
             document.documentElement.style.setProperty('color', '#8e50cc'); // Update primary color CSS variable
             document.documentElement.style.setProperty('background-color', '#14101E');
