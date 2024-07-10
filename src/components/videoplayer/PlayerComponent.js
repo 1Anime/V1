@@ -212,7 +212,6 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                 <div>
           <a
                             type="button"
-                            rel="nofollow"
                             onClick={openModal}
                             className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
                         >
