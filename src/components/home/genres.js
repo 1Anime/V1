@@ -33,7 +33,7 @@ const g = [
   },
 ];
 
-function Genres {
+function Genres ({}) {
   return (
     <div className={styles.animecard}>
       {show && (
