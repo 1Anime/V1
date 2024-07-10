@@ -34,12 +34,12 @@ Enjoy ad-free streaming and seamless progress tracking with AniList integration,
 ## Roadmap
 
 - [X] Add Changelog
-- [ ] Download episodes
-- [ ] Add Comment section
+- [X] Download episodes
+- [X] Add Comment section
 - [ ] Create separate page for anilist users
     - [ ] To view their progress
     - [ ] Check all their details imported from anilist
-- [ ] Add Scene Search in catalog page
+- [X] Add Scene Search
 - [X] Add Anilist episode tracking
 - [ ] Complete Watch Page
 - [X] Add Profile page.
