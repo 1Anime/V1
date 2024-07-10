@@ -50,8 +50,7 @@ function Genres({ data, cardid, show=true }) {
 
   const smoothScroll = (amount) => {
     const container = containerRef.current;
-    const cont = document.getElementById(cardid);
-
+  
     if (cont && container) {
       cont.classList.add('scroll-smooth');
       container.scrollLeft += amount;
@@ -73,10 +72,12 @@ function Genres({ data, cardid, show=true }) {
 
   return (
     <div className={styles.animecard}>
+      {show && (
       <div className={styles.cardhead}>
       <span className={styles.bar}></span>
         <h1 className={styles.headtitle}>Top Genres</h1>
       </div>
+    )}
       <div className={styles.animeitems}>
         <span className={`${styles.leftarrow} ${isLeftArrowActive ? styles.active : styles.notactive}`}>
           <svg onClick={scrollLeft} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m15 18-6-6 6-6"></path></svg>
