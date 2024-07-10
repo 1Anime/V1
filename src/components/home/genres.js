@@ -1,5 +1,3 @@
-"use client"
-import React, { useRef, useState } from 'react';
 import Image from "next/image";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
@@ -33,59 +31,18 @@ const g = [
   },
 ];
 
-function Genres({ data, cardid, show=true }) {
-  const containerRef = useRef();
-  const { events } = useDraggable(containerRef);
-  const [isLeftArrowActive, setIsLeftArrowActive] = useState(false);
-  const [isRightArrowActive, setIsRightArrowActive] = useState(false);
-
-  function handleScroll() {
-    const container = containerRef.current;
-    const scrollPosition = container.scrollLeft;
-    const maxScroll = container.scrollWidth - container.clientWidth;
-
-    setIsLeftArrowActive(scrollPosition > 30);
-    setIsRightArrowActive(scrollPosition < maxScroll - 30);
-  }
-
-  const smoothScroll = (amount) => {
-    const container = containerRef.current;
-  
-    if (cont && container) {
-      cont.classList.add('scroll-smooth');
-      container.scrollLeft += amount;
-
-      setTimeout(() => {
-        cont.classList.remove('scroll-smooth');
-      }, 300);
-    }
-  };
-
-
-  function scrollLeft() {
-    smoothScroll(-500);
-  }
-
-  function scrollRight() {
-    smoothScroll(+500);
-  }
-
+export default function Genres() {
   return (
     <div className={styles.animecard}>
-      {show && (
       <div className={styles.cardhead}>
       <span className={styles.bar}></span>
         <h1 className={styles.headtitle}>Top Genres</h1>
       </div>
-    )}
-      <div className={styles.animeitems}>
-        <span className={`${styles.leftarrow} ${isLeftArrowActive ? styles.active : styles.notactive}`}>
-          <svg onClick={scrollLeft} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m15 18-6-6 6-6"></path></svg>
-        </span>
-        <span className={`${styles.rightarrow} ${isRightArrowActive ? styles.active : styles.notactive}`}>
-          <svg onClick={scrollRight} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m9 18 6-6-6-6"></path></svg>
-        </span>
-        <div className={styles.cardcontainer} {...events} ref={containerRef} onScroll={handleScroll}>            {g.map((a, index) => (
+      <div className="scrollbar-width:none flex xl:justify-center items-center relative">
+        <div className="scrollbar-width:none bg-gradient-to-[#000000] to-transparent z-40 absolute w-7 h-full left-0" />
+        <div className="flex lg:gap-8 gap-3 lg:p-10 py-8 px-5 z-30 overflow-y-hidden overflow-x-scroll snap-x snap-proximity scrollbar-none relative">
+          <div className="flex lg:gap-10 gap-4">
+            {g.map((a, index) => (
               <Link
                 href={`/anime/catalog/?genres=${a.name}`}
                 key={index}
@@ -109,7 +66,6 @@ function Genres({ data, cardid, show=true }) {
         </div>
         <div className="bg-gradient-to-[#000000] to-transparent z-40 absolute w-7 h-full right-0" />
       </div>
+    </div>
   );
 }
-
-export default Genres;
