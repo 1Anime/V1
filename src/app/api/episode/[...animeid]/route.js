@@ -71,7 +71,7 @@ async function fetchAnify(id) {
 
 async function MalSync(id) {
   try {
-    const response = await axios.get(`https://api-mappings.madara.live/malSync/${id}`);
+    const response = await axios.get(`https://api-mappings.madara.live/malSync/${id}?api_key=eced54f4cd756c68abef8dcb5fdfe656fe120fce52965d88a00747d6a59c848b053eccf2caf026d86cc15163af940510d2ab05ca4ebaefed4e99c5b6bb4a3331`);
 
     const data = response?.data;
     const sites = Object.keys(data.Sites).map(providerId => ({ providerId: providerId.toLowerCase(), data: Object.values(data.Sites[providerId]) }));

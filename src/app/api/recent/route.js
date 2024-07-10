@@ -10,7 +10,7 @@ axios.interceptors.request.use(config => {
 async function fetchRecent() {
     try {
         const { data } = await axios.get(
-            `https://anify.eltik.cc/recent?type=anime&page=1&perPage=20&fields=[id,title,status,format,currentEpisode,coverImage,episodes,totalEpisodes]`
+            `https://api-mappings.madara.live/trending?api_key=eced54f4cd756c68abef8dcb5fdfe656fe120fce52965d88a00747d6a59c848b053eccf2caf026d86cc15163af940510d2ab05ca4ebaefed4e99c5b6bb4a3331&type=anime&page=1&perPage=20&fields=[id,title,status,format,currentEpisode,coverImage,episodes,totalEpisodes]`
         );
 
         const mappedData = data.map((i) => {

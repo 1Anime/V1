@@ -1,6 +1,10 @@
+"use client"
+import React, { useRef, useState } from 'react';
 import Image from "next/image";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import styles from '../../styles/Animecard.module.css';
+import { useDraggable } from 'react-use-draggable-scroll';
 
 const g = [
   {
@@ -31,13 +35,13 @@ const g = [
 
 export default function Genres() {
   return (
-    <div className="antialiased">
-      <div className="flex items-center justify-between lg:justify-normal lg:gap-3 px-5">
-        <h1 className="font-karla text-[20px] font-bold">Top Genres</h1>
-        <ChevronRightIcon className="w-5 h-5" />
+    <div className={styles.animecard}>
+      <div className={styles.cardhead}>
+      <span className={styles.bar}></span>
+        <h1 className={styles.headtitle}>Top Genres</h1>
       </div>
-      <div className="scrollbar-width:none flex xl:justify-center items-center relative">
-        <div className="scrollbar-width:none bg-gradient-to-[#000000] to-transparent z-40 absolute w-7 h-full left-0" />
+      <div className={styles.animeitems}>
+        <div className={className={styles.cardcontainer}/>
         <div className="flex lg:gap-8 gap-3 lg:p-10 py-8 px-5 z-30 overflow-y-hidden overflow-x-scroll snap-x snap-proximity scrollbar-none relative">
           <div className="flex lg:gap-10 gap-4">
             {g.map((a, index) => (
