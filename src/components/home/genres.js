@@ -33,7 +33,44 @@ const g = [
   },
 ];
 
-export default function Genres() {
+function Genres({ data, cardid, show=true }) {
+  const containerRef = useRef();
+  const { events } = useDraggable(containerRef);
+  const [isLeftArrowActive, setIsLeftArrowActive] = useState(false);
+  const [isRightArrowActive, setIsRightArrowActive] = useState(false);
+
+  function handleScroll() {
+    const container = containerRef.current;
+    const scrollPosition = container.scrollLeft;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    setIsLeftArrowActive(scrollPosition > 30);
+    setIsRightArrowActive(scrollPosition < maxScroll - 30);
+  }
+
+  const smoothScroll = (amount) => {
+    const container = containerRef.current;
+    const cont = document.getElementById(cardid);
+
+    if (cont && container) {
+      cont.classList.add('scroll-smooth');
+      container.scrollLeft += amount;
+
+      setTimeout(() => {
+        cont.classList.remove('scroll-smooth');
+      }, 300);
+    }
+  };
+
+
+  function scrollLeft() {
+    smoothScroll(-500);
+  }
+
+  function scrollRight() {
+    smoothScroll(+500);
+  }
+
   return (
     <div className={styles.animecard}>
       <div className={styles.cardhead}>
@@ -41,10 +78,13 @@ export default function Genres() {
         <h1 className={styles.headtitle}>Top Genres</h1>
       </div>
       <div className={styles.animeitems}>
-      <div className={styles.cardcontainer} id={cardid} {...events} ref={containerRef} onScroll={handleScroll}>
-        <div className="flex lg:gap-8 gap-3 lg:p-10 py-8 px-5 z-30 overflow-y-hidden overflow-x-scroll snap-x snap-proximity scrollbar-none relative">
-          <div className="flex lg:gap-10 gap-4">
-            {g.map((a, index) => (
+        <span className={`${styles.leftarrow} ${isLeftArrowActive ? styles.active : styles.notactive}`}>
+          <svg onClick={scrollLeft} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m15 18-6-6 6-6"></path></svg>
+        </span>
+        <span className={`${styles.rightarrow} ${isRightArrowActive ? styles.active : styles.notactive}`}>
+          <svg onClick={scrollRight} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m9 18 6-6-6-6"></path></svg>
+        </span>
+        <div className={styles.cardcontainer} id={cardid} {...events} ref={containerRef} onScroll={handleScroll}>            {g.map((a, index) => (
               <Link
                 href={`/anime/catalog/?genres=${a.name}`}
                 key={index}
@@ -71,3 +111,5 @@ export default function Genres() {
     </div>
   );
 }
+
+export default Genres;
