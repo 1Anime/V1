@@ -198,6 +198,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                     <h2 className='text-[20px]'>{data?.title?.[animetitle] || data?.title?.romaji}</h2>
                     <h2 className='text-[16px] text-[#ffffffb2]'>YOU'RE WATCHING:{` EPISODE ${epNum} `}</h2>
                 </div>
+                <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center">
                 <div>
           <a
                             type="button"
@@ -304,6 +305,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                 </ModalContent>
               </Modal>
             )}
+          </div>
           </div> 
               </div>
             <div className='w-[98%] mx-auto lg:w-full'>
