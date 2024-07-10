@@ -6,34 +6,35 @@ import Link from "next/link";
 import styles from '../../styles/Animecard.module.css';
 import { useDraggable } from 'react-use-draggable-scroll';
 
-const g = [
-  {
-    name: "Action",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20958-HuFJyr54Mmir.jpg",
-  },
-  {
-    name: "Comedy",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202-TfzXuWQf2oLQ.png",
-  },
-  {
-    name: "Horror",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png",
-  },
-  {
-    name: "Romance",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124080-h8EPH92nyRfS.jpg",
-  },
-  {
-    name: "Music",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-5Y8rYzg982sq.png",
-  },
-  {
-    name: "Sports",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20464-eW7ZDBOcn74a.png",
-  },
-];
-
 function Genres ({}) {
+  const g = [
+    {
+      name: "Action",
+      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20958-HuFJyr54Mmir.jpg",
+    },
+    {
+      name: "Comedy",
+      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202-TfzXuWQf2oLQ.png",
+    },
+    {
+      name: "Horror",
+      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png",
+    },
+    {
+      name: "Romance",
+      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124080-h8EPH92nyRfS.jpg",
+    },
+    {
+      name: "Music",
+      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-5Y8rYzg982sq.png",
+    },
+    {
+      name: "Sports",
+      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20464-eW7ZDBOcn74a.png",
+    },
+  ];
+  
+  
   return (
     <div className={styles.animecard}>
       <div className={styles.cardhead}>
@@ -47,7 +48,8 @@ function Genres ({}) {
         <span className={styles.rightarrow}>
           <svg  xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m9 18 6-6-6-6"></path></svg>
         </span>
-        <div className={styles.cardcontainer}>            {g.map((a, index) => (
+        <div className={styles.cardcontainer}>           
+           {g.map((a, index) => (
               <Link
                 href={`/anime/catalog/?genres=${a.name}`}
                 key={index}
