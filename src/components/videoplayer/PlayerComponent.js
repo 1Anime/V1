@@ -165,7 +165,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const [showModal, setShowModal] = useState(false);
-  const iframeSrc = '/anime/info/${data.id}'; 
+  const iframeSrc = 'https://app.1anime.co/anime/info/${data.id}'; 
   const title = 'Anime Info';
 
   const openModal = () => {
