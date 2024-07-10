@@ -6,50 +6,86 @@ import Link from "next/link";
 import styles from '../../styles/Animecard.module.css';
 import { useDraggable } from 'react-use-draggable-scroll';
 
-function Genres ({}) {
-  const g = [
-    {
-      name: "Action",
-      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20958-HuFJyr54Mmir.jpg",
-    },
-    {
-      name: "Comedy",
-      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202-TfzXuWQf2oLQ.png",
-    },
-    {
-      name: "Horror",
-      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png",
-    },
-    {
-      name: "Romance",
-      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124080-h8EPH92nyRfS.jpg",
-    },
-    {
-      name: "Music",
-      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-5Y8rYzg982sq.png",
-    },
-    {
-      name: "Sports",
-      img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20464-eW7ZDBOcn74a.png",
-    },
-  ];
+const g = [
+  {
+    name: "Action",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20958-HuFJyr54Mmir.jpg",
+  },
+  {
+    name: "Comedy",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202-TfzXuWQf2oLQ.png",
+  },
+  {
+    name: "Horror",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png",
+  },
+  {
+    name: "Romance",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124080-h8EPH92nyRfS.jpg",
+  },
+  {
+    name: "Music",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-5Y8rYzg982sq.png",
+  },
+  {
+    name: "Sports",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20464-eW7ZDBOcn74a.png",
+  },
+];
+
+function Genres({ data, cardid, show=true }) {
+  const containerRef = useRef();
+  const { events } = useDraggable(containerRef);
+  const [isLeftArrowActive, setIsLeftArrowActive] = useState(false);
+  const [isRightArrowActive, setIsRightArrowActive] = useState(false);
+
+  function handleScroll() {
+    const container = containerRef.current;
+    const scrollPosition = container.scrollLeft;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    setIsLeftArrowActive(scrollPosition > 30);
+    setIsRightArrowActive(scrollPosition < maxScroll - 30);
+  }
+
+  const smoothScroll = (amount) => {
+    const container = containerRef.current;
   
-  
+    if (cont && container) {
+      cont.classList.add('scroll-smooth');
+      container.scrollLeft += amount;
+
+      setTimeout(() => {
+        cont.classList.remove('scroll-smooth');
+      }, 300);
+    }
+  };
+
+
+  function scrollLeft() {
+    smoothScroll(-500);
+  }
+
+  function scrollRight() {
+    smoothScroll(+500);
+  }
+
   return (
     <div className={styles.animecard}>
+      {show && (
       <div className={styles.cardhead}>
       <span className={styles.bar}></span>
         <h1 className={styles.headtitle}>Top Genres</h1>
       </div>
+    )}
       <div className={styles.animeitems}>
-        <span className={styles.leftarrow}>
-          <svg  xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m15 18-6-6 6-6"></path></svg>
+        <span className={`${styles.leftarrow} ${isLeftArrowActive ? styles.active : styles.notactive}`}>
+          <svg onClick={scrollLeft} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m15 18-6-6 6-6"></path></svg>
         </span>
-        <span className={styles.rightarrow}>
-          <svg  xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m9 18 6-6-6-6"></path></svg>
+        <span className={`${styles.rightarrow} ${isRightArrowActive ? styles.active : styles.notactive}`}>
+          <svg onClick={scrollRight} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mb-4"><path d="m9 18 6-6-6-6"></path></svg>
         </span>
-        <div className={styles.cardcontainer}>           
-           {g.map((a, index) => (
+        <div className={styles.cardcontainer} {...events} ref={containerRef} onScroll={handleScroll}>            {g.map((a, index) => (
               <Link
                 href={`/anime/catalog/?genres=${a.name}`}
                 key={index}
