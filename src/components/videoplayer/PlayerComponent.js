@@ -210,7 +210,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                 </div>
                 <div className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg">
                 <div>
-          <a
+          <button
                             type="button"
                             onClick={openModal}
                             className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
@@ -218,7 +218,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 See Anime Info
                             </span>
-                            <InformationCircleIcon className="w-7 h-7" /></a>
+                            <InformationCircleIcon className="w-7 h-7" /></button>
                             {showModal && <ModalWithIframe title={title} iframeSrc={iframeSrc} onClose={closeModal} />}
                           
                             <a
