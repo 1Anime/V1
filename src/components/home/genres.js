@@ -41,7 +41,7 @@ export default function Genres() {
         <h1 className={styles.headtitle}>Top Genres</h1>
       </div>
       <div className={styles.animeitems}>
-        <div className={className={styles.cardcontainer}/>
+      <div className={styles.cardcontainer} id={cardid} {...events} ref={containerRef} onScroll={handleScroll}>
         <div className="flex lg:gap-8 gap-3 lg:p-10 py-8 px-5 z-30 overflow-y-hidden overflow-x-scroll snap-x snap-proximity scrollbar-none relative">
           <div className="flex lg:gap-10 gap-4">
             {g.map((a, index) => (
