@@ -1,5 +1,3 @@
-"use client"
-import React, { useRef, useState } from 'react';
 import Image from "next/image";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
