@@ -12,6 +12,7 @@ import RecentEpisodes from '@/components/home/RecentEpisodes'
 import { getAuthSession } from './api/auth/[...nextauth]/route'
 import { redis } from '@/lib/rediscache'
 import Greeting from '@/components/Greeting';
+import Scheds from '@/components/Scheds';
 import RandomTextComponent from '@/components/RandomTextComponent';
 // import { getWatchHistory } from '@/lib/EpHistoryfunctions'
 
@@ -126,6 +127,7 @@ async function Home() {
             <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 100 Anime" />
             <VerticalList data={seasonaldata} id="Seasonal Anime" />
           </div>
+          <Scheds />
         </div>
       </div>
     </div>

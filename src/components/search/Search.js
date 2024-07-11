@@ -27,10 +27,10 @@ function Search() {
         setLoading(true);
          const res = await axios.get(
         `https://anify.eltik.cc/search/anime/${query} `
-             `${process.env.CONSUMET_URI}/meta/anilist/advanced-search`,{ params: { query:query,sort:["POPULARITY_DESC","SCORE_DESC","FAVOURITES","TRENDING"] } }
+             `https://api-consumet-org-azure.vercel.app/meta/anilist/advanced-search`,{ params: { query:query,sort:["POPULARITY_DESC","SCORE_DESC","FAVOURITES","TRENDING"] } }
 
          );
-        const res = await AdvancedSearch(debouncedSearch);
+//        const res = await AdvancedSearch(debouncedSearch);
         setData(res?.media)
         setNextPage(res?.pageInfo?.hasNextPage);
         console.log(res);
