@@ -46,8 +46,8 @@ export default function MWMovies() {
       </div>
       <div className="flex xl:justify-center items-center relative">
         <div className="bg-gradient-to-[#000000] to-transparent z-40 absolute w-7 h-full left-0" />
-        <div className="flex lg:gap-8 gap-3 lg:p-10 py-8 px-5 z-30 overflow-y-hidden overflow-x-hidden snap-x snap-proximity relative">
-          <div className="flex lg:gap-10 gap-4">
+        <div className="flex lg:gap-6 gap-2 lg:p-10 py-8 px-2 z-30 overflow-y-hidden overflow-x-scroll snap-x snap-proximity scrollbar-none relative">
+          <div className="flex lg:gap-8 gap-3">
             {g.map((a, index) => (
               <Link
                 href={`anime/info/${a.id}`}
