@@ -73,8 +73,6 @@ function Footer() {
                                     <li>
                                         <Link href="/dmca" className="hover:text-white"> DMCA & Privacy Policy</Link>
                                     </li>
-                                    
-                                        <Link href="https://status.1anime.info" className="hover:text-white"> Status</Link>
                                     </li>
                                     <li>
                                         <Link href="https://1anime.co/proxy" className="hover:text-white"> Proxy</Link>
