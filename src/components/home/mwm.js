@@ -54,8 +54,8 @@ export default function MWMovies() {
                 key={index}
                 className="relative hover:shadow-lg hover:scale-105 duration-200 cursor-pointer ease-out h-[190px] w-[135px] lg:h-[265px] lg:w-[230px] rounded-md shrink-0"
               >
-                <div className="bg-gradient-to-b from-transparent to-[#000000] h-[190px] w-[105px] lg:h-[265px] lg:w-[230px] rounded-md absolute flex justify-center items-end">
-                  <h1 className="pb-7 lg:text-xl font-karla font-semibold">
+                <div className="bg-gradient-to-b from-transparent to-[#000000] h-[180px] w-[105px] lg:h-[245px] lg:w-[210px] rounded-md absolute flex justify-center items-end">
+                  <h1 className="pb-7 lg:text-xl font-semibold">
                     {a.name}
                   </h1>
                 </div>
@@ -64,7 +64,7 @@ export default function MWMovies() {
                   alt="genres images"
                   width={1000}
                   height={1000}
-                  className="object-cover shrink-0 h-[190px] w-[105px] lg:h-[265px] lg:w-[230px] rounded-md"
+                  className="object-cover shrink-0 h-[180px] w-[105px] lg:h-[245px] lg:w-[210px] rounded-md"
                 />
               </Link>
             ))}
