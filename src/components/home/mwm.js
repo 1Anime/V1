@@ -7,33 +7,33 @@ import { useDraggable } from 'react-use-draggable-scroll';
 const g = [
   {
     name: "Your Name",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20958-HuFJyr54Mmir.jpg",
-    id: "",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21519-fPhvy69vnQqS.png",
+    id: "21519",
   },
   {
     name: "A Silent Voice",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202-TfzXuWQf2oLQ.png",
-    id: "",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20954-UMb6Kl7ZL8Ke.jpg",
+    id: "20954",
   },
   {
-    name: "Voilet Evergarden",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-FlochcFsyoF4.png",
-    id: "",
+    name: "Violet Evergarden",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx109190-e8mv1qdmpjLW.jpg",
+    id: "109190",
   },
   {
     name: "The Tunnel to Summer, the Exit of Goodbyes",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124080-h8EPH92nyRfS.jpg",
-    id: "",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142769-kNyyqpwC9gGV.jpg",
+    id: "142769",
   },
   {
     name: "Summer Ghost",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-5Y8rYzg982sq.png",
-    id: "",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130050-7tcgvLV2w3xH.jpg",
+    id: "130050",
   },
   {
     name: "Hello World",
-    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20464-eW7ZDBOcn74a.png",
-    id: "",
+    img: "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx106240-XeWQ4YhKzv7h.png",
+    id: "106240",
   },
 ];
 
