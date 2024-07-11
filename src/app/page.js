@@ -97,7 +97,7 @@ async function Home() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <Genres />
+              <MWMovies />
             </div>
         <div
         >
