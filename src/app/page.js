@@ -6,6 +6,7 @@ import { TrendingAnilist, PopularAnilist, Top100Anilist, SeasonalAnilist } from 
 import React from 'react'
 import VerticalList from '@/components/home/VerticalList'
 import Genres from "@/components/home/genres";
+import MWMovies from "@/components/home/mwm";
 import ContinueWatching from '@/components/home/ContinueWatching'
 import RecentEpisodes from '@/components/home/RecentEpisodes'
 import { getAuthSession } from './api/auth/[...nextauth]/route'
@@ -89,6 +90,15 @@ async function Home() {
         >
  <Animecard data={herodata} cardid="Trending Now" />
         </div>
+        <div // Add motion.div to each child component
+              key="Genres"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <Genres />
+            </div>
         <div
         >
           <Animecard data={populardata} cardid="Popular" />
