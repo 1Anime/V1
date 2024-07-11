@@ -6,11 +6,13 @@ import { TrendingAnilist, PopularAnilist, Top100Anilist, SeasonalAnilist } from 
 import React from 'react'
 import VerticalList from '@/components/home/VerticalList'
 import Genres from "@/components/home/genres";
+import MWMovies from "@/components/home/mwm";
 import ContinueWatching from '@/components/home/ContinueWatching'
 import RecentEpisodes from '@/components/home/RecentEpisodes'
 import { getAuthSession } from './api/auth/[...nextauth]/route'
 import { redis } from '@/lib/rediscache'
 import Greeting from '@/components/Greeting';
+import Scheds from '@/components/Scheds';
 import RandomTextComponent from '@/components/RandomTextComponent';
 // import { getWatchHistory } from '@/lib/EpHistoryfunctions'
 
@@ -89,6 +91,15 @@ async function Home() {
         >
  <Animecard data={herodata} cardid="Trending Now" />
         </div>
+        <div // Add motion.div to each child component
+              key="Genres"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <MWMovies />
+            </div>
         <div
         >
           <Animecard data={populardata} cardid="Popular" />
@@ -103,7 +114,7 @@ async function Home() {
         </div>
         <div
         >
-           <div // Add motion.div to each child component
+        {/* <div // Add motion.div to each child component
               key="Genres"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -111,11 +122,12 @@ async function Home() {
               viewport={{ once: true }}
             >
               <Genres />
-            </div>
+            </div> */}
           <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
             <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 100 Anime" />
             <VerticalList data={seasonaldata} id="Seasonal Anime" />
           </div>
+          <Scheds />
         </div>
       </div>
     </div>
