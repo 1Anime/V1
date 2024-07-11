@@ -45,10 +45,7 @@ export default function MWMovies() {
         <h1 className={styles.headtitle}>Creators' Choice: Movies</h1>
       </div>
       <div className="scrollbar-width:none flex xl:justify-center items-center relative">
-        <div className="scrollbar-width:none bg-gradient-to-[#000000] to-transparent z-40 absolute w-7 h-full left-0" />
-        <div className="flex lg:gap-8 gap-3 lg:p-10 py-8 px-5 z-30 overflow-y-hidden overflow-x-scroll snap-x snap-proximity scrollbar-none relative">
-          <div className="flex lg:gap-10 gap-4">
-            {g.map((a, index) => (
+      <div className={styles.animeitems}>            {g.map((a, index) => (
               <Link
                 href={`anime/info/${a.id}`}
                 key={index}
