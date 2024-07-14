@@ -108,14 +108,14 @@ async function AnimeWatch({ params, searchParams }) {
         </div>
         <div className="h-full lg:flex lg:flex-col md:max-lg:w-full gap-10">
         <div className="rounded-lg hidden lg:block lg:max-w-[280px] xl:max-w-[380px] w-[100%] xl:overflow-y-scroll xl:overflow-x-hidden overflow-hidden scrollbar-hide overflow-y-hidden">
-            <PlayerAnimeCard data={data?.relations?.edges} id="Related Anime"/>
+            <PlayerAnimeCard data={data?.relations?.edges} id="Related"/>
           </div> 
           <div className="rounded-lg hidden lg:block lg:max-w-[280px] xl:max-w-[380px] w-[100%] xl:overflow-y-scroll xl:overflow-x-hidden overflow-hidden scrollbar-hide overflow-y-hidden">
             <PlayerAnimeCard data={data?.recommendations?.nodes} id="Recommendations"/>
           </div>
         </div>
         <div className="lg:hidden">
-        <Animecards data={data?.relations?.edges} cardid="Related Anime"/>
+        <Animecards data={data?.relations?.edges} cardid="Related"/>
         </div>
         <div className="lg:hidden">
         <Animecards data={data?.recommendations?.nodes} cardid={"Recommendations"}/>

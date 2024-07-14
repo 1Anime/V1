@@ -1,5 +1,5 @@
 "use server"
-import { trending, animeinfo, advancedsearch, top100anime, seasonal, popular } from "./anilistqueries";
+import { trending, animeinfo, advancedsearch, top100anime, TopAnilist, seasonal, popular, nextseason, pmovies } from "./anilistqueries";
 
 export const TrendingAnilist = async () => {
     try {
@@ -63,6 +63,30 @@ export const Top100Anilist = async () => {
                 query: top100anime,
                 variables: {
                     page: 1,
+                    perPage: 20,
+                },
+            }),
+        }, { next: { revalidate: 3600 } });
+
+        const data = await response.json();
+        return data.data.Page.media;
+    } catch (error) {
+        console.error('Error fetching data from AniList:', error);
+    }
+}
+
+export const TopAniList = async () => {
+    try {
+        const response = await fetch('https://graphql.anilist.co', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+                query: top100anime,
+                variables: {
+                    page: 1,
                     perPage: 10,
                 },
             }),
@@ -74,6 +98,7 @@ export const Top100Anilist = async () => {
         console.error('Error fetching data from AniList:', error);
     }
 }
+
 
 export const SeasonalAnilist = async () => {
     try {
@@ -88,6 +113,54 @@ export const SeasonalAnilist = async () => {
                 variables: {
                     page: 1,
                     perPage: 10,
+                },
+            }),
+        }, { next: { revalidate: 3600 } });
+
+        const data = await response.json();
+        return data.data.Page.media;
+    } catch (error) {
+        console.error('Error fetching data from AniList:', error);
+    }
+}
+
+export const NextSeasonAnilist = async () => {
+    try {
+        const response = await fetch('https://graphql.anilist.co', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+                query: nextseason,
+                variables: {
+                    page: 1,
+                    perPage: 20,
+                },
+            }),
+        }, { next: { revalidate: 3600 } });
+
+        const data = await response.json();
+        return data.data.Page.media;
+    } catch (error) {
+        console.error('Error fetching data from AniList:', error);
+    }
+}
+
+export const PopularMoviesAnilist = async () => {
+    try {
+        const response = await fetch('https://graphql.anilist.co', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+            },
+            body: JSON.stringify({
+                query: pmovies,
+                variables: {
+                    page: 1,
+                    perPage: 15,
                 },
             }),
         }, { next: { revalidate: 3600 } });

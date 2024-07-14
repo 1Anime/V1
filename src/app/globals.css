@@ -53,6 +53,12 @@ html {
     }
 }
 
+@media (max-width: 640px) {
+  .flex-on-mobile {
+    display: none;
+  }
+}
+
 .gototop{
     display: flex;
     justify-content: center;

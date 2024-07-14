@@ -208,6 +208,111 @@ query($perPage: Int, $page: Int) {
     }
 }`
 
+
+export const nextseason = `
+query($perPage: Int, $page: Int) {
+    Page(page: $page, perPage: $perPage) {
+        pageInfo {
+            total
+            perPage
+            currentPage
+            lastPage
+            hasNextPage
+        }
+        media (season: FALL, seasonYear: 2024,sort :POPULARITY_DESC, type : ANIME){
+            id
+            idMal
+            title {
+                romaji
+                english
+                userPreferred
+            }
+            coverImage {
+                large
+                extraLarge
+                color
+            }
+            episodes
+            status
+            duration
+            genres
+            season
+            format
+            averageScore
+            popularity
+            nextAiringEpisode {
+                airingAt
+                episode
+              }
+              seasonYear
+              startDate {
+                year
+                month
+                day
+              }
+              endDate {
+                year
+                month
+                day
+              }
+        }
+    }
+}`
+
+
+export const pmovies = `
+query($perPage: Int, $page: Int) {
+    Page(page: $page, perPage: $perPage) {
+        pageInfo {
+            total
+            perPage
+            currentPage
+            lastPage
+            hasNextPage
+        }
+        media (format_in :MOVIE, sort :POPULARITY_DESC, type : ANIME){
+            id
+            idMal
+            title {
+                romaji
+                english
+                userPreferred
+            }
+            coverImage {
+                large
+                extraLarge
+                color
+            }
+            episodes
+            status
+            duration
+            genres
+            description
+            bannerImage
+            season
+            format
+            averageScore
+            popularity
+            nextAiringEpisode {
+                airingAt
+                episode
+              }
+              seasonYear
+              startDate {
+                year
+                month
+                day
+              }
+              endDate {
+                year
+                month
+                day
+              }
+        }
+    }
+}`
+
+
 export const animeinfo = `
 query ($id: Int) {
     Media (id: $id) {
