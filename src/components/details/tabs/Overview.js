@@ -119,7 +119,7 @@ function Overview({data}) {
             </div>
             <div className={styles.card2}>
                 <h3 className={styles.detailsheading}>Description</h3>   
-        <button
+        <a
             type="button"
             className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
             onClick={handleShareClick}
@@ -128,7 +128,7 @@ function Overview({data}) {
               Share {isAnime ? "Anime" : "Manga"}
             </span>
             <ShareIcon className="w-7 h-7" />
-          </button>
+          </a>
       <a
                             type="button"
                             target="_blank"
