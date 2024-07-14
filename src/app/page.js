@@ -2,7 +2,7 @@
 import Animecard from '@/components/CardComponent/Animecards'
 import Herosection from '@/components/home/Herosection'
 import Navbarcomponent from '@/components/navbar/Navbar'
-import { TrendingAnilist, PopularAnilist, Top100Anilist, SeasonalAnilist } from '@/lib/Anilistfunctions'
+import { TrendingAnilist, PopularAnilist, Top100Anilist, SeasonalAnilist, NextSeasonAnilist, PopularMoviesAnilist } from '@/lib/Anilistfunctions'
 import React from 'react'
 import VerticalList from '@/components/home/VerticalList'
 import Genres from "@/components/home/genres";
@@ -30,20 +30,22 @@ async function getHomePage() {
       }
     }
     if (cachedData) {
-      const { herodata, populardata, top100data, seasonaldata } = JSON.parse(cachedData);
-      return { herodata, populardata, top100data, seasonaldata };
+      const { herodata, populardata, top100data, seasonaldata, nextseasondata, popularmoviesdata } = JSON.parse(cachedData);
+      return { herodata, populardata, top100data, seasonaldata, nextseasondata, popularmoviesdata };
     } else {
-      const [herodata, populardata, top100data, seasonaldata] = await Promise.all([
+      const [herodata, populardata, top100data, seasonaldata, nextseasondata, popularmoviesdata ] = await Promise.all([
         TrendingAnilist(),
         PopularAnilist(),
         Top100Anilist(),
-        SeasonalAnilist()
+        SeasonalAnilist(),
+        NextSeasonAnilist(),
+        PopularMoviesAnilist()
       ]);
       const cacheTime = 60 * 60 * 2;
       if (redis) {
-        await redis.set(`homepage`, JSON.stringify({ herodata, populardata, top100data, seasonaldata }), "EX", cacheTime);
+        await redis.set(`homepage`, JSON.stringify({ herodata, populardata, top100data, seasonaldata, nextseasondata, popularmoviesdata }), "EX", cacheTime);
       }
-      return { herodata, populardata, top100data, seasonaldata };
+      return { herodata, populardata, top100data, seasonaldata, nextseasondata, popularmoviesdata };
     }
   } catch (error) {
     console.error("Error fetching homepage from anilist: ", error);
@@ -53,7 +55,7 @@ async function getHomePage() {
 
 async function Home() {
   const session = await getAuthSession();
-  const { herodata = [], populardata = [], top100data = [], seasonaldata = [] } = await getHomePage();
+  const { herodata = [], populardata = [], top100data = [], seasonaldata = [], nextseasondata = [], popularmoviesdata = [] } = await getHomePage();
   // const history = await getWatchHistory();
   // console.log(history)
 
@@ -91,18 +93,13 @@ async function Home() {
         >
  <Animecard data={herodata} cardid="Trending Now" />
         </div>
-        <div // Add motion.div to each child component
-              key="Genres"
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <MWMovies />
-            </div>
-        <div
+     <div
         >
           <Animecard data={populardata} cardid="Popular" />
+        </div>
+        <div
+        >
+          <Animecard data={popularmoviesdata} cardid="Popular Movies" />
         </div>
         <div
         >
@@ -127,6 +124,10 @@ async function Home() {
             <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 100 Anime" />
             <VerticalList data={seasonaldata} id="Seasonal Anime" />
           </div>
+          <div
+        >
+          <Animecard data={nextseasondata} cardid="Next Season" />
+        </div>
           <Scheds />
         </div>
       </div>
