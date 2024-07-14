@@ -102,7 +102,7 @@ function Search() {
                                     }}
                                 >
                                     <div className="flex justify-between py-1">
-                                        <div className="flex items-center px-2 gap-2">
+                                        <div className="flex items-center px-2 gap-2 flex-on-mobile">
                                             <p className="my-1">For quick access :</p>
                                             <div className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md">CTRL</div>
                                             <span>+</span>
