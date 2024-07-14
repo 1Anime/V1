@@ -20,7 +20,7 @@ function ItemContent({ anime, cardid }) {
                 <div className="flex-shrink-0 absolute top-0 right-0 flex items-center justify-center gap-[.4rem] bg-black/60 backdrop-blur font-light xl:font-normal text-white !text-xs  line-clamp-1 px-2 p-1 rounded-bl-lg tracking-wider">
                     <span className='hidden md:flex'>Episode</span><span className='md:hidden'>Ep</span> <span className='font-medium'>{anime?.currentEpisode || '?'}</span></div>
             )}
-             {cardid === 'Related Anime' && (
+             {cardid === 'Related' && (
                 <div className="flex-shrink-0 absolute top-0 right-0 flex items-center justify-center gap-[.4rem] bg-black/60 backdrop-blur font-light xl:font-normal text-white !text-xs  line-clamp-1 px-2 p-1 rounded-bl-lg tracking-wider">
                     <span className=''>{anime?.relationType}</span></div>
             )}

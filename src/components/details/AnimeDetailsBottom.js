@@ -61,7 +61,7 @@ function AnimeDetailsBottom({ data }) {
                 <h3 className={styles.relationsheading}>Chronology</h3>
                 <Animecards
                   data={data?.relations?.edges}
-                  cardid="Related Anime"
+                  cardid="Related"
                   show={false}
                 />
               </div>
