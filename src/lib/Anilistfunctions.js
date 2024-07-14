@@ -63,7 +63,7 @@ export const Top100Anilist = async () => {
                 query: top100anime,
                 variables: {
                     page: 1,
-                    perPage: 10,
+                    perPage: 20,
                 },
             }),
         }, { next: { revalidate: 3600 } });
@@ -111,7 +111,7 @@ export const NextSeasonAnilist = async () => {
                 query: nextseason,
                 variables: {
                     page: 1,
-                    perPage: 10,
+                    perPage: 20,
                 },
             }),
         }, { next: { revalidate: 3600 } });
@@ -135,7 +135,7 @@ export const PopularMoviesAnilist = async () => {
                 query: pmovies,
                 variables: {
                     page: 1,
-                    perPage: 10,
+                    perPage: 15,
                 },
             }),
         }, { next: { revalidate: 3600 } });
