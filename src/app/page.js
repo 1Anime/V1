@@ -103,7 +103,7 @@ async function Home() {
         </div>
         <div
         >
-          <Animecard data={top100data} cardid="Most Favorites" />
+          <Animecard data={top100data} cardid="Top Anime" />
         </div>
         <div
         >
