@@ -2,7 +2,7 @@
 import Animecard from '@/components/CardComponent/Animecards'
 import Herosection from '@/components/home/Herosection'
 import Navbarcomponent from '@/components/navbar/Navbar'
-import { TrendingAnilist, PopularAnilist, Top100Anilist, SeasonalAnilist, NextSeasonAnilist, PopularMoviesAnilist } from '@/lib/Anilistfunctions'
+import { TrendingAnilist, PopularAnilist, Top100Anilist, TopAniList, SeasonalAnilist, NextSeasonAnilist, PopularMoviesAnilist } from '@/lib/Anilistfunctions'
 import React from 'react'
 import VerticalList from '@/components/home/VerticalList'
 import Genres from "@/components/home/genres";
