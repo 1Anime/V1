@@ -30,22 +30,23 @@ async function getHomePage() {
       }
     }
     if (cachedData) {
-      const { herodata, populardata, top100data, seasonaldata, nextseasondata, popularmoviesdata } = JSON.parse(cachedData);
-      return { herodata, populardata, top100data, seasonaldata, nextseasondata, popularmoviesdata };
+      const { herodata, populardata, top100data, topdata, seasonaldata, nextseasondata, popularmoviesdata } = JSON.parse(cachedData);
+      return { herodata, populardata, top100data, topdata, seasonaldata, nextseasondata, popularmoviesdata };
     } else {
-      const [herodata, populardata, top100data, seasonaldata, nextseasondata, popularmoviesdata ] = await Promise.all([
+      const [herodata, populardata, top100data, topdata, seasonaldata, nextseasondata, popularmoviesdata ] = await Promise.all([
         TrendingAnilist(),
         PopularAnilist(),
         Top100Anilist(),
+        TopAniList(),
         SeasonalAnilist(),
         NextSeasonAnilist(),
         PopularMoviesAnilist()
       ]);
       const cacheTime = 60 * 60 * 2;
       if (redis) {
-        await redis.set(`homepage`, JSON.stringify({ herodata, populardata, top100data, seasonaldata, nextseasondata, popularmoviesdata }), "EX", cacheTime);
+        await redis.set(`homepage`, JSON.stringify({ herodata, populardata, top100data, topdata, seasonaldata, nextseasondata, popularmoviesdata }), "EX", cacheTime);
       }
-      return { herodata, populardata, top100data, seasonaldata, nextseasondata, popularmoviesdata };
+      return { herodata, populardata, top100data, topdata, seasonaldata, nextseasondata, popularmoviesdata };
     }
   } catch (error) {
     console.error("Error fetching homepage from anilist: ", error);
@@ -55,7 +56,7 @@ async function getHomePage() {
 
 async function Home() {
   const session = await getAuthSession();
-  const { herodata = [], populardata = [], top100data = [], seasonaldata = [], nextseasondata = [], popularmoviesdata = [] } = await getHomePage();
+  const { herodata = [], populardata = [], top100data = [], topdata = [], seasonaldata = [], nextseasondata = [], popularmoviesdata = [] } = await getHomePage();
   // const history = await getWatchHistory();
   // console.log(history)
 
@@ -99,15 +100,15 @@ async function Home() {
         </div>
         <div
         >
+          <Animecard data={seasonaldata} cardid="Popular This Season" />
+        </div>
+        <div
+        >
           <Animecard data={popularmoviesdata} cardid="Popular Movies" />
         </div>
         <div
         >
           <Animecard data={top100data} cardid="Top Anime" />
-        </div>
-        <div
-        >
-          <Animecard data={seasonaldata} cardid="Popular This Season" />
         </div>
         <div
         >
@@ -121,7 +122,7 @@ async function Home() {
               <Genres />
             </div> */}
           <div className='lg:flex lg:flex-row justify-between lg:gap-20'>
-            <VerticalList data={top100data} mobiledata={seasonaldata} id="Top 100 Anime" />
+            <VerticalList data={topdata} mobiledata={seasonaldata} id="Top 100 Anime" />
             <VerticalList data={seasonaldata} id="Seasonal Anime" />
           </div>
           <div
