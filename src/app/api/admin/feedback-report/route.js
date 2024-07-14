@@ -20,12 +20,13 @@ export const GET = async (req) => {
 
 
 export const POST = async (request) => {
-    const { title, description, type, severity } = await request.json();
+    const { email, title, description, type, severity } = await request.json();
 
     try {
         await connectMongo();
 
         const newReport = await Feedback.create({
+            email: email,
             title: title,
             description: description,
             type: type,
