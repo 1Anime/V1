@@ -4,6 +4,7 @@ import styles from '../../../styles/AnimeDetailsBottom.module.css'
 import { Tooltip } from "@nextui-org/react";
 import { ShareIcon } from "@heroicons/react/24/solid";
 import { AniListIcon,MyAnimeListIcon } from "@/lib/SvgIcons";
+import { useRouter } from 'next-nprogress-bar';
 
 function Overview({data}) {
     const [showFullDescription, setShowFullDescription] = useState(false);
@@ -53,7 +54,7 @@ function Overview({data}) {
         console.error("Error sharing:", error);
       }
     };
-
+    const router = useRouter();
       // Assuming data.genres is an array of genre names
   const hasHentaiGenre = data.genres.includes('Hentai');
 

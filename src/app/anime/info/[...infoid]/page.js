@@ -8,7 +8,6 @@ import Animecards from '@/components/CardComponent/Animecards'
 import { getAuthSession } from '@/app/api/auth/[...nextauth]/route'
 import { redis } from '@/lib/rediscache'
 import DetailsContainer from './DetailsContainer'
-import { useRouter } from 'next-nprogress-bar';
 
 async function getInfo(id) {
   try {
