@@ -13,7 +13,7 @@ function ErrorPage({ statusCode, reset }) {
      ,
        title: "Retry",
        desc: "Refresh this page",
-       href:  "/#"
+       href:  "#"
       },
         {
             icon:

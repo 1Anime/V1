@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v.next.7.14"
+const newVersion = "v.next.7.17"
 
 const releaseLogs = [
     // {
@@ -46,9 +46,11 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v.next.7.14",
+        version: "v.next.7.17",
         changes: [
-            "😎 Fixed Minor Issues & UI Fixes",
+            "😎 Added Romaji Title in Info page for Mobile",
+            "Fixed some UIs",
+            "🔞 Removed NSFW Content",
             "Join our new discord: https://dsc.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
             ],
