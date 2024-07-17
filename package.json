@@ -22,6 +22,7 @@
     "framer-motion": "^10.18.0",
     "hls.js": "^1.5.8",
     "ioredis": "^5.3.2",
+    "rate-limiter-flexible": "^3.0.0",
     "js-cookie": "^3.0.5",
     "ky": "^1.4.0",
     "media-icons": "^1.1.4",
