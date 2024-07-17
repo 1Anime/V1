@@ -13,7 +13,7 @@ function NSFWPage({ statusCode, reset }) {
      ,
        title: "Learn more why",
        desc: "Why did we remove NSFW Content?",
-       href:  "/",
+       href:  "/"
       },
         {
             icon:

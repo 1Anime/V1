@@ -55,7 +55,7 @@ function Overview({data}) {
     };
 
       // Assuming data.genres is an array of genre names
-  const hasHentaiGenre = data.genres.includes('hentai');
+  const hasHentaiGenre = data.genres.includes('Hentai');
 
   if (hasHentaiGenre) {
     // Redirect to the warning page
