@@ -61,6 +61,9 @@ function Overview({data}) {
                 <h3 className={styles.detailsheading}>Details</h3>
             
                 <div className={styles.detailscontent}>
+                <div className={styles.singlecontent}>
+                        <span className={styles.sideheading}>Romaji</span> <span className={styles.con}>{data?.title?.romaji}</span>
+                    </div>
                   {data?.status==='RELEASING' && 
                     <div className={styles.singlecontent}>
                         <span className={`${styles.sideheading} font-semibold !text-[15px]`}>Airing</span>

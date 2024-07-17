@@ -41,7 +41,6 @@ async function getInfo(id) {
   if (hasHentaiGenre) {
     // Redirect to the warning page
     router.push('/warnings/nsfw');
-    return null; // Render nothing on this page
   }
 
 
