@@ -13,7 +13,7 @@ import {
   sortScheduleByDay,
   transformSchedule
 } from "@/utils/schedulesUtils";
-
+import Loading from "@/components/shared/loading";
 import { scheduleQuery } from "@/lib/graphql/query";
 
 import { redis } from "@/lib/redis";
@@ -455,7 +455,7 @@ export default function Schedule({ schedule }: any) {
             )
           ) : (
             <div className="z-[500] pt-10 lg:pt-0">
-              <p className="">Loading...</p>
+              <Loading />
             </div>
           )}
         </div>
