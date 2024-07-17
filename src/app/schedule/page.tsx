@@ -30,6 +30,9 @@ const day = [
   "Saturday"
 ];
 
+const tuesday = day?.[2]; // Accessing 'Tuesday' safely
+console.log(tuesday); // Prints 'Tuesday' or undefined if 'day' is null or undefined
+
 const isAired = (timestamp: number | null) => {
   if (!timestamp) return false;
   const currentTime = new Date().getTime() / 1000;
