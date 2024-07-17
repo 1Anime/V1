@@ -16,7 +16,7 @@ import {
 import Loading from "@/components/shared/loading";
 import { scheduleQuery } from "@/lib/graphql/query";
 
-import { redis } from "@/lib/redis";
+import { redis } from "@/lib/rediscache";
 import Head from "next/head";
 import { Navbarcomponent } from "@/components/navbar/Navbar";
 
