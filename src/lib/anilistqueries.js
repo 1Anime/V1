@@ -496,7 +496,6 @@ query ($page: Int = 1, $id: Int, $type: MediaType, $search: String, $format: [Me
       chapters
       volumes
       genres
-      isAdult
       averageScore
       popularity
       nextAiringEpisode {

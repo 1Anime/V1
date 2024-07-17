@@ -4,6 +4,7 @@ import styles from '../../../styles/AnimeDetailsBottom.module.css'
 import { Tooltip } from "@nextui-org/react";
 import { ShareIcon } from "@heroicons/react/24/solid";
 import { AniListIcon,MyAnimeListIcon } from "@/lib/SvgIcons";
+import { useRouter } from 'next-nprogress-bar';
 
 function Overview({data}) {
     const [showFullDescription, setShowFullDescription] = useState(false);
@@ -53,7 +54,16 @@ function Overview({data}) {
         console.error("Error sharing:", error);
       }
     };
-  
+    const router = useRouter();
+      // Assuming data.genres is an array of genre names
+  const hasHentaiGenre = data.genres.includes('Hentai');
+
+  if (hasHentaiGenre) {
+    // Redirect to the warning page
+    router.push('/warnings/nsfw');
+  }
+
+
 
     return (
         <div className={styles.detailscard}>
@@ -61,6 +71,9 @@ function Overview({data}) {
                 <h3 className={styles.detailsheading}>Details</h3>
             
                 <div className={styles.detailscontent}>
+                <div className={styles.singlecontent}>
+                        <span className={styles.sideheading}>Romaji</span> <span className={styles.con}>{data?.title?.romaji}</span>
+                    </div>
                   {data?.status==='RELEASING' && 
                     <div className={styles.singlecontent}>
                         <span className={`${styles.sideheading} font-semibold !text-[15px]`}>Airing</span>
