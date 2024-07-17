@@ -55,23 +55,8 @@ export async function scheduletime() {
     (midnightTomorrowJapan.getTime() - nowJapan.getTime()) / 1000
   );
 
-  let cachedData;
-
   // Check if the data is already in Redis
-  if (redis) {
-    cachedData = await redis.get("new_schedule");
-  }
-
-  if (cachedData) {
-    const scheduleByDay = JSON.parse(cachedData);
-
-    return {
-      props: {
-        schedule: scheduleByDay
-        // today: todaySchedule,
-      }
-    };
-  } else {
+   {
     now.setHours(0, 0, 0, 0); // Set the time to 00:00:00.000
     const dayInSeconds = 86400; // Number of seconds in a day
     const yesterdayStart = Math.floor(now.getTime() / 1000) - dayInSeconds;
@@ -124,15 +109,6 @@ export async function scheduletime() {
       }
       scheduleByDay[day].push(schedule);
     });
-
-    if (redis) {
-      await redis.set(
-        "new_schedule",
-        JSON.stringify(scheduleByDay),
-        "EX",
-        timeUntilMidnightJapan
-      );
-    }
 
     return {
       props: {
