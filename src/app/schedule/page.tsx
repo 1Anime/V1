@@ -36,7 +36,7 @@ const isAired = (timestamp: number | null) => {
   return timestamp <= currentTime;
 };
 
-export async function getServerSideProps() {
+export async function scheduletime() {
   const now = new Date();
   // Adjust for Japan timezone (add 9 hours)
   const nowJapan = new Date(now.getTime() + 9 * 60 * 60 * 1000);
