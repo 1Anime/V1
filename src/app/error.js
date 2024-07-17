@@ -13,7 +13,7 @@ function ErrorPage({ statusCode, reset }) {
      ,
        title: "Retry",
        desc: "Refresh this page",
-       href:  () => reset(),
+       href:  "/.",
       },
         {
             icon:
@@ -31,7 +31,7 @@ function ErrorPage({ statusCode, reset }) {
                 </svg>,
             title: "Try Proxy",
             desc: "Use our Proxy sites if you are having issues in the main site",
-            href: "/"
+            href: "https://1anime.co/proxy"
         },
         {
             icon:
@@ -57,7 +57,7 @@ function ErrorPage({ statusCode, reset }) {
                         {statusCode ? `An error ${statusCode} occurred on server` : 'An error occurred on client'}
                         </p>
                         <p>
-                            Sorry, You have encountered an error. Try agaim or choose below
+                            Sorry, You have encountered an error. Try again or choose below
                         </p>
                     </div>
                     <div className="mt-12">

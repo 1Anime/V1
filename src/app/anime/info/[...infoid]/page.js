@@ -8,6 +8,7 @@ import Animecards from '@/components/CardComponent/Animecards'
 import { getAuthSession } from '@/app/api/auth/[...nextauth]/route'
 import { redis } from '@/lib/rediscache'
 import DetailsContainer from './DetailsContainer'
+import { useRouter } from 'next-nprogress-bar';
 
 async function getInfo(id) {
   try {
@@ -34,6 +35,15 @@ async function getInfo(id) {
     console.error("Error fetching info: ", error);
   } 
 }
+  // Assuming data.genres is an array of genre names
+  const hasHentaiGenre = data.genres.includes('hentai');
+
+  if (hasHentaiGenre) {
+    // Redirect to the warning page
+    router.push('/warnings/nsfw');
+    return null; // Render nothing on this page
+  }
+
 
 export async function generateMetadata({ params }) {
   const id = params.infoid[0];
