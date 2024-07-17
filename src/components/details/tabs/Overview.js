@@ -53,7 +53,16 @@ function Overview({data}) {
         console.error("Error sharing:", error);
       }
     };
-  
+
+      // Assuming data.genres is an array of genre names
+  const hasHentaiGenre = data.genres.includes('hentai');
+
+  if (hasHentaiGenre) {
+    // Redirect to the warning page
+    router.push('/warnings/nsfw');
+  }
+
+
 
     return (
         <div className={styles.detailscard}>

@@ -35,14 +35,6 @@ async function getInfo(id) {
     console.error("Error fetching info: ", error);
   } 
 }
-  // Assuming data.genres is an array of genre names
-  const hasHentaiGenre = data.genres.includes('hentai');
-
-  if (hasHentaiGenre) {
-    // Redirect to the warning page
-    router.push('/warnings/nsfw');
-  }
-
 
 export async function generateMetadata({ params }) {
   const id = params.infoid[0];
