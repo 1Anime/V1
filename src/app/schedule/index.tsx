@@ -455,7 +455,7 @@ export default function Schedule({ schedule }: any) {
             )
           ) : (
             <div className="z-[500] pt-10 lg:pt-0">
-              <Loading />
+              <p className="">Loading...</p>
             </div>
           )}
         </div>
