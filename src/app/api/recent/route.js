@@ -1,11 +1,10 @@
 import axios from "axios";
-import { redis } from "@/lib/rediscache";
 import { NextResponse } from "next/server";
 
 axios.interceptors.request.use(config => {
     config.timeout = 9000;
     return config;
-})
+});
 
 async function fetchRecent() {
     try {
@@ -37,3 +36,12 @@ async function fetchRecent() {
         return [];
     }
 }
+
+export const GET = async (req) => {
+    const data = await fetchRecent();
+    if (data && data?.length > 0) {
+        return NextResponse.json(data);
+    } else {
+        return NextResponse.json({ message: "Recent Episodes not found" });
+    }
+};
