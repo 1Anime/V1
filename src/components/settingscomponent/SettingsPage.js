@@ -45,7 +45,8 @@ function SettingsPage() {
     };
         const handleClearLocalStorage = () => {
           localStorage.clear(); // Clear all stored data
-
+        };
+        
         const handleThemeChange = (event) => {
             const selectedTheme = event.target.value;
             // Apply the selected theme to the site's CSS
@@ -260,15 +261,6 @@ Privacy & Account</p>
                                 </div>
                                 <button className="bg-[#bf1e07] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={() => signOut('AniListProvider')}>Turn on Incognito Mode </button>
                             </div>
-                        {/*    <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
-                                <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>Account Settings (Dangerous)</p>
-                                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                    Check what we collect, your Account information, your AI Chats history, or delete your account from our records
-                                    </p>
-                                </div>
-                                <button className="bg-[#bf1e07] text-black text-xs font-bold px-2 py-1 rounded-md" >Go to Accounts Panel </button>
-                            </div> */}
                         </div>
                         <div className='flex flex-col w-[100%]'>
                             <p className='text-[18px] md:text-[21px] font-medium mb-2'>App Information</p>
