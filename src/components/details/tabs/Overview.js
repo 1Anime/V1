@@ -7,6 +7,7 @@ import { AniListIcon,MyAnimeListIcon } from "@/lib/SvgIcons";
 import { useRouter } from 'next-nprogress-bar';
 import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
 import { useTitle } from '@/lib/store';
+import { useStore } from 'zustand';
 
 function Overview({data}) {
     const animetitle = useStore(useTitle, (state) => state.animetitle);
