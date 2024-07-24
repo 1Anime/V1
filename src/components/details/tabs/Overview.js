@@ -178,12 +178,12 @@ function Overview({data}) {
           <ModalContent>
             {(onClose) => (
               <>
-                <ModalHeader className="flex flex-col gap-0">{data.title?.[animetitle] || data?.title?.romaji}</ModalHeader>
+                <ModalHeader className="flex flex-col gap-0">Trailer of {data.title?.[animetitle] || data?.title?.romaji}</ModalHeader>
                 <ModalBody>
                   <div>
                     <iframe
                       title="Trailer"
-                      className='w-[620px] h-[350px] mb-4'
+                      className='w-[320px] h-[150px] mb-4'
                       src={`https://www.youtube.com/embed/${data?.trailer?.id}`}
                       frameBorder="0"
                       allowFullScreen

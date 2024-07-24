@@ -38,7 +38,7 @@ function AnimeDetailsTop({ data, list, session, setList, url }) {
                   <div>
                     <iframe
                       title="Trailer"
-                      className='w-[620px] h-[350px] mb-4'
+                      className='w-[320px] h-[150px] mb-4'
                       src={`https://www.youtube.com/embed/${data?.trailer?.id}`}
                       frameBorder="0"
                       allowFullScreen
