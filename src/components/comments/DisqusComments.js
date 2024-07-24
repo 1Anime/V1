@@ -23,7 +23,7 @@ const DisqusComments = ({ post }) => {
   return (
     <div>
     <button 
-                              className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
+                              className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
   onClick={toggleComments}>
     {showComments ? 'Hide Comments' : 'Show Comments'}
   </button>

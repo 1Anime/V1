@@ -134,7 +134,7 @@ function Overview({data}) {
                 <h3 className={styles.detailsheading}>Description</h3>   
         <a
             type="button"
-            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
+            className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
             onClick={handleShareClick}
           >
             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
@@ -147,7 +147,7 @@ function Overview({data}) {
                             target="_blank"
             rel="noopener noreferrer"
                             href={`https://anilist.co/anime/${data.id}`}
-                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
+                            className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 MAL
@@ -159,7 +159,7 @@ function Overview({data}) {
                             target="_blank"
             rel="noopener noreferrer"
                             href={`https://myanimelist.net/anime/${data?.idMal}`}
-                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
+                            className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 MAL
