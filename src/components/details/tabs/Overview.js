@@ -172,7 +172,7 @@ function Overview({data}) {
                             </span>
                             <MyAnimeListIcon className="w-7 h-7" /></a>
                             <>
-        <a className={styles.detailstrailer} onPress={onOpen}><PlayIcon className="w-7 h-7"/></a>
+        <a className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md" onPress={onOpen}><PlayIcon className="w-7 h-7"/></a>
         <Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange} size={"2xl"} placement="center">
           <ModalContent>
             {(onClose) => (
