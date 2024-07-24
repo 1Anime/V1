@@ -37,11 +37,3 @@ async function fetchRecent() {
         return [];
     }
 }
-
-export const GET = async (req) => { {
-        const data = await fetchRecent();
-         else {
-            return NextResponse.json({ message: "Recent Episodes not found" });
-        }
-    }
-};
