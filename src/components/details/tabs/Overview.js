@@ -2,11 +2,18 @@
 import React, { useState } from 'react'
 import styles from '../../../styles/AnimeDetailsBottom.module.css'
 import { Tooltip } from "@nextui-org/react";
-import { ShareIcon } from "@heroicons/react/24/solid";
+import { ShareIcon,PlayIcon } from "@heroicons/react/24/solid";
 import { AniListIcon,MyAnimeListIcon } from "@/lib/SvgIcons";
 import { useRouter } from 'next-nprogress-bar';
+import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
+import { useTitle } from '@/lib/store';
+import { useStore } from 'zustand';
 
 function Overview({data}) {
+    const animetitle = useStore(useTitle, (state) => state.animetitle);
+  const [openlist, setOpenlist] = useState(false);
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
     const [showFullDescription, setShowFullDescription] = useState(false);
 
     const toggleDescription = () => {
@@ -63,7 +70,12 @@ function Overview({data}) {
     router.push('/warnings/nsfw');
   }
 
+  // Check if "Action" or "Ecchi" is among the genres
+  const hasActionGenre = data.genres.includes("Action");
+  const hasEcchiGenre = data.genres.includes("Ecchi");
 
+  // Determine the age rating based on genres
+  const ageRating = hasActionGenre || hasEcchiGenre ? "16+" : "13+";
 
     return (
         <div className={styles.detailscard}>
@@ -71,6 +83,9 @@ function Overview({data}) {
                 <h3 className={styles.detailsheading}>Details</h3>
             
                 <div className={styles.detailscontent}>
+                <div className={styles.singlecontent}>
+                        <span className={styles.sideheading}>Age Rating</span> <span className={styles.con}>{ageRating}</span>
+                    </div>
                 <div className={styles.singlecontent}>
                         <span className={styles.sideheading}>Romaji</span> <span className={styles.con}>{data?.title?.romaji}</span>
                     </div>
@@ -134,7 +149,7 @@ function Overview({data}) {
                 <h3 className={styles.detailsheading}>Description</h3>   
         <a
             type="button"
-            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
+            className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
             onClick={handleShareClick}
           >
             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
@@ -147,7 +162,7 @@ function Overview({data}) {
                             target="_blank"
             rel="noopener noreferrer"
                             href={`https://anilist.co/anime/${data.id}`}
-                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
+                            className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 MAL
@@ -159,12 +174,36 @@ function Overview({data}) {
                             target="_blank"
             rel="noopener noreferrer"
                             href={`https://myanimelist.net/anime/${data?.idMal}`}
-                            className="bg-[#FFFFFF] text-black text-xs font-bold px-2 py-1 rounded-md"
+                            className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
                         >
                             <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
                                 MAL
                             </span>
                             <MyAnimeListIcon className="w-7 h-7" /></a>
+                            <>
+        <a type="button" className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md" onClick={onOpen}><PlayIcon className="w-7 h-7"/></a>
+        <Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange} size={"2xl"} placement="center">
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-0">Trailer of {data.title?.[animetitle] || data?.title?.romaji}</ModalHeader>
+                <ModalBody>
+                  <div>
+                    <iframe
+                      title="Trailer"
+                      className='w-[320px] h-[150px] mb-4'
+                      src={`https://www.youtube.com/embed/${data?.trailer?.id}`}
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </ModalBody>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
+      </>
+      
                 <div className={styles.descriptioncontent}>
                     <p dangerouslySetInnerHTML={{ __html: data?.description }} />
                 </div>

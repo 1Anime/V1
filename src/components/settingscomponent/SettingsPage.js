@@ -43,12 +43,10 @@ function SettingsPage() {
             useTitle.setState({ animetitle: 'english' })
         }
     };
-        const handleClearCookies = () => {
-            Cookies.remove('', { path: '/', domain: 'app.1anime.co' }); // Replace with your cookie name
-            Cookies.remove('', { path: '/', domain: 'app.1anime.info' });
-            Cookies.remove('', { path: '/', domain: 'beta.1anime.co' });
+        const handleClearLocalStorage = () => {
+          localStorage.clear(); // Clear all stored data
         };
-    
+        
         const handleThemeChange = (event) => {
             const selectedTheme = event.target.value;
             // Apply the selected theme to the site's CSS
@@ -247,30 +245,21 @@ function SettingsPage() {
 Privacy & Account</p>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>Clear Cookies (Beta)</p>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>Clear Local Storage/Cache (Beta)</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                        This will reset your app/browser's Cookies (Clears Watch History in local, and logs out your AniList if logged in)
+                                        Clears Watch History in local, and logs out your AniList if logged in
                                     </p>
                                 </div>
-                                <button className="bg-[#bf1e07] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={handleClearCookies}>Clear Cookies </button>
+                                <button className="bg-[#bf1e07] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={handleClearLocalStorage}>Clear Cookies </button>
                             </div>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
                                     <p className='text-[15px] md:text-[18px] font-medium'>Incognito Mode (Beta)</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                    Prevent saving your watch history and adding anime to your lists. Plus, Anilist tracking is also disabled. (Note: You'll be logged out of your AniList account, Log in again to turn this off)
+                                    Note: You'll be logged out of your AniList account, Clear Local Storage & Log in again to turn this off
                                     </p>
                                 </div>
                                 <button className="bg-[#bf1e07] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={() => signOut('AniListProvider')}>Turn on Incognito Mode </button>
-                            </div>
-                            <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
-                                <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>Account Settings (Dangerous)</p>
-                                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                    Check what we collect, your Account information, your AI Chats history, or delete your account from our records
-                                    </p>
-                                </div>
-                                <button className="bg-[#bf1e07] text-black text-xs font-bold px-2 py-1 rounded-md" >Go to Accounts Panel </button>
                             </div>
                         </div>
                         <div className='flex flex-col w-[100%]'>

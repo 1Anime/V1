@@ -1,11 +1,10 @@
 import axios from "axios";
-import { redis } from "@/lib/rediscache";
 import { NextResponse } from "next/server";
 
 axios.interceptors.request.use(config => {
     config.timeout = 9000;
     return config;
-})
+});
 
 async function fetchRecent() {
     try {
@@ -39,28 +38,10 @@ async function fetchRecent() {
 }
 
 export const GET = async (req) => {
-    let cached;
-    if (redis) {
-        console.log('using redis')
-        cached = await redis.get('recent');
-    }
-    if (cached) {
-        return NextResponse.json(JSON.parse(cached));
-    }
-    else {
-        const data = await fetchRecent();
-        if (data && data?.length > 0) {
-            if (redis) {
-                await redis.set(
-                    "recent",
-                    JSON.stringify(data),
-                    "EX",
-                    60 * 60
-                );
-            }
-            return NextResponse.json(data);
-        } else {
-            return NextResponse.json({ message: "Recent Episodes not found" });
-        }
+    const data = await fetchRecent();
+    if (data && data?.length > 0) {
+        return NextResponse.json(data);
+    } else {
+        return NextResponse.json({ message: "Recent Episodes not found" });
     }
 };
