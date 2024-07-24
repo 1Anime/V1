@@ -2,11 +2,17 @@
 import React, { useState } from 'react'
 import styles from '../../../styles/AnimeDetailsBottom.module.css'
 import { Tooltip } from "@nextui-org/react";
-import { ShareIcon } from "@heroicons/react/24/solid";
+import { ShareIcon,PlayIcon } from "@heroicons/react/24/solid";
 import { AniListIcon,MyAnimeListIcon } from "@/lib/SvgIcons";
 import { useRouter } from 'next-nprogress-bar';
+import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
+import { useTitle } from '@/lib/store';
 
 function Overview({data}) {
+    const animetitle = useStore(useTitle, (state) => state.animetitle);
+  const [openlist, setOpenlist] = useState(false);
+
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
     const [showFullDescription, setShowFullDescription] = useState(false);
 
     const toggleDescription = () => {
@@ -165,6 +171,30 @@ function Overview({data}) {
                                 MAL
                             </span>
                             <MyAnimeListIcon className="w-7 h-7" /></a>
+                            <>
+        <a className={styles.detailstrailer} onPress={onOpen}><PlayIcon className="w-7 h-7"/></a>
+        <Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange} size={"2xl"} placement="center">
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-0">{data.title?.[animetitle] || data?.title?.romaji}</ModalHeader>
+                <ModalBody>
+                  <div>
+                    <iframe
+                      title="Trailer"
+                      className='w-[620px] h-[350px] mb-4'
+                      src={`https://www.youtube.com/embed/${data?.trailer?.id}`}
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </ModalBody>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
+      </>
+      
                 <div className={styles.descriptioncontent}>
                     <p dangerouslySetInnerHTML={{ __html: data?.description }} />
                 </div>
