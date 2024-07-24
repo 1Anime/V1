@@ -38,28 +38,9 @@ async function fetchRecent() {
     }
 }
 
-export const GET = async (req) => {
-    let cached;
-    if (redis) {
-        console.log('using redis')
-        cached = await redis.get('recent');
-    }
-    if (cached) {
-        return NextResponse.json(JSON.parse(cached));
-    }
-    else {
+export const GET = async (req) => { {
         const data = await fetchRecent();
-        if (data && data?.length > 0) {
-            if (redis) {
-                await redis.set(
-                    "recent",
-                    JSON.stringify(data),
-                    "EX",
-                    60 * 60
-                );
-            }
-            return NextResponse.json(data);
-        } else {
+         else {
             return NextResponse.json({ message: "Recent Episodes not found" });
         }
     }
