@@ -70,7 +70,12 @@ function Overview({data}) {
     router.push('/warnings/nsfw');
   }
 
+  // Check if "Action" or "Ecchi" is among the genres
+  const hasActionGenre = data.genres.includes("Action");
+  const hasEcchiGenre = data.genres.includes("Ecchi");
 
+  // Determine the age rating based on genres
+  const ageRating = hasActionGenre || hasEcchiGenre ? "16+" : "13+";
 
     return (
         <div className={styles.detailscard}>
@@ -78,6 +83,9 @@ function Overview({data}) {
                 <h3 className={styles.detailsheading}>Details</h3>
             
                 <div className={styles.detailscontent}>
+                <div className={styles.singlecontent}>
+                        <span className={styles.sideheading}>Age Rating</span> <span className={styles.con}>{ageRating}</span>
+                    </div>
                 <div className={styles.singlecontent}>
                         <span className={styles.sideheading}>Romaji</span> <span className={styles.con}>{data?.title?.romaji}</span>
                     </div>
