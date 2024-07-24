@@ -49,9 +49,8 @@ const releaseLogs = [
         version: "v.next.7.24",
         changes: [
             "😎 Added Watch Trailer for Mobile",
-            "🟢 Fixed Settings",
+            "🟢 Fixed Settings (Clear Cookies & Incognito), Recent Episodes, UI & more.",
             "🔥 Added Age Rating in Info page",
-            "💖 Fixed Explore page",
             "Join our new discord: https://dsc.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
             ],
