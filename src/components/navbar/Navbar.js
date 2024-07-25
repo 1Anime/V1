@@ -29,7 +29,6 @@ function Navbarcomponent({ home = false }) {
         isOpen: isOpenModalTwo,
         onOpen: onOpenModalTwo,
         onClose: onCloseModalTwo,
-        onOpenChange,
       } = useDisclosure();
           const iconClasses = "w-5 h-5 text-xl text-default-500 pointer-events-none flex-shrink-0";
     const [isLoggedIn, setIsLoggedIn] = useState(false);
