@@ -44,6 +44,9 @@ function Footer() {
                                 This site does not store any files on our server, we are linked
                                 to the media which is hosted on 3rd party services.
                             </p>
+                            <button className="bg-white text-black font-medium py-2 px-3 rounded-lg">
+           🟢 Status: Operational
+          </button>
                         </div>
                         <div className="grid grid-cols-2 lg:gap-16 sm:gap-6 sm:grid-cols-2">
                             <div>

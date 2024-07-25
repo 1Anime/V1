@@ -13,7 +13,7 @@ export function AuthProvider({ children, session }) {
         // Only run this effect in the browser
         if (typeof window !== 'undefined') {
             // Check if the toast has already been shown
-            const hasToastShown = sessionStorage.getItem('loggedinToast');
+            const hasToastShown = sessionStorage.getItem('toastShown');
 
             if (!hasToastShown && session?.user) {
                 // Display the toast
