@@ -261,7 +261,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                   <div>
                     <iframe
                       title="Troubleshoot"
-                      className='w-[320px] h-[650px] mb-4'
+                      className='w-[520px] h-[650px] mb-4 scrollable-container'
                       src={`https://1anime.tawk.help/article/no-episodes`}
                       frameBorder="0"
                     ></iframe>

@@ -190,3 +190,13 @@ html {
   max-width: 100%;
   height: auto;
 }
+
+.scrollable-container {
+  overflow: auto; /* Enable scrolling */
+  /* Optionally, hide the scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.scrollable-container::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar in WebKit browsers */
+}
