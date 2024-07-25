@@ -19,6 +19,7 @@ function Navbarcomponent({ home = false }) {
     const animetitle = useStore(useTitle, (state) => state.animetitle);
     const Isopen = useStore(useSearchbar, (state) => state.Isopen);
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    const { isOpenB, onOpenB, onOpenChangeB } = useDisclosure();
     const iconClasses = "w-5 h-5 text-xl text-default-500 pointer-events-none flex-shrink-0";
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -354,7 +355,7 @@ function Navbarcomponent({ home = false }) {
                     ) : (
                         <DropdownMenu aria-label="Profile Actions" variant="flat">
                             <DropdownItem key="notlogprofile" startContent={<LoginIcon className={iconClasses} />}> <>
-                                <button className="font-semibold outline-none border-none w-full h-full block text-left"  onClick={onOpen}>SignUp/LogIn</button><Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange} size={"2xl"} placement="center">
+                                <button className="font-semibold outline-none border-none w-full h-full block text-left"  onClick={onOpenB}>SignUp/LogIn</button><Modal backdrop='blur' isOpen={isOpenB} onOpenChange={onOpenChangeB} size={"2xl"} placement="center">
             <ModalContent>
               {(onClose) => (
                 <>
