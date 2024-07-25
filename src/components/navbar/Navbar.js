@@ -22,7 +22,6 @@ function Navbarcomponent({ home = false }) {
         isOpen: isOpenModalOne,
         onOpen: onOpenModalOne,
         onClose: onCloseModalOne,
-        onOpenChange,
       } = useDisclosure();
       
       const {

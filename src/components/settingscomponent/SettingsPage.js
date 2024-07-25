@@ -247,19 +247,19 @@ Privacy & Account</p>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
                                     <p className='text-[15px] md:text-[18px] font-medium'>Clear Local Storage/Cache (Beta)</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                        Clears Watch History in local, and logs out your AniList if logged in
+                                        Clears Watch History in your device. Doesn't logs out your account
                                     </p>
                                 </div>
-                                <button className="bg-[#bf1e07] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={handleClearLocalStorage}>Clear Cookies </button>
+                                <button className="bg-[#bf1e07] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={handleClearLocalStorage}>Clear Local Storage </button>
                             </div>
                             <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between mb-3'>
                                 <div className='mr-4 w-[100%] ml-4 md:ml-6 mx-auto'>
-                                    <p className='text-[15px] md:text-[18px] font-medium'>Incognito Mode (Beta)</p>
+                                    <p className='text-[15px] md:text-[18px] font-medium'>Log out</p>
                                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'>
-                                    Note: You'll be logged out of your AniList account, Clear Local Storage & Log in again to turn this off
+                                    Log out of your account
                                     </p>
                                 </div>
-                                <button className="bg-[#bf1e07] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={() => signOut('AniListProvider')}>Turn on Incognito Mode </button>
+                                <button className="bg-[#bf1e07] text-black text-xs font-bold px-2 py-1 rounded-md" onClick={() => signOut('AniListProvider')}>Log out </button>
                             </div>
                         </div>
                         <div className='flex flex-col w-[100%]'>
