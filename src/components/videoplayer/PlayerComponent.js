@@ -7,7 +7,7 @@ import { Spinner } from '@vidstack/react';
 import { toast } from 'sonner';
 import { useTitle, useNowPlaying, useDataInfo } from '../../lib/store';
 import { useStore } from "zustand";
-import { ShareIcon,InformationCircleIcon,ArrowDownTrayIcon,BookmarkIcon } from "@heroicons/react/24/solid";
+import { ShareIcon,InformationCircleIcon,ArrowDownTrayIcon,BookmarkIcon,FlagIcon } from "@heroicons/react/24/solid";
 import { AniListIcon,MyAnimeListIcon } from "@/lib/SvgIcons";
 import { Modal, ModalContent, ModalHeader, ModalBody, Button, useDisclosure } from "@nextui-org/react";
 import Link from 'next/link'
@@ -177,7 +177,7 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
                                 <div className='text-sm sm:text-base px-2 flex flex-col items-center text-center'>
                                     <p className='mb-2 text-xl'>(╯°□°)╯︵ ɹoɹɹƎ</p>
                                     <p>Failed to load episode. Please try again later.</p>
-                                    <p>If the problem persists, consider changing servers. or try <a href="https://1anime.co/proxy.html">1Anime Proxy</a></p>
+                                    <p>If the problem persists, consider changing servers or click the report/flag button below.</p>
                                 </div>) : (
                                 <div className="pointer-events-none absolute inset-0 z-50 flex h-full w-full items-center justify-center">
                                     <Spinner.Root className="text-black animate-spin opacity-100" size={84}>
@@ -250,7 +250,28 @@ function PlayerComponent({ id, epId, provider, epNum, subdub, data, session, sav
               Share Anime
             </span>
             <ShareIcon className="w-7 h-7" />
-      </a> </div>
+      </a>                     <>
+        <a type="button" className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md" onClick={onOpen}><FlagIcon className="w-7 h-7"/></a>
+        <Modal backdrop='blur' isOpen={isOpen} onOpenChange={onOpenChange} size={"2xl"} placement="center">
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-0">Troubleshooting: Episode fails to load</ModalHeader>
+                <ModalBody>
+                  <div>
+                    <iframe
+                      title="Troubleshoot"
+                      className='w-[520px] h-[650px] mb-4 scrollable-container'
+                      src={`https://1anime.tawk.help/article/no-episodes`}
+                      frameBorder="0"
+                    ></iframe>
+                  </div>
+                </ModalBody>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
+      </> </div>
           </div> 
               </div>
             <div className='w-[98%] mx-auto lg:w-full'>
