@@ -314,7 +314,7 @@ function Navbarcomponent({ home = false }) {
                 <Dropdown placement="bottom-end" classNames={{
                     base: "before:bg-default-200",
                     content: "py-1 px-1 border border-default-200 bg-gradient-to-br from-white to-default-200 dark:from-default-50 dark:to-black",
-                }}>
+                }} isLazy> 
                     <DropdownTrigger>
                         <Avatar
                             isBordered
@@ -376,7 +376,7 @@ function Navbarcomponent({ home = false }) {
                                           <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>Welcome to 1Anime!</p>
-                                <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'> Please choose a way to login/signup</p>
+                                <p className='text-[11px] md:text-[13px] text-[#bfc6d0]'> Please choose a way to login/signup</p>
                                 <button className="bg-white text-black font-medium py-2 px-3 rounded-lg"
             onClick={onCloseModalTwo}>
             Close
@@ -391,7 +391,7 @@ function Navbarcomponent({ home = false }) {
                             <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
 </svg>
-                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0] lg:max-w-[55%] line-clamp-3'> By signing up/logging in, you agree to our <a className="text-blue-500 hover:text-blue-600" href="https://1anime.tawk.help/category/policies">Privacy Policy + Terms of Service</a></p></div></div>
+                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0]'> By signing up/logging in, you agree to our <a className="text-blue-500 hover:text-blue-600" href="https://1anime.tawk.help/category/policies">Privacy Policy + Terms of Service</a></p></div></div>
               </div>
               </div> </div>
                       </div>
