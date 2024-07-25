@@ -30,6 +30,7 @@ function Navbarcomponent({ home = false }) {
         onOpen: onOpenModalTwo,
         onClose: onCloseModalTwo,
       } = useDisclosure();
+      const { isOpen, onOpen, onOpenChange } = useDisclosure()
           const iconClasses = "w-5 h-5 text-xl text-default-500 pointer-events-none flex-shrink-0";
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -373,7 +374,6 @@ function Navbarcomponent({ home = false }) {
                   <ModalBody>
                     <div>
                     <div className='max-w-[94%] md:max-w-[95%] lg:max-w-[85%] xl:max-w-[80%] mx-auto min-h-[58vh] flex flex-col gap-6 mt-5'>
-                                          <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>Welcome to 1Anime!</p>
                                 <p className='text-[11px] md:text-[13px] text-[#bfc6d0]'> Please choose a way to login/signup</p>
@@ -385,7 +385,6 @@ function Navbarcomponent({ home = false }) {
 >
 <svg fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M6.361 2.943 0 21.056h4.942l1.077-3.133H11.4l1.052 3.133H22.9c.71 0 1.1-.392 1.1-1.101V17.53c0-.71-.39-1.101-1.1-1.101h-6.483V4.045c0-.71-.392-1.102-1.101-1.102h-2.422c-.71 0-1.101.392-1.101 1.102v1.064l-.758-2.166zm2.324 5.948 1.688 5.018H7.144z"/></svg>  Login with AniList 
           </button>  
-               <div className='mx-3 bg-[#1a1a1f] text-xs font-bold px-5 py-3 rounded-lg flex items-center w-[100%] justify-between'>
                             <div className='mr-4 w-full'>
                                 <p className='text-[18px] md:text-[21px] font-medium'>User Agreement</p>
                             <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -393,7 +392,6 @@ function Navbarcomponent({ home = false }) {
 </svg>
                     <p className='text-[11px] md:text-[13px] text-[#bfc6d0]'> By signing up/logging in, you agree to our <a className="text-blue-500 hover:text-blue-600" href="https://1anime.tawk.help/category/policies">Privacy Policy + Terms of Service</a></p></div></div>
               </div>
-              </div> </div>
                       </div>
                   </ModalBody>
                 </>
