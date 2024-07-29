@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v.next.7.25"
+const newVersion = "v.next.7.29"
 
 const releaseLogs = [
     // {
@@ -46,12 +46,9 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v.next.7.25",
+        version: "v.next.7.29",
         changes: [
-            "Added Episodes not showing troubleshooter.",
-            "😎 Added Watch Trailer for Mobile.",
-            "🟢 Fixed Settings (Clear Cookies & Incognito), Recent Episodes, UI & more.",
-            "🔥 Added Age Rating in Info page.",
+            "⚠️ Anilist is down",
             "Join our new discord: https://dsc.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
             ],
