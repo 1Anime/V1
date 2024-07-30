@@ -132,7 +132,7 @@ function Catalog({ searchParams }) {
                                 <div className="relative w-full cursor-default overflow-hidden rounded-[0.6rem] text-left shadow-md focus:outline-none sm:text-sm">
                                     <Combobox.Input
                                         className="w-full border-none py-[9px] pl-3 pr-10 text-sm leading-5 bg-[#27272a] text-[#b2b2b2] focus:ring-0 outline-none"
-                                        displayValue={(item) => item?.map((item) => item?.name).join(", ")}
+                                        displayValue={(items) => Array.isArray(items) ? items.map((item) => item.name).join(', ') : ''}
                                         placeholder="Select Genres"
                                         onChange={(event) => setQuery(event.target.value)}
                                         autoComplete="off"
