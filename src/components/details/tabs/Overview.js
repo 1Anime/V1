@@ -147,6 +147,7 @@ function Overview({data}) {
             </div>
             <div className={styles.card2}>
                 <h3 className={styles.detailsheading}>Description</h3>   
+                <div className="flex space-x-4">
         <a
             type="button"
             className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
@@ -203,7 +204,7 @@ function Overview({data}) {
           </ModalContent>
         </Modal>
       </>
-      
+      </div>
                 <div className={styles.descriptioncontent}>
                     <p dangerouslySetInnerHTML={{ __html: data?.description }} />
                 </div>
