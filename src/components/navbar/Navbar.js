@@ -365,7 +365,7 @@ function Navbarcomponent({ home = false }) {
                     ) : (
                         <DropdownMenu aria-label="Profile Actions" variant="flat">
                             <DropdownItem key="notlogprofile" startContent={<LoginIcon className={iconClasses} />}> <>
-                                <button className="font-semibold outline-none border-none w-full h-full block text-left"  onClick={onOpenModalTwo}>SignUp/LogIn</button><Modal backdrop='blur' isOpen={isOpenModalTwo} onOpenChange={onOpenChangeTwo} size={"2xl"} placement="center">
+                                <button className="font-semibold outline-none border-none w-full h-full block text-left"  onPress={onOpenModalTwo}>SignUp/LogIn</button><Modal backdrop='blur' isOpen={isOpenModalTwo} onOpenChange={onOpenChangeTwo} size={"2xl"} placement="center">
             <ModalContent>
               {(onCloseModalTwo) => (
                 <>
