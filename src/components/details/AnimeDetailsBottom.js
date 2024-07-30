@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Characters from "./Characters";
 import Overview from "./tabs/Overview";
 import Draggable from 'react-draggable';
+import { AniListIcon } from "@/lib/SvgIcons";
 
 function AnimeDetailsBottom({ data }) {
   const tabs = [
