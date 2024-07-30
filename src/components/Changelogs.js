@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v.next.7.29"
+const newVersion = "v.next.7.30"
 
 const releaseLogs = [
     // {
@@ -46,9 +46,9 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v.next.7.29",
+        version: "v.next.7.30",
         changes: [
-            "⚠️ Anilist is down",
+            "AniList is back up!",
             "Join our new discord: https://dsc.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
             ],

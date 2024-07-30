@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import styles from "../../styles/AnimeDetailsBottom.module.css";
 import Animecards from "../CardComponent/Animecards";
@@ -20,31 +20,43 @@ function AnimeDetailsBottom({ data }) {
       name: "Characters",
       label: "Characters",
     },
-  
+    {
+      name: "Reviews",
+      label: "Reviews",
+    },
   ];
 
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
-  const handleSelectChange = (e) => {
-    const selectedTab = tabs.find((tab) => tab.name === e.target.value);
-    setActiveTab(selectedTab);
+  const handleClick = (e, tab) => {
+    e.preventDefault();
+
+    setActiveTab(tab);
   };
 
-  
+  const isSelected = (tab) => activeTab.name === tab.name;
+
   return (
     <div>
       <div className={styles.detailstabs}>
-        <select
-          value={activeTab.name}
-          onChange={handleSelectChange}
-          className="mx-1 bg-[#1a1a1f] text-xs font-bold px-2 py-1 rounded-lg flex items-center justify-center"
-        >
+        <div className={styles.tabHeader}>
           {tabs.map((tab) => (
-            <option key={tab.name} value={tab.name}>
-              {tab.label}
-            </option>
+            <div
+              key={tab.name}
+              className={[
+                styles.tabItem,
+                isSelected(tab) ? styles.selected : "",
+              ].join(" ")}
+            >
+              <div key={tab.name} onClick={(e) => handleClick(e, tab)}>
+                {tab.label}
+              </div>
+              {isSelected(tab) && (
+                <motion.div layoutId="indicator" className={styles.indicator} />
+              )}
+            </div>
           ))}
-        </select>
+        </div>
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab.name || "empty"}
@@ -71,6 +83,9 @@ function AnimeDetailsBottom({ data }) {
                 <h3 className={styles.relationsheading}>Anime Characters</h3>
                 <Characters data={data?.characters?.edges} />
               </div>
+            )}
+            {activeTab.name === "Reviews" && (
+              <div className={styles.detailscard}>Coming Soon</div>
             )}
           </motion.div>
         </AnimatePresence>
