@@ -5,6 +5,7 @@ import Animecards from "../CardComponent/Animecards";
 import { AnimatePresence, motion } from "framer-motion";
 import Characters from "./Characters";
 import Overview from "./tabs/Overview";
+import Draggable from 'react-draggable';
 
 function AnimeDetailsBottom({ data }) {
   const tabs = [
@@ -38,26 +39,26 @@ function AnimeDetailsBottom({ data }) {
 
   return (
     <div>
-      <div className={styles.detailstabs}>
-        <div className={styles.tabHeader}>
-          {tabs.map((tab) => (
-            <div
-              key={tab.name}
-              className={[
-                styles.tabItem,
-                isSelected(tab) ? styles.selected : "",
-              ].join(" ")}
-            >
-              <div key={tab.name} onClick={(e) => handleClick(e, tab)}>
-                {tab.label}
-              </div>
-              {isSelected(tab) && (
-                <motion.div layoutId="indicator" className={styles.indicator} />
-              )}
-            </div>
-          ))}
+    <Draggable axis="x">
+    <div className={styles.tabHeader}>
+      {tabs.map((tab) => (
+        <div
+          key={tab.name}
+          className={[
+            styles.tabItem,
+            isSelected(tab) ? styles.selected : "",
+          ].join(" ")}
+        >
+          <div key={tab.name} onClick={(e) => handleClick(e, tab)}>
+            {tab.label}
+          </div>
+          {isSelected(tab) && (
+            <motion.div layoutId="indicator" className={styles.indicator} />
+          )}
         </div>
-        <AnimatePresence mode="wait">
+      ))}
+    </div>
+  </Draggable>   <AnimatePresence mode="wait">
           <motion.div
             key={activeTab.name || "empty"}
             initial="initial"
@@ -90,7 +91,6 @@ function AnimeDetailsBottom({ data }) {
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
   );
 }
 
