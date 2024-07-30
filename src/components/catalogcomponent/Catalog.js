@@ -29,20 +29,12 @@ function Catalog({ searchParams }) {
     // console.log(sortbyvalue)
 
     useEffect(() => {
-        // Parse URL parameters and update state accordingly
-        const urlParams = new URLSearchParams(window.location.search);
-        const genreParam = urlParams.get('genre');
-      
-        if (genreParam) {
-          setGenrevalue([genreParam]);
-        } else {
-          setGenrevalue([]); // Set to an empty array if no genre parameter is provided
+        if (query.genres) {
+          const initialGenres = query.genres.split(',').map((genre) => ({ name: genre }));
+          setGenreValue(initialGenres);
         }
-        // Handle other URL parameters similarly
-      
-        // ... (other URL parameter handling)
-      
-      }, []);
+      }, [query.genres]);
+    
 
     const handleResize = () => {
         if (window.innerWidth <= 1024) {
@@ -144,6 +136,7 @@ function Catalog({ searchParams }) {
                                         placeholder="Select Genres"
                                         onChange={(event) => setQuery(event.target.value)}
                                         autoComplete="off"
+                                        readOnly
                                     />
                                     <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon" className="h-5 w-5 text-gray-400"><path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd"></path></svg>

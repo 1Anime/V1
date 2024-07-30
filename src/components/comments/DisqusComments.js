@@ -38,25 +38,4 @@ const DisqusComments = ({ post }) => {
 );
 };
   
-function removeIframesWithHtml() {
-  const disqusDiv = document.getElementById('disqus_thread');
-
-  if (disqusDiv && disqusDiv.getElementsByTagName('iframe').length > 0) {
-      const iframes = disqusDiv.getElementsByTagName('iframe');
-      for (let i = 0; i < iframes.length; i++) {
-          const iframe = iframes[i];
-          if (iframe.contentDocument.documentElement.tagName.toLowerCase() === 'html') {
-              // Remove the iframe
-              iframe.parentNode?.removeChild(iframe);
-}}}}
-
-
-let count = 0;
-const intervalId = setInterval(() => {
-  removeIframesWithHtml();
-  count += 2;
-  if (count >= 60) {
-      clearInterval(intervalId); 
-  }
-}, 2000);
 export default DisqusComments;
