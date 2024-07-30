@@ -13,7 +13,7 @@ import Changelogs from '../components/Changelogs';
 import FloatingButton from '@/components/FloatingButton';
 import { AuthProvider } from './SessionProvider';
 import ThemeManager from './ThemeManager';
-import TallyForm from './TallyForm';
+import TallyForm from './TallyForm'; 
 
 const inter = Inter({ subsets: ['latin'] })
 const myfont = localFont({ src: "../static-fonts/archivo.ttf" })

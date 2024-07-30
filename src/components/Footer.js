@@ -42,7 +42,7 @@ function Footer() {
                             </Link>
                             <p className="lg:text-[0.8rem] text-[0.7rem] text-[#ffffffb2] lg:w-[480px]">
                             <button className="bg-black text-white font-medium py-2 px-3 rounded-lg">
-           ⚠️ Status: AniList down (main features broken)
+           🟡 Status: Mappings API Down, Operational
           </button>
                                 This site does not store any files on our server, we are linked
                                 to the media which is hosted on 3rd party services.
