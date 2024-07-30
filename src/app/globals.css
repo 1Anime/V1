@@ -1,202 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/*
-@font-face {
-    font-family: "Archivo";
-    src: url('https://1anime.co/archivo.ttf');
-}
 
-.aniplay{
-    font-family: "28 Days Later";
-}
-*/
-html {
-     scroll-behavior: smooth !important; 
-    letter-spacing:0.05rem;
-   }
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
 
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-thumb{
-    border-radius: 4px;
-    background-color: #767676;
-}
-
-::-webkit-scrollbar-track{
-    background-color: rgb(60, 26, 60);
-}
-
-.recommendationglobal{
-    max-width: 85%;
-    margin: 20px auto 0 auto;
-}
-
-
-@media(max-width:1200px){
-    .recommendationglobal{
-        max-width: 90%;
-    }
-}
-
-@media(max-width:900px){
-    .recommendationglobal{
-        max-width: 95%;
-    }
-}
-
-@media(max-width:600px){
-    .recommendationglobal{
-        max-width: 99%;
-    }
-}
-
-@media (max-width: 640px) {
-  .flex-on-mobile {
-    display: none;
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
-.gototop{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.top-btn {
-    font-size: 1.2rem;
-    width: 41px;
-    height: 41px;
-    color: #fff;
-    background-color: #1e1e24;
-    border-radius: 50%;
-    position: fixed;
-    bottom: 5%;
-    right: 1.5%;
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-
-}
-/* .top-btn--icon {
-  animation: gototop 1.2s linear infinite alternate-reverse;
-} */
-
-@keyframes gototop {
-  0% {
-    transform: translateY(-0.25rem);
+@layer base {
+  * {
+    @apply border-border;
   }
-  100% {
-    transform: translateY(0.5rem);
+  body {
+    @apply bg-background text-foreground;
   }
-}
-
-  @media (max-width: 1024px) {
-    .top-btn {
-        display: none;
-    }
-  }
-
-
-/* 404 Page */
-.button {
-    display: block;
-    position: relative;
-    width: 56px;
-    height: 56px;
-    margin: 0;
-    overflow: hidden;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
-    border: 0;
-  }
-  
-  .button:before,
-  .button:after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    inset: 7px;
-  }
-  
-  .button:before {
-    border: 4px solid #f0eeef;
-    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
-      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
-  }
-  
-  .button:after {
-    border: 4px solid #96daf0;
-    transform: scale(1.3);
-    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    opacity: 0;
-  }
-  
-  .button-box {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .button-elem {
-    display: block;
-    width: 20px;
-    height: 20px;
-    margin: 17px 18px 0 18px;
-    transform: rotate(180deg);
-    fill: #f0eeef;
-  }
-  
-  .notf:hover .button:before,
-  .notf:hover .button:before {
-    opacity: 0;
-    transform: scale(0.7);
-    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  
-  .notf:hover .button:after,
-  .notf:focus .button:after {
-    opacity: 1;
-    transform: scale(1);
-    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
-      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
-  }
-  
-  .notf:hover .button .button-box,
-  .notf:focus .button .button-box {
-    transition: 0.4s;
-    transform: translateX(-56px);
-  }
-
-  /* Add this to your globals.css or a separate CSS file */
-.ad-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 10px; /* Adjust the radius as desired */
-  overflow: hidden; /* Clip the curved corners */
-  background-color: transparent; /* Set a transparent background */
-}
-
-.ad-image {
-  max-width: 100%;
-  height: auto;
-}
-
-.scrollable-container {
-  overflow: auto; /* Enable scrolling */
-  /* Optionally, hide the scrollbar */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
-}
-.scrollable-container::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar in WebKit browsers */
 }

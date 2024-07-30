@@ -14,6 +14,7 @@ import FloatingButton from '@/components/FloatingButton';
 import { AuthProvider } from './SessionProvider';
 import ThemeManager from './ThemeManager';
 import TallyForm from './TallyForm';
+import { AssistantModal } from "@/components/ui/assistant-ui/assistant-modal";
 
 const inter = Inter({ subsets: ['latin'] })
 const myfont = localFont({ src: "../static-fonts/archivo.ttf" })
@@ -131,6 +132,7 @@ export default async function RootLayout({ children }) {
         <Changelogs />
         <FloatingButton session={session} />
         <GoToTop />
+        <AssistantModal />
         <Footer />
       </body>
     </html>
