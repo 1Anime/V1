@@ -15,6 +15,8 @@ import { AuthProvider } from './SessionProvider';
 import ThemeManager from './ThemeManager';
 import TallyForm from './TallyForm';
 import { AssistantModal } from "@/components/ui/assistant-ui/assistant-modal";
+import { Thread, useEdgeRuntime } from "@assistant-ui/react";
+ 
 
 const inter = Inter({ subsets: ['latin'] })
 const myfont = localFont({ src: "../static-fonts/archivo.ttf" })
@@ -78,6 +80,9 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const session = await getAuthSession();
+  const runtime = useEdgeRuntime({
+    api: "/api/chat",
+  });
 
   return (
     <html lang="en" className='dark text-foreground bg-background' suppressHydrationWarning={true}>
@@ -132,7 +137,7 @@ export default async function RootLayout({ children }) {
         <Changelogs />
         <FloatingButton session={session} />
         <GoToTop />
-        <AssistantModal />
+        <AssistantModal runtime={runtime} />
         <Footer />
       </body>
     </html>
