@@ -22,8 +22,14 @@ function Navbarcomponent({ home = false }) {
         isOpen: isOpenModalTwo,
         onOpen: onOpenModalTwo,
         onClose: onCloseModalTwo,
+        onOpenChange: onOpenChangeTwo,
       } = useDisclosure();
-      const { isOpen, onOpen, onOpenChange } = useDisclosure()
+      const {
+        isOpen: isOpenModalOne,
+        onOpen: onOpenModalOne,
+        onClose: onCloseModalOne,
+        onOpenChange: onOpenChangeOne,
+      } = useDisclosure();
           const iconClasses = "w-5 h-5 text-xl text-default-500 pointer-events-none flex-shrink-0";
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -348,7 +354,7 @@ function Navbarcomponent({ home = false }) {
                 <DropdownItem disabled key="manga" startContent={<BookOpenIcon className={iconClasses} />}>
                     <Link disabled href={`#`} className='w-full h-full block '>Manga (Unavailable)</Link>
                 </DropdownItem>
-                            <DropdownItem key="help_and_feedback" onPress={onOpen} startContent={<FeedbackIcon className={iconClasses} />}>Help & Feedback</DropdownItem>
+                            <DropdownItem key="help_and_feedback" onPress={onOpenModalOne} startContent={<FeedbackIcon className={iconClasses} />}>Help & Feedback</DropdownItem>
                             <DropdownItem key="settings" startContent={<SettingsIcon className={iconClasses} />}>
                                 <Link href={`/settings`} className='w-full h-full block '>Settings</Link>
                             </DropdownItem>
@@ -359,7 +365,7 @@ function Navbarcomponent({ home = false }) {
                     ) : (
                         <DropdownMenu aria-label="Profile Actions" variant="flat">
                             <DropdownItem key="notlogprofile" startContent={<LoginIcon className={iconClasses} />}> <>
-                                <button className="font-semibold outline-none border-none w-full h-full block text-left"  onClick={onOpenModalTwo}>SignUp/LogIn</button><Modal backdrop='blur' isOpen={isOpenModalTwo} onOpenChange={onOpenChange} size={"2xl"} placement="center">
+                                <button className="font-semibold outline-none border-none w-full h-full block text-left"  onPress={onOpenModalTwo}>SignUp/LogIn</button><Modal backdrop='blur' isOpen={isOpenModalTwo} onOpenChange={onOpenChangeTwo} size={"2xl"} placement="center">
             <ModalContent>
               {(onCloseModalTwo) => (
                 <>
@@ -410,14 +416,14 @@ function Navbarcomponent({ home = false }) {
                     <Link disabled href={`#`} className='w-full h-full block '>Manga (Unavailable)</Link>
                 </DropdownItem>
                             </DropdownItem>
-                            <DropdownItem key="notloghelp_and_feedback" onPress={onOpen} startContent={<FeedbackIcon className={iconClasses} />}>Help & Feedback</DropdownItem>
+                            <DropdownItem key="notloghelp_and_feedback" onPress={onOpenModalOne} startContent={<FeedbackIcon className={iconClasses} />}>Help & Feedback</DropdownItem>
                             <DropdownItem key="settings" startContent={<SettingsIcon className={iconClasses} />}>
                                 <Link href={`/settings`} className='w-full h-full block '>Settings</Link>
                             </DropdownItem>
                         </DropdownMenu>
                     )}
                 </Dropdown>
-                <Feedbackform isOpen={isOpen} onOpen={onOpen} onOpenChange={onOpenChange} />
+                <Feedbackform isOpen={isOpenModalOne} onOpen={onOpenModalOne} onOpenChange={onOpenChangeOne} />
             </div>
         </motion.nav>
     )
