@@ -48,6 +48,8 @@ const releaseLogs = [
     {
         version: "v.next.7.30",
         changes: [
+            "Moved to a new hosting provider",
+            "Fixed some UI",
             "AniList is back up!",
             "Join our new discord: https://dsc.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
