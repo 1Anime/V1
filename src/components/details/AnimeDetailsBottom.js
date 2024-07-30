@@ -22,8 +22,8 @@ function AnimeDetailsBottom({ data }) {
       label: "Characters",
     },
     {
-      name: "Reviews",
-      label: "Reviews",
+      name: "more",
+      label: "more",
     },
   ];
 
@@ -39,26 +39,25 @@ function AnimeDetailsBottom({ data }) {
 
   return (
     <div>
-    <Draggable axis="x">
     <div className={styles.tabHeader}>
-      {tabs.map((tab) => (
-        <div
-          key={tab.name}
-          className={[
-            styles.tabItem,
-            isSelected(tab) ? styles.selected : "",
-          ].join(" ")}
-        >
-          <div key={tab.name} onClick={(e) => handleClick(e, tab)}>
-            {tab.label}
-          </div>
-          {isSelected(tab) && (
-            <motion.div layoutId="indicator" className={styles.indicator} />
-          )}
+          {tabs.map((tab) => (
+            <div
+              key={tab.name}
+              className={[
+                styles.tabItem,
+                isSelected(tab) ? styles.selected : "",
+              ].join(" ")}
+            >
+              <div key={tab.name} onClick={(e) => handleClick(e, tab)}>
+                {tab.label}
+              </div>
+              {isSelected(tab) && (
+                <motion.div layoutId="indicator" className={styles.indicator} />
+              )}
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </Draggable>   <AnimatePresence mode="wait">
+   <AnimatePresence mode="wait">
           <motion.div
             key={activeTab.name || "empty"}
             initial="initial"
@@ -85,8 +84,30 @@ function AnimeDetailsBottom({ data }) {
                 <Characters data={data?.characters?.edges} />
               </div>
             )}
-            {activeTab.name === "Reviews" && (
-              <div className={styles.detailscard}>Coming Soon</div>
+            {activeTab.name === "more" && (
+              <div className={styles.detailscard}><a
+              type="button"
+              target="_blank"
+rel="noopener noreferrer"
+              href={`https://anilist.co/anime/${data.id}/reviews`}
+              className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
+          >
+              <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
+                  AniList
+              </span>
+             See Reviews on AniList <AniListIcon className="w-7 h-7" /></a>
+             <a
+              type="button"
+              target="_blank"
+rel="noopener noreferrer"
+              href={`https://anilist.co/anime/${data.id}/reviews`}
+              className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
+          >
+              <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
+                  AniList
+              </span>
+             See Activities & Post about this on AniList <AniListIcon className="w-7 h-7" /></a>
+</div>
             )}
           </motion.div>
         </AnimatePresence>
