@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^0.0.40",
-    "@assistant-ui/react": "^0.5.19",
     "@auth/mongodb-adapter": "^2.4.0",
     "@ducanh2912/next-pwa": "^10.2.2",
     "@headlessui/react": "^1.7.17",
