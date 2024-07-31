@@ -364,39 +364,10 @@ function Navbarcomponent({ home = false }) {
                         </DropdownMenu>
                     ) : (
                         <DropdownMenu aria-label="Profile Actions" variant="flat">
-                            <DropdownItem key="notlogprofile" startContent={<LoginIcon className={iconClasses} />}> <>
-                                <button className="font-semibold outline-none border-none w-full h-full block text-left"  onPress={onOpenModalTwo}>SignUp/LogIn</button><Modal backdrop='blur' isOpen={isOpenModalTwo} onOpenChange={onOpenChangeTwo} size={"2xl"} placement="center">
-            <ModalContent>
-              {(onCloseModalTwo) => (
-                <>
-                  <ModalHeader className="flex flex-col gap-0">Login/SignUp</ModalHeader>
-                  <ModalBody>
-                    <div>
-                    <div className='max-w-[94%] md:max-w-[95%] lg:max-w-[85%] xl:max-w-[80%] mx-auto min-h-[58vh] flex flex-col gap-6 mt-5'>
-                            <div className='mr-4 w-full'>
-                                <p className='text-[18px] md:text-[21px] font-medium'>Welcome to 1Anime!</p>
-                                <p className='text-[11px] md:text-[13px] text-[#bfc6d0]'> Please choose a way to login/signup</p>
-                                <button className="bg-white text-black font-medium py-2 px-3 rounded-lg"
-                       onClick={() => signIn('AniListProvider')}
->
-<svg fill="#000000" width="25px" height="25px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M6.361 2.943 0 21.056h4.942l1.077-3.133H11.4l1.052 3.133H22.9c.71 0 1.1-.392 1.1-1.101V17.53c0-.71-.39-1.101-1.1-1.101h-6.483V4.045c0-.71-.392-1.102-1.101-1.102h-2.422c-.71 0-1.101.392-1.101 1.102v1.064l-.758-2.166zm2.324 5.948 1.688 5.018H7.144z"/></svg>  Login with AniList 
-          </button>  <button className="bg-white text-black font-medium py-2 px-3 rounded-lg"
-            onClick={onCloseModalTwo}>
-            More Login providers coming soon.
-          </button>           
-                            <div className='mr-4 w-full'>
-                                <p className='text-[18px] md:text-[21px] font-medium'>User Agreement</p>
-                            <svg width="25px" height="25px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-</svg>
-                    <p className='text-[11px] md:text-[13px] text-[#bfc6d0]'> By signing up/logging in, you agree to our <a className="text-blue-500 hover:text-blue-600" href="https://1anime.tawk.help/category/policies">Privacy Policy + Terms of Service</a></p></div></div>
-              </div>
-                      </div>
-                  </ModalBody>
-                </>
-              )}
-            </ModalContent>
-          </Modal>  </>
+                            <DropdownItem key="notlogprofile" startContent={<LoginIcon className={iconClasses} />}> 
+                                <button className="font-semibold outline-none border-none w-full h-full block text-left" onClick={() => {
+                router.push("/authv2/v2/");
+            }}>SignUp/LogIn</button>
              <DropdownItem key="donate" startContent={<BanknotesIcon className={iconClasses} />}>
                     <Link href={`https://ko-fi.com/1Anime`} className='w-full h-full block '>Support us/Donate</Link>
                 </DropdownItem>
