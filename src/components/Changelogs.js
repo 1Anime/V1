@@ -48,7 +48,7 @@ const releaseLogs = [
     {
         version: "v.next.7.31.1",
         changes: [
-            "Fixed GoGoAnime",
+            "GoGoAnime down: Try another provider",
             "Fixed Login issue",
             "New landing page",
             "Fixed some UI",
