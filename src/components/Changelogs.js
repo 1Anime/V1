@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v.next.7.31.1"
+const newVersion = "v.next.8.2"
 
 const releaseLogs = [
     // {
@@ -46,9 +46,9 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v.next.7.31.1",
+        version: "v.next.8.2",
         changes: [
-            "GoGoAnime down: Try another provider",
+            "GoGoAnime UP",
             "Fixed Login issue",
             "New landing page",
             "Fixed some UI",
