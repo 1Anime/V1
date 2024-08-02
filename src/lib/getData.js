@@ -36,7 +36,7 @@ export const getSources = async (id, provider, epid, epnum, subdub) => {
       method: 'POST',
       body: JSON.stringify({
         source : provider === 'anify' || provider === 'gogobackup' ? 'consumet' : 'gogoanime',
-        provider: `${provider === "gogobackup" ? 'gogoanime' : provider}`,
+        provider: `${provider === "gogobackup" ? 'anify' : provider}`,
         episodeid: epid,
         episodenum: epnum,
         subtype: subdub
