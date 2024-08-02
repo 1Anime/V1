@@ -208,8 +208,8 @@ const fetchAndCacheData = async (id, meta, redis, cacheTime, refresh) => {
     promises.push(fetchEpisodeMeta(id, !refresh));
 
   } else {
-    promises.push(fetchConsumet(id));
     promises.push(fetchAnify(id));
+    promises.push(fetchConsumet(id));
     promises.push(fetchEpisodeMeta(id, !refresh));
   }
   const [consumet, anify, cover] = await Promise.all(promises);  
