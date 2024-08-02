@@ -48,8 +48,8 @@ const releaseLogs = [
     {
         version: "v.next.8.2",
         changes: [
-            "GoGoAnime DOWN",
-            "Fixed Login issue",
+            "GoGoAnime: DOWN, Dub may not work too. We're working on it",
+          "Fixed Login issue",
             "New landing page",
             "Fixed some UI",
             "Join our new discord: https://dsc.gg/1anime",
