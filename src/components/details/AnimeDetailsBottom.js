@@ -5,8 +5,6 @@ import Animecards from "../CardComponent/Animecards";
 import { AnimatePresence, motion } from "framer-motion";
 import Characters from "./Characters";
 import Overview from "./tabs/Overview";
-import Draggable from 'react-draggable';
-import { AniListIcon } from "@/lib/SvgIcons";
 
 function AnimeDetailsBottom({ data }) {
   const tabs = [
@@ -23,8 +21,8 @@ function AnimeDetailsBottom({ data }) {
       label: "Characters",
     },
     {
-      name: "more",
-      label: "more",
+      name: "Staff",
+      label: "Staff",
     },
   ];
 
@@ -40,7 +38,8 @@ function AnimeDetailsBottom({ data }) {
 
   return (
     <div>
-    <div className={styles.tabHeader}>
+      <div className={styles.detailstabs}>
+        <div className={styles.tabHeader}>
           {tabs.map((tab) => (
             <div
               key={tab.name}
@@ -58,7 +57,7 @@ function AnimeDetailsBottom({ data }) {
             </div>
           ))}
         </div>
-   <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait">
           <motion.div
             key={activeTab.name || "empty"}
             initial="initial"
@@ -74,7 +73,7 @@ function AnimeDetailsBottom({ data }) {
                 <h3 className={styles.relationsheading}>Chronology</h3>
                 <Animecards
                   data={data?.relations?.edges}
-                  cardid="Related"
+                  cardid="Related Anime"
                   show={false}
                 />
               </div>
@@ -85,34 +84,13 @@ function AnimeDetailsBottom({ data }) {
                 <Characters data={data?.characters?.edges} />
               </div>
             )}
-            {activeTab.name === "more" && (
-              <div className={styles.detailscard}><a
-              type="button"
-              target="_blank"
-rel="noopener noreferrer"
-              href={`https://anilist.co/anime/${data.id}/reviews`}
-              className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
-          >
-              <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
-                  AniList
-              </span>
-             See Reviews on AniList <AniListIcon className="w-7 h-7" /></a>
-             <a
-              type="button"
-              target="_blank"
-rel="noopener noreferrer"
-              href={`https://anilist.co/anime/${data.id}/reviews`}
-              className="bg-[#1a1a1f] text-white text-xs font-bold px-2 py-1 rounded-md"
-          >
-              <span className="absolute pointer-events-none z-40 opacity-0 -translate-y-8 group-hover:-translate-y-10 group-hover:opacity-100 font-karla shadow-tersier shadow-md whitespace-nowrap bg-secondary px-2 py-1 rounded transition-all duration-200 ease-out">
-                  AniList
-              </span>
-             See Activities & Post about this on AniList <AniListIcon className="w-7 h-7" /></a>
-</div>
+            {activeTab.name === "Staff" && (
+              <div className={styles.detailscard}>Coming Soon</div>
             )}
           </motion.div>
         </AnimatePresence>
       </div>
+    </div>
   );
 }
 
