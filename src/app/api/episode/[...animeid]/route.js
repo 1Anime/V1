@@ -8,6 +8,33 @@ axios.interceptors.request.use(config => {
   return config;
 });
 
+async function fetchAnify(id) {
+  try {
+    const { data } = await axios.get(`https://anify.eltik.cc/info/${id}?fields=[episodes]`);
+
+    if (!data || !data?.episodes?.data) {
+      return [];
+    }
+    const epdata = data?.episodes?.data;
+
+    const filtereddata = epdata?.filter((episodes) => episodes.providerId !== "9anime");
+    const mappedData = filtereddata?.map((i) => {
+      if (i?.providerId === "gogoanime"){
+       return {
+        episodes: i.episodes,
+        providerId: "gogobackup",
+      }
+    };
+      return i;
+    });
+    return mappedData;
+  } catch (error) {
+    console.error("Error fetching anify:", error.message);
+    return [];
+  }
+}
+
+
 async function fetchConsumet(id) {
   try {
     async function fetchData(dub) {
@@ -43,31 +70,6 @@ async function fetchConsumet(id) {
   }
 }
 
-async function fetchAnify(id) {
-  try {
-    const { data } = await axios.get(`https://anify.eltik.cc/info/${id}?fields=[episodes]`);
-
-    if (!data || !data?.episodes?.data) {
-      return [];
-    }
-    const epdata = data?.episodes?.data;
-
-    const filtereddata = epdata?.filter((episodes) => episodes.providerId !== "9anime");
-    const mappedData = filtereddata?.map((i) => {
-      if (i?.providerId === "gogoanime"){
-       return {
-        episodes: i.episodes,
-        providerId: "gogobackup",
-      }
-    };
-      return i;
-    });
-    return mappedData;
-  } catch (error) {
-    console.error("Error fetching anify:", error.message);
-    return [];
-  }
-}
 
 async function MalSync(id) {
   try {
@@ -98,6 +100,26 @@ async function MalSync(id) {
     return null;
   }
 }
+
+async function fetchZoro(id) {
+  try {
+    const { data } = await axios.get(`${process.env.ZORO_URI}/anime/episodes/${id}`);
+    if (!data?.episodes) return [];
+
+    const array = [
+      {
+        providerId: "zoro",
+        episodes: data?.episodes,
+      },
+    ];
+
+    return array;
+    } catch (error) {
+    console.error("Error fetching zoro:", error.message);
+    return [];
+  }
+}
+
 
 async function fetchGogoanime(sub, dub) {
   try {
@@ -134,24 +156,6 @@ async function fetchGogoanime(sub, dub) {
   }
 }
 
-async function fetchZoro(id) {
-  try {
-    const { data } = await axios.get(`${process.env.ZORO_URI}/anime/episodes/${id}`);
-    if (!data?.episodes) return [];
-
-    const array = [
-      {
-        providerId: "zoro",
-        episodes: data?.episodes,
-      },
-    ];
-
-    return array;
-    } catch (error) {
-    console.error("Error fetching zoro:", error.message);
-    return [];
-  }
-}
 
 async function fetchEpisodeMeta(id, available = false) {
   try {
