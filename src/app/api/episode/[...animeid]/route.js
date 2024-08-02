@@ -83,7 +83,7 @@ async function MalSync(id) {
         const remove = 'https://anitaku.pe/category/';
         const dub = data.find(item => item.title.toLowerCase().endsWith(" (dub)"));
         const duburl = dub?.url?.replace(remove,'');
-        const sub = data.find(item => item.title.toLowerCase().includes(" (uncensored)"))?.url?.replace(remove,'') ?? data.find((item) => item?.url === dub?.url?.replace(/-dub$/, ''))?.url?.replace(remove,'') ?? data.find(item => !item.title.toLowerCase().includes(")"))?.url?.replace(remove,'');
+        const sub = data.find(item => item.title.toLowerCase().includes(""))?.url?.replace(remove,'') ?? data.find((item) => item?.url === dub?.url?.replace(/-dub$/, ''))?.url?.replace(remove,'') ?? data.find(item => !item.title.toLowerCase().includes(")"))?.url?.replace(remove,'');
         finaldata.push({ providerId, sub: sub || "", dub: duburl || "" });
       } else {
         const remove = 'https://hianime.to/';
