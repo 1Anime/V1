@@ -35,8 +35,8 @@ export const getSources = async (id, provider, epid, epnum, subdub) => {
     const response = await fetch(`${checkEnvironment()}/api/source/${id}`,{
       method: 'POST',
       body: JSON.stringify({
-        source : provider === 'anify' || provider === 'gogobackup' ? 'consumet' : 'gogoanime',
-        provider: `${provider === "gogobackup" ? 'anify' : provider}`,
+        source : provider === 'gogoanime' || provider === 'gogobackup' ? 'consumet' : 'anify',
+        provider: `${provider === "gogobackup" ? 'gogoanime' : provider}`,
         episodeid: epid,
         episodenum: epnum,
         subtype: subdub
@@ -49,9 +49,9 @@ export const getSources = async (id, provider, epid, epnum, subdub) => {
       throw new Error('Failed to fetch episodes')
     }
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
     console.error("Error fetching Episode sources:", error);
   }
-}
+    }
