@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import Link from "next/link";
 
-const newVersion = "v.next.8.2"
+const newVersion = "Readying for REVAMP - v.1.9"
 
 const releaseLogs = [
     // {
@@ -46,12 +46,9 @@ const releaseLogs = [
     //     ],
     // },
     {
-        version: "v.next.8.2",
+        version: "Readying for REVAMP - v.1.9",
         changes: [
-            "GoGoAnime: DOWN, Dub may not work too. We're working on it",
-          "Fixed Login issue",
-            "New landing page",
-            "Fixed some UI",
+            "Join the new Waitlist for our BIGGEST update EVER.",
             "Join our new discord: https://dsc.gg/1anime",
             "Report any bugs and request features in Feedback or Discord. It's FREE!",
             ],
