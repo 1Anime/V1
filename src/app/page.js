@@ -81,15 +81,17 @@ async function Home() {
                       A big REVAMP is coming to 1Anime. Your feedbacks, Answered!~ Join the waitlist now!
                     </p>
                 </div>
-                <div className="mt-5 items-center justify-center gap-3 sm:flex">
-                    <a 
-                        href="https://1anime.co/waitlist/"
-                        className="block w-full mt-2 py-2.5 px-8 text-gray-700 bg-white rounded-md duration-150 hover:bg-gray-100 sm:w-auto"
-                    >
-                        Join the Waitlist
-                    </a>
-                </div>
-            </div>
+                <div className="video-responsive">
+    <iframe
+      width="853"
+      height="480"
+      src={`https://www.youtube.com/embed/8X1mezu8RLc`}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="Trailer"
+    />
+  </div>            </div>
         </section>
         <div
         >
