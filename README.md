@@ -23,7 +23,7 @@
 
 <p align="center">
 
- <a href="https://github.com/1Anime/V1/blob/main/LICENSE.md">
+ <a href="https://github.com/1Anime/V1/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/1Anime/V1" alt="license"/>
   </a>
   <a href="https://github.com/1Anime/V1/fork">
