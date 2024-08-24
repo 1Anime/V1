@@ -1,61 +1,86 @@
 <div align="center">
-  <a href="https://aniplaynow.live" target="_blank">
-    <img src="https://github.com/Luckyhv/aniplay/blob/c39875dc6e1bc2db9d8371574a9ab3ed95ff3b93/public/icon-512x512.png" alt="Logo" width="140" height="140">
-  </a>
-
-  <h2 align="center">Aniplay</h3>
-
-  <p align="center">
-    An open-source Anime streaming site built with Nextjs 14
-  </p>
+<a href="https://v1.1anime.one">
+  <img src="https://1anime.co/favicon.ico" alt="logo" width="180"/>
+</a>
 </div>
 
+<h1 align="center">
+  <a href="https://v1.1anime.one">1Anime V1</a>
+</h1>
 
-# About the Project
 
-Enjoy ad-free streaming and seamless progress tracking with AniList integration, powered by Consumet API and Anify. Built with Next.js 14, Nextui, MongoDB, and Redis, our platform offers a smooth experience. Look out for hidden features - every clickable item may hold a different surprise.
+> [!WARNING]  
+>  
+> As of August 24 2024, this repository is no longer maintained and will not receive any further updates or support from the author. If you choose to use the code in this repository, please do so at your own risk.
+> ### Important Points:
+> - **No Updates**: There will be no further updates or improvements made to this repository.
+> - **No Support**: The author will not provide any support, fixes, or acknowledge any issues found in the code.
+> - **Use at Your Own Risk**: Any errors, bugs, or other issues that arise from using this code are your responsibility.
+> 
+> Thank you for your understanding. 
+<br />
 
+<p align="center">
+
+ <a href="https://github.com/1Anime/V1/blob/main/LICENSE.md">
+    <img src="https://img.shields.io/github/license/1Anime/V1" alt="license"/>
+  </a>
+  <a href="https://github.com/1Anime/V1/fork">
+    <img src="https://img.shields.io/github/forks/1Anime/V1?style=social" alt="fork"/>
+  </a>
+  <a href="https://github.com/DevanAbinaya/Ani-Moopa">
+    <img src="https://img.shields.io/github/stars/1Anime/V1?style=social" alt="stars"/>
+  </a>
+  
+</p>
+
+<p align="center">
+ <img src="https://github.com/Ani-Moopa/Moopa/assets/97084324/c17d5d6a-36a2-4d08-957d-ad4683dcdf0d" alt="main">
+</p>
+
+> **Warning:** If you are not familiar with JavaScript or any other programming language related to this project, please learn it first before attempting to work on this project. **I won't help anyone who doesn't know how to do basic stuff.**
+
+## Introduction
+
+<p><a href="https://v1.1anime.one">1Anime</a> is an anime streaming website made possible by the <a href="https://github.com/consumet">Consumet API</a> and <a href="https://anify.tv">Anify API</a>, built with <a href="https://github.com/vercel/next.js/">Next.js</a> and <a href="https://nextui.org/">Nextui</a>, It offers AniList integration with no ads or interruptions</p>
 
 ## Features
 
-- No ads
-- Fast page load
-- PWA supported
-- Responsive on all devices
-- Multi provider support
-- Recommendations
-- Player Features
-  - Autoplay next episode
-  - Skip op/ed button
-  - Autoplay Video
+- General
+  - Free ad-supported streaming service
+  - Dub Anime support
+  - User-friendly interface
+  - Auto sync with AniList
+  - Add Anime to your AniList
+  - Scene Searching powered by [trace.moe](https://trace.moe)
+  - PWA supported
+  - Mobile responsive
+- Watch Page
+  - Player
+    - Autoplay next episode
+    - Skip op/ed button
+  - Comment section
+- Profile page to see your watch list
 
+## For Local Development
 
-<!-- ROADMAP -->
-## Roadmap
+> If you want to self-host this app, please note that it is only allowed for personal use. Commercial use is not permitted, and including ads on your self-hosted site may result in actions such as site takedown.
 
-- [X] Add Changelog
-- [X] Download episodes
-- [X] Add Comment section
-- [ ] Create separate page for anilist users
-    - [ ] To view their progress
-    - [ ] Check all their details imported from anilist
-- [X] Add Scene Search
-- [X] Add Anilist episode tracking
-- [ ] Complete Watch Page
-- [X] Add Profile page.
-- [ ] Add Manga Reading Support
-    - [ ] Comick
-    - [ ] Mangadex
-    - [ ] And some more
+1. Clone this repository using :
 
-See the [open issues](https://github.com/Luckyhv/aniplay/issues) for a full list of proposed features (and known issues).
-
-
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
+```bash
+git clone https://github.com/1Anime/V1.git
 ```
+
+2. Install package using npm :
+
+```bash
+npm install
+```
+
+3. Create `.env` file in the root folder and put this inside the file :
+
+```bash
 ## Redis
 # If you don't want to use redis leave it empty or comment it.
 REDIS_URL="get redis from upstash, litegix or aiven. They offer free tier."
@@ -86,85 +111,38 @@ NEXT_PUBLIC_PRODUCTION_URL="Your deployement URL. Don't put / at the end of the 
 
 ## In AniList Developer console add redirect url :
 # https://{your-domain}/api/auth/callback/AniListProvider
-
 ```
 
-
-## Run Locally
-
-Clone the project
-```bash
-  git clone https://github.com/Luckyhv/aniplay.git
-```
-
-Go to the project directory
-```bash
-  cd aniplay
-```
-
-Install dependencies
-```bash
-  npm install
-```
-
-Start the server
+4. Add this endpoint as Redirect Url on AniList Developer :
 
 ```bash
-  npm run dev
+https://your-website-domain/api/auth/callback/AniListProvider
 ```
 
-## Run using Docker
+5. Start local server :
 
-Get the .env.example file from the repo, edit it and then rename it to .env
-
-Move the .env file somewhere it won't bother you (optional)
-
-Run the image:
 ```bash
-docker run -d -it \
---name Aniplay \
--p 3000:3000 \
--v <path_of_env_file>/.env:/usr/src/app/.env \
-ghcr.io/luckyhv/aniplay:latest
+npm run build
 ```
 
-For Docker Compose:
-```yaml
-version: "3.3"
-services:
-  aniplay:
-    container_name: Aniplay
-    ports:
-      - 3000:3000
-    volumes:
-      - <path_of_env_file>/.env:/usr/src/app/.env
-    image: ghcr.io/luckyhv/aniplay:latest
-```
+## Credits
 
-For at full stack deploy (db, redis, consumet api)
-See [docker-compose.yml](https://github.com/Luckyhv/aniplay/blob/master/docker-compose.yml)
+- [Consumet API](https://github.com/consumet/api.consumet.org) for anime sources
+- [AniList API](https://github.com/AniList/ApiV2-GraphQL-Docs) for anime details source
+- [Anify API](https://anify.tv/discord) for backup anime sources
+- [Airin](https://github.com/Noname968/airin) for the base code
 
-Access Aniplay at ``http://localhost:3000``
+## License
 
-<!-- CONTRIBUTING -->
-## Contributing
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details.
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+> This means that if you choose to use or host this site for your own purposes, you are also required to release the source code of any modifications or improvements you make to this project. This open-source ethos is central to the project's philosophy.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<!-- CONTACT -->
 ## Contact
+[![Discord Banner](https://discord.com/api/guilds/1241662958082330714/widget.png?style=banner2)](https://discord.gg/7x8bKaY9eP)
 
-Project Link: [https://github.com/Luckyhv/aniplay](https://github.com/Luckyhv/aniplay)
+## Support This Project
 
-Discord Server: [https://https://discord.gg/pWgPSJ2U83/1Anime](https://https://discord.gg/pWgPSJ2U83/1Anime)
+✨ [Star this project](https://github.com/1Anime/V1)
 
-For any queries you can DM me on Discord `harsha9680`.
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/1anime)  
