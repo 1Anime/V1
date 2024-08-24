@@ -49,6 +49,7 @@
 
 - General
   - Free ad-supported streaming service
+  - Theming
   - Dub Anime support
   - User-friendly interface
   - Auto sync with AniList
