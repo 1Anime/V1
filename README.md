@@ -8,20 +8,17 @@
   <a href="https://v1.1anime.one">1Anime V1</a>
 </h1>
 <h2 align="center"><a href="https://github.com/Noname968/airin">A permitted and official fork of Airin</a></h2>
-> [!IMPORTANT]  
->
-> As of 06/02/24, Vendetta has been discontinued.
-<br/>
 
-> [!WARNING]  
+> [!IMPORTANT]  
 >  
 > As of August 24 2024, this repository is no longer maintained and will not receive any further updates or support from the author. If you choose to use the code in this repository, please do so at your own risk.
 > ### Important Points:
+> - **Don't use this code for commercial use**: Read the LICENSE for more.
 > - **No Updates**: There will be no further updates or improvements made to this repository.
 > - **No Support**: The author will not provide any support, fixes, or acknowledge any issues found in the code.
-> - **Use at Your Own Risk**: Any errors, bugs, or other issues that arise from using this code are your responsibility.
+> - **Use at your own Risk**: Any errors, bugs, or other issues that arise from using this code are your responsibility.
 > 
-> Thank you for your understanding. 
+> Thank you. 
 <br />
 
 <p align="center">
@@ -135,6 +132,7 @@ npm run build
 - [AniList API](https://github.com/AniList/ApiV2-GraphQL-Docs) for anime details source
 - [Anify API](https://anify.tv/discord) for backup anime sources
 - [Airin](https://github.com/Noname968/airin) for the base code
+- [Moopa](https://github.com/Ani-Moopa/Moopa) for UI Inspiration and ReadMe.md Inspiration
 
 ## License
 
