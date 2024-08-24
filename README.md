@@ -36,7 +36,7 @@
 </p>
 
 <p align="center">
- <img src="https://github.com/Ani-Moopa/Moopa/assets/97084324/c17d5d6a-36a2-4d08-957d-ad4683dcdf0d" alt="main">
+ <img src="https://github.com/1Anime/V1/blob/main/public/image.png?raw=true" alt="main">
 </p>
 
 > **Warning:** If you are not familiar with JavaScript or any other programming language related to this project, please learn it first before attempting to work on this project. **I won't help anyone who doesn't know how to do basic stuff.**
