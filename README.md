@@ -29,7 +29,7 @@
   <a href="https://github.com/1Anime/V1/fork">
     <img src="https://img.shields.io/github/forks/1Anime/V1?style=social" alt="fork"/>
   </a>
-  <a href="https://github.com/DevanAbinaya/Ani-Moopa">
+  <a href="https://github.com/1Anime/V1">
     <img src="https://img.shields.io/github/stars/1Anime/V1?style=social" alt="stars"/>
   </a>
   
