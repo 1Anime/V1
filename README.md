@@ -7,7 +7,11 @@
 <h1 align="center">
   <a href="https://v1.1anime.one">1Anime V1</a>
 </h1>
-
+<h2 align="center"><a href="https://github.com/Noname968/airin">A permitted and official fork of Airin</a></h2>
+> [!IMPORTANT]  
+>
+> As of 06/02/24, Vendetta has been discontinued.
+<br/>
 
 > [!WARNING]  
 >  
